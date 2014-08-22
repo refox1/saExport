@@ -4896,10 +4896,6 @@ void ReadArg( string path , string name , string tem )
 			continue;
 		}
         
-        if ( ) {
-            <#statements#>
-        }
-		
 
 		if ( !xml )
 		{
