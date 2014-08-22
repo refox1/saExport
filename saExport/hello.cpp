@@ -4888,13 +4888,204 @@ void ReadArg( string path , string name , string tem )
 		static int n555 = 0;
 		static map< string , string > m555;
 		
-		if ( tem == "sb_dice" )
+		if ( (int)tem.find( "sb_" ) >= 0 || (int)tem.find( "ev" ) >= 0 ||
+            tem == "angelfire" ||
+            tem == "devilpk" || tem == "frecos" ||
+            tem == "koberoll" || tem == "moonenemy" ||
+            tem == "moonenemy2" || tem == "moonenemy3" ||
+            tem == "sin" || tem == "saveking2pk" )
 		{
 			// entype:2
 
             
 			continue;
 		}
+        
+        if ( tem == "luckyman" )
+        {
+            continue;
+        }
+        
+        if ( tem == "manorsman" )
+        {
+            continue;
+        }
+        
+        if ( tem == "exchangeman" || tem == "moon" || tem == "mooni" ||
+            tem == "moonn" || tem == "moonno" || tem == "moonqueen" || tem == "moonya" )
+        {
+            continue;
+        }
+        
+        if ( tem == "moonwarp" || tem == "moonwarp2" || tem == "moonwarp3" )
+        {
+            // warp man
+            
+            continue;
+        }
+        
+        if ( tem == "windowman" )
+        {
+            continue;
+        }
+        
+        if ( (int)tem.find( "npcgen_" ) >= 0 )
+        {
+            continue;
+        }
+        
+        if ( tem == "transman" )
+        {
+            continue;
+        }
+        
+        if ( tem == "vipshop" )
+        {
+            continue;
+        }
+        
+        if ( tem == "warp" )
+        {
+            continue;
+        }
+        
+        if ( tem == "npc_newnpcman" )
+        {
+            continue;
+        }
+        
+        if ( tem == "npc_petfusion" )
+        {
+            continue;
+        }
+        
+        if ( tem == "npc_transmigration" )
+        {
+            continue;
+        }
+        
+        if ( tem == "scheduleman" )
+        {
+            continue;
+        }
+        
+        if ( tem == "npc_checkman" )
+        {
+            continue;
+        }
+        
+        if ( tem == "familyman" || tem == "fmletter" )
+        {
+            continue;
+        }
+        
+        if ( tem == "familyman" )
+        {
+            continue;
+        }
+        
+        if ( tem == "bankman" )
+        {
+            continue;
+        }
+        
+        if ( tem == "bigsmallmaster" )
+        {
+            continue;
+        }
+        
+        if ( tem == "bigsmallpet" )
+        {
+            continue;
+        }
+        
+        if ( tem == "bluestrong" )
+        {
+            continue;
+        }
+        
+        if ( tem == "bus" )
+        {
+            continue;
+        }
+        
+        if ( tem == "changeevent" )
+        {
+            continue;
+        }
+        
+        if ( tem == "petracepet" )
+        {
+            continue;
+        }
+        
+        if ( tem == "petshop" )
+        {
+            continue;
+        }
+        
+        if ( tem == "riderman" )
+        {
+            continue;
+        }
+        
+        if ( tem == "petskillshop" )
+        {
+            continue;
+        }
+        
+        if ( tem == "auctioneer" )
+        {
+            continue;
+        }
+        if ( tem == "GambleBank" )
+        {
+            continue;
+        }
+        
+        if ( tem == "FreePetSkill" )
+        {
+            continue;
+        }
+        
+        if ( tem == "ITEMCHANGE" )
+        {
+            continue;
+        }
+        
+        if ( tem == "NPC_GambleMaster" )
+        {
+            continue;
+        }
+        if ( tem == "NPC_GambleRoulette" )
+        {
+            continue;
+        }
+        if ( tem == "Profession" )
+        {
+            continue;
+        }
+        if ( tem == "airplane" )
+        {
+            continue;
+        }
+        
+        if ( tem == "ProfessionShop" )
+        {
+            continue;
+        }
+        
+        if ( tem == "DuelRanKings" || tem == "duelranking" )
+        {
+            continue;
+        }
+        if ( tem == "BodyLan" )
+        {
+            continue;
+        }
+        
+        printf( "%s\n" , tem.c_str() );
+        assert( 0 );
         
 
 		if ( !xml )
