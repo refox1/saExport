@@ -91,6 +91,7 @@
 		98017B4119A6E6A5008D6305 /* crtManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crtManager.h; sourceTree = "<group>"; };
 		98017B4C19A6E78C008D6305 /* hello.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hello.cpp; sourceTree = "<group>"; };
 		98017B4D19A6E78C008D6305 /* hello.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hello.h; sourceTree = "<group>"; };
+		982B820C19AB3C4F000B8AC5 /* bait_03a2 */ = {isa = PBXFileReference; fileEncoding = 2147486000; lastKnownFileType = text; name = bait_03a2; path = ../../saRes/ssss/gmsv/data/npc/jaruga/event/bait_03a2; sourceTree = "<group>"; };
 		9832796A19A5CD2E007818C1 /* saExport */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = saExport; sourceTree = BUILT_PRODUCTS_DIR; };
 		9832796F19A5CD2E007818C1 /* saExport.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = saExport.1; sourceTree = "<group>"; };
 		9832797C19A5CE74007818C1 /* sa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sa.h; sourceTree = "<group>"; };
@@ -218,6 +219,7 @@
 				98017AED19A6E35F008D6305 /* XML */,
 				9832797C19A5CE74007818C1 /* sa.h */,
 				98017B4D19A6E78C008D6305 /* hello.h */,
+				982B820C19AB3C4F000B8AC5 /* bait_03a2 */,
 				98017B4C19A6E78C008D6305 /* hello.cpp */,
 				98CEF9BA19A7360500514DDD /* npcTemplate.xml */,
 				9832796F19A5CD2E007818C1 /* saExport.1 */,
