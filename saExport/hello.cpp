@@ -5707,13 +5707,41 @@ void ReadArg( string path , string name , string tem )
             continue;
         }
         
-        if ( tem == "warp" )
-        {
-            continue;
-        }
-        
         if ( tem == "npc_newnpcman" )
         {
+            if ( !xml )
+            {
+                xml = CreatXMLElement( doc , "newNpcMan" );
+				root->LinkEndChild( xml );
+            }
+            
+            if ( line[ 0 ] == 'S' && getStringFromIndexWithDelim(line, "TART_MSG:", 2, token, sizeof(token)) )
+			{
+				wstring str = AnsitoUnicode( token );
+				if ( stringMap.find( str ) == stringMap.end() )
+				{
+					stringMap[ str ] = stringMap.size();
+				}
+				xml->SetAttribute( "startMsg" , stringMap[ str ] );
+                continue;
+			}
+            if ( line[ 0 ] == 'C' && getStringFromIndexWithDelim(line, "HECK_MSG:", 2, token, sizeof(token)) )
+			{
+				wstring str = AnsitoUnicode( token );
+				if ( stringMap.find( str ) == stringMap.end() )
+				{
+					stringMap[ str ] = stringMap.size();
+				}
+				xml->SetAttribute( "checkMsg" , stringMap[ str ] );
+                continue;
+			}
+            
+            if ( line[ 0 ] != '\0' && line[ 0 ] != ' ' && line[ 0 ] != '\r' )
+            {
+                printf( "%s \n" , line );
+                assert( 0 );
+            }
+            
             continue;
         }
         
@@ -8253,6 +8281,10 @@ void ReadArg( string path , string name , string tem )
         if ( tem == "npc_checkman" )
         {
             assert( 0 );
+            continue;
+        }
+        if ( tem == "warp" )
+        {
             continue;
         }
         
