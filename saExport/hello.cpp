@@ -5546,6 +5546,8 @@ void ReadArg( string path , string name , string tem )
 	xmlPath += subPath;
 	xmlPath += ".arg";
     
+    int addEggID = 0;
+    
 	char	line[20000];
 	char	token[16384];
 	int		listindex =0;
@@ -5717,12 +5719,6 @@ void ReadArg( string path , string name , string tem )
         
         if ( tem == "npc_petfusion" )
         {
-//        StartMsg:准备好要进行融合了吗？
-//        SelectMsg:选出你要合体的宠物吧，最多只能三只喔⋯。
-//        FREE:LV>0
-//        ADDEGGID:2055
-//        ADDEGGID:1045
-            
             if ( !xml )
             {
                 xml = CreatXMLElement( doc , "petfusion" );
@@ -5736,7 +5732,7 @@ void ReadArg( string path , string name , string tem )
 				{
 					stringMap[ str ] = stringMap.size();
 				}
-				xml1->SetAttribute( "startMsg" , stringMap[ str ] );
+				xml->SetAttribute( "startMsg" , stringMap[ str ] );
                 continue;
 			}
             if ( line[ 0 ] == 'S' && getStringFromIndexWithDelim(line, "electMsg:", 2, token, sizeof(token)) )
@@ -5746,13 +5742,17 @@ void ReadArg( string path , string name , string tem )
 				{
 					stringMap[ str ] = stringMap.size();
 				}
-				xml1->SetAttribute( "selectMsg" , stringMap[ str ] );
+				xml->SetAttribute( "selectMsg" , stringMap[ str ] );
                 continue;
 			}
             
             if ( line[ 0 ] == 'A' && getStringFromIndexWithDelim(line, "DDEGGID:", 2, token, sizeof(token)) )
 			{
-                xml1->SetAttribute( "addEggID" , stringMap[ str ] );
+                char buffer[ 32 ];
+                sprintf( buffer , "addEggID%d" , addEggID );
+                xml->SetAttribute( buffer , token );
+                addEggID++;
+                
                 continue;
 			}
             if ( line[ 0 ] == 'F' && getStringFromIndexWithDelim(line, "REE:", 2, token, sizeof(token)) )
@@ -5859,9 +5859,7 @@ void ReadArg( string path , string name , string tem )
 			}
             
             
-            
             // pet
-            
             if ( line[ 0 ] == 's' && getStringFromIndexWithDelim(line, "electmsg:", 2, token, sizeof(token)) )
 			{
 				wstring str = AnsitoUnicode( token );
