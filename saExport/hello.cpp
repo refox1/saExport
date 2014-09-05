@@ -4866,6 +4866,9 @@ enum FREETYPE
     
     FREE_MANOR = 90,
     
+    FREE_EQUIT = 100,
+    FREE_EQUIT_NOT,
+    
     
     FREE_COUNT
 };
@@ -4883,7 +4886,7 @@ void ReadFree( xmlElement* xml , xmlDocument* doc , char* token )
     
     while ( getStringFromIndexWithDelim( token , (char*)check.c_str() , nnss2 , buffer , 1024 ) )
     {
-        xmlElement* xml1 = CreatXMLElement( doc , "free" );
+        xmlElement* xml1 = CreatXMLElement( doc , "f" );
         xml->LinkEndChild( xml1 );
         
         int nnss1 = 1;
@@ -5635,7 +5638,7 @@ void ReadFree1( xmlElement* xml , xmlDocument* doc , char* token )
     
     while ( getStringFromIndexWithDelim( token , (char*)check.c_str() , nnss2 , buffer , 1024 ) )
     {
-        xmlElement* xml1 = CreatXMLElement( doc , "free" );
+        xmlElement* xml1 = CreatXMLElement( doc , "f" );
         xml->LinkEndChild( xml1 );
         
         int nnss1 = 1;
@@ -6356,6 +6359,28 @@ void ReadFree1( xmlElement* xml , xmlDocument* doc , char* token )
                 
                 typeNum++;
             }
+            else if ( line0[ 0 ] == 'E' && getStringFromIndexWithDelim( line0, "QUIT=", 2, line1 , 1024) )
+            {
+                char buffer[ 32 ];
+                
+                sprintf( buffer , "t%d" , typeNum );
+                xml1->SetAttribute( buffer , FREE_EQUIT );
+                sprintf( buffer , "tv%d" , typeNum );
+                xml1->SetAttribute( buffer , atoi( line1 ) );
+                
+                typeNum++;
+            }
+            else if ( line0[ 0 ] == 'E' && getStringFromIndexWithDelim( line0, "QUIT!=", 2, line1 , 1024) )
+            {
+                char buffer[ 32 ];
+                
+                sprintf( buffer , "t%d" , typeNum );
+                xml1->SetAttribute( buffer , FREE_EQUIT_NOT );
+                sprintf( buffer , "tv%d" , typeNum );
+                xml1->SetAttribute( buffer , atoi( line1 ) );
+                
+                typeNum++;
+            }
             else if ( line0[ 0 ] == 'V' && getStringFromIndexWithDelim(line0, "IP=", 2, line1, 1024) )
 			{
                 //xml1->SetAttribute( "vip" , atoi( token ) );
@@ -6467,10 +6492,490 @@ void ReadArg( string path , string name , string tem )
             tem == "devilpk" || tem == "frecos" ||
             tem == "koberoll" || tem == "moonenemy" ||
             tem == "moonenemy2" || tem == "moonenemy3" ||
-            tem == "sin" || tem == "saveking2pk" )
+            tem == "sin" || tem == "saveking2pk" ||
+            tem == "bluestrong" )
 		{
 			// entype:2
 
+//        entype:2
+//        askbattlemsg1:什么！给我滚到旁边去！
+//        askbattlemsg2:还是你打算阻挠我们！
+//        askbattlemsg3:我们的等级可都是LV65以上的呀!即使这样还是有赢的自信
+//        askbattlemsg4:的话就放马过来吧!
+//        startmsg:放马过来!
+//        dieact:0
+//            end msg:
+//        enemyno:1283,1282,1284,1285,1286
+//        deniedmsg:什么!别妨碍我们、滚到旁边去!
+//            time=300
+//
+            if ( !xml )
+            {
+                xml = CreatXMLElement( doc , "enemy" );
+				root->LinkEndChild( xml );
+            }
+            
+            
+            if ( line[ 0 ] == 'N' && getStringFromIndexWithDelim(line, "EWNPCENEM", 2, token, sizeof(token)) )
+			{
+                continue;
+			}
+            if ( line[ 0 ] == 'N' && getStringFromIndexWithDelim(line, "EWEVENT", 2, token, sizeof(token)) )
+			{
+                xml1 = CreatXMLElement( doc , "event" );
+                xml->LinkEndChild( xml1 );
+                
+                continue;
+			}
+            
+            if ( line[ 0 ] == 'O' && getStringFromIndexWithDelim(line, "VE", 2, token, sizeof(token)) )
+			{
+                xml1 = NULL;
+                continue;
+			}
+            
+            if ( line[ 0 ] == 'e' && getStringFromIndexWithDelim(line, "ntype:", 2, token, sizeof(token)) )
+			{
+                xml->SetAttribute( "type" , token );
+                continue;
+			}
+            if ( line[ 0 ] == 't' && getStringFromIndexWithDelim(line, "ime=", 2, token, sizeof(token)) )
+			{
+                xml->SetAttribute( "time" , token );
+                continue;
+			}
+            if ( line[ 0 ] == 't' && getStringFromIndexWithDelim(line, "ime:", 2, token, sizeof(token)) )
+			{
+                xml->SetAttribute( "time" , token );
+                continue;
+			}
+            if ( line[ 0 ] == 'i' && getStringFromIndexWithDelim(line, "tem:", 2, token, sizeof(token)) )
+			{
+                xml->SetAttribute( "item" , token );
+                continue;
+			}
+            
+            if ( line[ 0 ] == 'd' && getStringFromIndexWithDelim(line, "dieact:", 2, token, sizeof(token)) )
+			{
+                xml->SetAttribute( "die" , token );
+                continue;
+			}
+            if ( line[ 0 ] == 'w' && getStringFromIndexWithDelim(line, "arpfl:", 2, token, sizeof(token)) )
+			{
+                xml->SetAttribute( "warpMap" , token );
+                continue;
+			}
+            if ( line[ 0 ] == 'w' && getStringFromIndexWithDelim(line, "arpx:", 2, token, sizeof(token)) )
+			{
+                xml->SetAttribute( "warpX" , token );
+                continue;
+			}
+            if ( line[ 0 ] == 'w' && getStringFromIndexWithDelim(line, "arpy:", 2, token, sizeof(token)) )
+			{
+                xml->SetAttribute( "warpY" , token );
+                continue;
+			}
+            if ( line[ 0 ] == 'o' && getStringFromIndexWithDelim(line, "nebattle:", 2, token, sizeof(token)) )
+			{
+                xml->SetAttribute( "oneBattle" , token );
+                continue;
+			}
+            if ( line[ 0 ] == 'B' && getStringFromIndexWithDelim(line, "_evend:", 2, token, sizeof(token)) )
+			{
+                xml->SetAttribute( "eventEnd" , token );
+                continue;
+			}
+            if ( line[ 0 ] == 'B' && getStringFromIndexWithDelim(line, "_evnow:", 2, token, sizeof(token)) )
+			{
+                xml->SetAttribute( "eventNow" , token );
+                continue;
+			}
+            if ( line[ 0 ] == 's' && getStringFromIndexWithDelim(line, "ktype:", 2, token, sizeof(token)) )
+			{
+                xml->SetAttribute( "skType" , token );
+                continue;
+			}
+            
+            if ( line[ 0 ] == 's' && getStringFromIndexWithDelim(line, "teal:", 2, token, sizeof(token)) )
+			{
+                xml->SetAttribute( "steal" , token );
+                continue;
+			}
+            if ( line[ 0 ] == 'g' && getStringFromIndexWithDelim(line, "ym:", 2, token, sizeof(token)) )
+			{
+                xml->SetAttribute( "gym" , token );
+                continue;
+			}
+            
+            if ( line[ 0 ] == 'e' && getStringFromIndexWithDelim( line, "nemyno:", 2, token , 1024) )
+            {
+                xml2 = CreatXMLElement( doc , "enemy" );
+                xml->LinkEndChild( xml2 );
+                
+                char buffer[ 32 ];
+                char line1[ 320 ];
+                
+                int n = 1;
+                while ( getStringFromIndexWithDelim( token , ",", n, line1 , 256) )
+                {
+                    sprintf( buffer , "e%d" , n - 1 );
+                    xml2->SetAttribute( buffer , line1 );
+                    n++;
+                }
+                xml2 = NULL;
+                continue;
+            }
+            if ( line[ 0 ] == 'e' && getStringFromIndexWithDelim( line, "nemypetno:", 2, token , 1024) )
+            {
+                xml2 = CreatXMLElement( doc , "enemyPet" );
+                xml->LinkEndChild( xml2 );
+                
+                char buffer[ 32 ];
+                char line1[ 320 ];
+                
+                int n = 1;
+                while ( getStringFromIndexWithDelim( token , ",", n, line1 , 256) )
+                {
+                    sprintf( buffer , "e%d" , n - 1 );
+                    xml2->SetAttribute( buffer , line1 );
+                    n++;
+                }
+                xml2 = NULL;
+                continue;
+            }
+            
+            
+            if ( line[ 0 ] == 'd' && getStringFromIndexWithDelim(line, "eniedmsg:", 2, token, sizeof(token)) )
+			{
+                wstring str = AnsitoUnicode( token );
+				if ( stringMap.find( str ) == stringMap.end() )
+				{
+					stringMap[ str ] = stringMap.size();
+				}
+				xml->SetAttribute( "deniedMsg" , stringMap[ str ] );
+                continue;
+			}
+            if ( line[ 0 ] == 's' && getStringFromIndexWithDelim(line, "tar tmsg:", 2, token, sizeof(token)) )
+			{
+                wstring str = AnsitoUnicode( token );
+				if ( stringMap.find( str ) == stringMap.end() )
+				{
+					stringMap[ str ] = stringMap.size();
+				}
+				xml->SetAttribute( "startMsg" , stringMap[ str ] );
+                continue;
+			}
+            if ( line[ 0 ] == 's' && getStringFromIndexWithDelim(line, "tart msg:", 2, token, sizeof(token)) )
+			{
+                wstring str = AnsitoUnicode( token );
+				if ( stringMap.find( str ) == stringMap.end() )
+				{
+					stringMap[ str ] = stringMap.size();
+				}
+				xml->SetAttribute( "startMsg" , stringMap[ str ] );
+                continue;
+			}
+            
+            if ( line[ 0 ] == 'a' && getStringFromIndexWithDelim(line, "lreadymsg:", 2, token, sizeof(token)) )
+			{
+                wstring str = AnsitoUnicode( token );
+				if ( stringMap.find( str ) == stringMap.end() )
+				{
+					stringMap[ str ] = stringMap.size();
+				}
+				xml->SetAttribute( "alreadyMsg" , stringMap[ str ] );
+                continue;
+			}
+            
+            if ( line[ 0 ] == 'e' && getStringFromIndexWithDelim(line, "nd msg:", 2, token, sizeof(token)) )
+			{
+                wstring str = AnsitoUnicode( token );
+				if ( stringMap.find( str ) == stringMap.end() )
+				{
+					stringMap[ str ] = stringMap.size();
+				}
+				xml->SetAttribute( "endMsg" , stringMap[ str ] );
+                continue;
+			}
+            if ( line[ 0 ] == 'a' && getStringFromIndexWithDelim(line, "skbattlemsg:", 2, token, sizeof(token)) )
+			{
+                wstring str = AnsitoUnicode( token );
+				if ( stringMap.find( str ) == stringMap.end() )
+				{
+					stringMap[ str ] = stringMap.size();
+				}
+				xml->SetAttribute( "askBattleMsg0" , stringMap[ str ] );
+                continue;
+			}
+            if ( line[ 0 ] == 'a' && getStringFromIndexWithDelim(line, "skbattlemsg1:", 2, token, sizeof(token)) )
+			{
+                wstring str = AnsitoUnicode( token );
+				if ( stringMap.find( str ) == stringMap.end() )
+				{
+					stringMap[ str ] = stringMap.size();
+				}
+				xml->SetAttribute( "askBattleMsg1" , stringMap[ str ] );
+                continue;
+			}
+            if ( line[ 0 ] == 'a' && getStringFromIndexWithDelim(line, "skbattlemsg2:", 2, token, sizeof(token)) )
+			{
+                wstring str = AnsitoUnicode( token );
+				if ( stringMap.find( str ) == stringMap.end() )
+				{
+					stringMap[ str ] = stringMap.size();
+				}
+				xml->SetAttribute( "askBattleMsg2" , stringMap[ str ] );
+                continue;
+			}
+            if ( line[ 0 ] == 'a' && getStringFromIndexWithDelim(line, "skbattlemsg3:", 2, token, sizeof(token)) )
+			{
+                wstring str = AnsitoUnicode( token );
+				if ( stringMap.find( str ) == stringMap.end() )
+				{
+					stringMap[ str ] = stringMap.size();
+				}
+				xml->SetAttribute( "askBattleMsg3" , stringMap[ str ] );
+                continue;
+			}
+            if ( line[ 0 ] == 'a' && getStringFromIndexWithDelim(line, "skbattlemsg4:", 2, token, sizeof(token)) )
+			{
+                wstring str = AnsitoUnicode( token );
+				if ( stringMap.find( str ) == stringMap.end() )
+				{
+					stringMap[ str ] = stringMap.size();
+				}
+				xml->SetAttribute( "askBattleMsg4" , stringMap[ str ] );
+                continue;
+			}
+            if ( line[ 0 ] == 'a' && getStringFromIndexWithDelim(line, "skbattlemsg5:", 2, token, sizeof(token)) )
+			{
+                wstring str = AnsitoUnicode( token );
+				if ( stringMap.find( str ) == stringMap.end() )
+				{
+					stringMap[ str ] = stringMap.size();
+				}
+				xml->SetAttribute( "askBattleMsg5" , stringMap[ str ] );
+                continue;
+			}
+            if ( line[ 0 ] == 'a' && getStringFromIndexWithDelim(line, "skbattlemsg6:", 2, token, sizeof(token)) )
+			{
+                wstring str = AnsitoUnicode( token );
+				if ( stringMap.find( str ) == stringMap.end() )
+				{
+					stringMap[ str ] = stringMap.size();
+				}
+				xml->SetAttribute( "askBattleMsg6" , stringMap[ str ] );
+                continue;
+			}
+            
+            if ( line[ 0 ] == 's' && getStringFromIndexWithDelim(line, "tartmsg:", 2, token, sizeof(token)) )
+			{
+                wstring str = AnsitoUnicode( token );
+				if ( stringMap.find( str ) == stringMap.end() )
+				{
+					stringMap[ str ] = stringMap.size();
+				}
+				xml->SetAttribute( "startMsg" , stringMap[ str ] );
+                continue;
+			}
+            
+            if ( line[ 0 ] == 'R' && getStringFromIndexWithDelim(line, "EPLACEMENT:", 2, token, sizeof(token)) )
+			{
+				xml2 = CreatXMLElement( doc , "replace" );
+                xml->LinkEndChild( xml2 );
+                
+				char	token1[128];
+                
+				int n = 1;
+				while ( getStringFromIndexWithDelim(token, ";", n, token1, 128 ) )
+				{
+					char token2[ 128 ];
+					getStringFromIndexWithDelim(token1, ",", 1, token2, 128 );
+					int map = atoi( token2 );
+					getStringFromIndexWithDelim(token1, ",", 2, token2, 128 );
+					int x = atoi( token2 );
+					getStringFromIndexWithDelim(token1, ",", 3, token2, 128 );
+					int y = atoi( token2 );
+                    
+                    char buff[ 32 ];
+                    sprintf( buff , "map%d" , n - 1 );
+                    xml2->SetAttribute( buff , map );
+                    sprintf( buff , "x%d" , n - 1 );
+                    xml2->SetAttribute( buff , x );
+                    sprintf( buff , "y%d" , n - 1 );
+                    xml2->SetAttribute( buff , y );
+                    
+					n++;
+				}
+                
+                xml2 = NULL;
+                
+                continue;
+			}
+            
+
+            
+            
+            
+            
+            
+            // event
+            
+            if ( line[ 0 ] == 'F' && getStringFromIndexWithDelim(line, "REE:", 2, token, sizeof(token)) )
+            {
+                xml2 = CreatXMLElement( doc , "free" );
+                xml1->LinkEndChild( xml2 );
+                
+                ReadFree1( xml2 , doc , token );
+                xml2 = NULL;
+                continue;
+            }
+            
+            if ( line[ 0 ] == 'W' && getStringFromIndexWithDelim(line, "ARP:", 2, token, sizeof(token)) )
+			{
+				xml2 = CreatXMLElement( doc , "warp" );
+                xml1->LinkEndChild( xml2 );
+                
+				char	token1[128];
+                
+				int n = 1;
+				while ( getStringFromIndexWithDelim(token, ";", n, token1, 128 ) )
+				{
+					char token2[ 128 ];
+					getStringFromIndexWithDelim(token1, ",", 1, token2, 128 );
+					int map = atoi( token2 );
+					getStringFromIndexWithDelim(token1, ",", 2, token2, 128 );
+					int x = atoi( token2 );
+					getStringFromIndexWithDelim(token1, ",", 3, token2, 128 );
+					int y = atoi( token2 );
+                    
+                    char buff[ 32 ];
+                    sprintf( buff , "map%d" , n - 1 );
+                    xml2->SetAttribute( buff , map );
+                    sprintf( buff , "x%d" , n - 1 );
+                    xml2->SetAttribute( buff , x );
+                    sprintf( buff , "y%d" , n - 1 );
+                    xml2->SetAttribute( buff , y );
+                    
+					n++;
+				}
+                
+                xml2 = NULL;
+                
+                continue;
+			}
+            if ( line[ 0 ] == 'e' && getStringFromIndexWithDelim(line, "ndmsg:", 2, token, sizeof(token)) )
+			{
+                wstring str = AnsitoUnicode( token );
+				if ( stringMap.find( str ) == stringMap.end() )
+				{
+					stringMap[ str ] = stringMap.size();
+				}
+                if ( !xml1 )
+                {
+                    xml->SetAttribute( "endMsg" , stringMap[ str ] );
+                }
+                else
+                {
+                    xml1->SetAttribute( "endMsg" , stringMap[ str ] );
+                }
+				
+                continue;
+			}
+            if ( line[ 0 ] == 'h' && getStringFromIndexWithDelim(line, "erobattlefield:", 2, token, sizeof(token)) )
+			{
+                if ( !xml1 )
+                {
+                    xml->SetAttribute( "heroBattleField" , token );
+                }
+                else
+                {
+                    xml1->SetAttribute( "heroBattleField" , token );
+                }
+                continue;
+			}
+            if ( line[ 0 ] == 'E' && getStringFromIndexWithDelim(line, "vent_Now:", 2, token, sizeof(token)) )
+			{
+				xml1->SetAttribute( "eventNow" , token );
+                continue;
+			}
+            if ( line[ 0 ] == 'E' && getStringFromIndexWithDelim(line, "vent_End:", 2, token, sizeof(token)) )
+			{
+				xml1->SetAttribute( "eventEnd" , token );
+                continue;
+			}
+            if ( line[ 0 ] == 'E' && getStringFromIndexWithDelim(line, "vClr:", 2, token, sizeof(token)) )
+			{
+				xml1->SetAttribute( "eventClear" , token );
+                continue;
+			}
+            if ( line[ 0 ] == 'A' && getStringFromIndexWithDelim(line, "ddItem:", 2, token, sizeof(token)) )
+			{
+				xml1->SetAttribute( "addItem" , token );
+                continue;
+			}
+            if ( line[ 0 ] == 'C' && getStringFromIndexWithDelim(line, "HANGEBBI:", 2, token, sizeof(token)) )
+			{
+                continue;
+			}
+            
+            if ( line[ 0 ] == 'D' && getStringFromIndexWithDelim( line, "elItem:", 2, token , 1024) )
+            {
+                xml2 = CreatXMLElement( doc , "delItem" );
+                xml1->LinkEndChild( xml2 );
+                
+                char buffer[ 32 ];
+                char line1[ 320 ];
+                char line2[ 320 ];
+                
+                int n = 1;
+                while ( getStringFromIndexWithDelim( token , ",", n, line1 , 256) )
+                {
+                    if ( getStringFromIndexWithDelim( line1 , "*", 2, line2 , 256) )
+                    {
+                        getStringFromIndexWithDelim( line1, "*", 1, line2 , 256);
+                        sprintf( buffer , "i%d" , n - 1 );
+                        xml2->SetAttribute( buffer , line2 );
+                        
+                        getStringFromIndexWithDelim( line1, "*", 2, line2 , 256);
+                        sprintf( buffer , "n%d" , n - 1 );
+                        xml2->SetAttribute( buffer , line2 );
+                    }
+                    else
+                    {
+                        sprintf( buffer , "i%d" , n - 1 );
+                        xml2->SetAttribute( buffer , line1 );
+                        sprintf( buffer , "n%d" , n - 1 );
+                        xml2->SetAttribute( buffer , 1 );
+                    }
+                    n++;
+                }
+                xml2 = NULL;
+                continue;
+            }
+            
+            if ( line[ 0 ] == 'G' && getStringFromIndexWithDelim( line , "etRandItem:" , 2 , token , sizeof(token) ) )
+			{
+                xmlElement* xml2 = CreatXMLElement( doc , "getRandItem" );
+                xml1->LinkEndChild( xml2 );
+                
+				char token1[ 512 ];
+                
+				int nn = 1;
+				while ( getStringFromIndexWithDelim( token , "," , nn , token1 , 512 ) )
+				{
+					char buff[ 32 ];
+					sprintf( buff , "i%d" , nn - 1 ); nn++;
+					xml2->SetAttribute( buff , atoi( token1 ) );
+				}
+                continue;
+			}
+            
+            if ( line[ 0 ] != '\0' && line[ 0 ] != ' ' && line[ 0 ] != '\r' )
+            {
+                printf( "%s \n" , line );
+                assert( 0 );
+            }
             
 			continue;
 		}
@@ -6534,16 +7039,11 @@ void ReadArg( string path , string name , string tem )
 				root->LinkEndChild( xml );
             }
             
+            
             continue;
         }
         if ( tem == "windowman" )
         {
-            continue;
-        }
-        
-        if ( tem == "bluestrong" )
-        {
-            // new npc enemy
             continue;
         }
         
@@ -7158,7 +7658,7 @@ void ReadArg( string path , string name , string tem )
 			}
             if ( line[ 0 ] == 'E' && getStringFromIndexWithDelim(line, "vClr:", 2, token, sizeof(token)) )
 			{
-                xml1->SetAttribute( "eventCtrl" , atoi( token ) );
+                xml1->SetAttribute( "eventClear" , atoi( token ) );
                 continue;
 			}
             if ( line[ 0 ] == 'P' && getStringFromIndexWithDelim(line, "ROFESSION:", 2, token, sizeof(token)) )
