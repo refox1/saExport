@@ -4869,6 +4869,9 @@ enum FREETYPE
     FREE_EQUIT = 100,
     FREE_EQUIT_NOT,
     
+    FREE_GOLD_MIN,
+    FREE_GOLD_MAX,
+    
     
     FREE_COUNT
 };
@@ -5610,7 +5613,156 @@ void ReadFree( xmlElement* xml , xmlDocument* doc , char* token )
 			{
                 //xml1->SetAttribute( "vip" , atoi( token ) );
 			}
+            else if ( line0[ 0 ] == 'B' && getStringFromIndexWithDelim( line0, "BI!=", 2, line1 , 1024) )
+            {
+                char buffer[ 32 ];
+                
+                sprintf( buffer , "t%d" , typeNum );
+                xml1->SetAttribute( buffer , FREE_BBI_NOT );
+                sprintf( buffer , "tv%d" , typeNum );
+                xml1->SetAttribute( buffer , atoi( line1 ) );
+                
+                typeNum++;
+            }
+            else if ( line0[ 0 ] == 'B' && getStringFromIndexWithDelim( line0, "BI=", 2, line1 , 1024) )
+            {
+                char buffer[ 32 ];
+                
+                sprintf( buffer , "t%d" , typeNum );
+                xml1->SetAttribute( buffer , FREE_BBI );
+                sprintf( buffer , "tv%d" , typeNum );
+                xml1->SetAttribute( buffer , atoi( line1 ) );
+                
+                typeNum++;
+            }
+            else if ( line0[ 0 ] == 'B' && getStringFromIndexWithDelim( line0, "BI<=", 2, line1 , 1024) )
+            {
+                char buffer[ 32 ];
+                
+                sprintf( buffer , "t%d" , typeNum );
+                xml1->SetAttribute( buffer , FREE_BBI_MAX );
+                sprintf( buffer , "tv%d" , typeNum );
+                xml1->SetAttribute( buffer , atoi( line1 ) );
+                
+                typeNum++;
+            }
+            else if ( line0[ 0 ] == 'B' && getStringFromIndexWithDelim( line0, "BI<", 2, line1 , 1024) )
+            {
+                char buffer[ 32 ];
+                
+                sprintf( buffer , "t%d" , typeNum );
+                xml1->SetAttribute( buffer , FREE_BBI_MAX );
+                sprintf( buffer , "tv%d" , typeNum );
+                xml1->SetAttribute( buffer , atoi( line1 ) - 1 );
+                
+                typeNum++;
+            }
+            else if ( line0[ 0 ] == 'B' && getStringFromIndexWithDelim( line0, "BI>=", 2, line1 , 1024) )
+            {
+                char buffer[ 32 ];
+                
+                sprintf( buffer , "t%d" , typeNum );
+                xml1->SetAttribute( buffer , FREE_BBI_MIN );
+                sprintf( buffer , "tv%d" , typeNum );
+                xml1->SetAttribute( buffer , atoi( line1 ) );
+                
+                typeNum++;
+            }
+            else if ( line0[ 0 ] == 'B' && getStringFromIndexWithDelim( line0, "BI>", 2, line1 , 1024) )
+            {
+                char buffer[ 32 ];
+                
+                sprintf( buffer , "t%d" , typeNum );
+                xml1->SetAttribute( buffer , FREE_BBI_MIN );
+                sprintf( buffer , "tv%d" , typeNum );
+                xml1->SetAttribute( buffer , atoi( line1 ) + 1 );
+                
+                typeNum++;
+            }
             
+            else if ( line0[ 0 ] == 'M' && getStringFromIndexWithDelim( line0, "ANOR=", 2, line1 , 1024) )
+            {
+                char buffer[ 32 ];
+                
+                sprintf( buffer , "t%d" , typeNum );
+                xml1->SetAttribute( buffer , FREE_MANOR );
+                sprintf( buffer , "tv%d" , typeNum );
+                xml1->SetAttribute( buffer , atoi( line1 ) );
+                
+                typeNum++;
+            }
+            else if ( line0[ 0 ] == 'E' && getStringFromIndexWithDelim( line0, "QUIT=", 2, line1 , 1024) )
+            {
+                char buffer[ 32 ];
+                
+                sprintf( buffer , "t%d" , typeNum );
+                xml1->SetAttribute( buffer , FREE_EQUIT );
+                sprintf( buffer , "tv%d" , typeNum );
+                xml1->SetAttribute( buffer , atoi( line1 ) );
+                
+                typeNum++;
+            }
+            else if ( line0[ 0 ] == 'E' && getStringFromIndexWithDelim( line0, "QUIT!=", 2, line1 , 1024) )
+            {
+                char buffer[ 32 ];
+                
+                sprintf( buffer , "t%d" , typeNum );
+                xml1->SetAttribute( buffer , FREE_EQUIT_NOT );
+                sprintf( buffer , "tv%d" , typeNum );
+                xml1->SetAttribute( buffer , atoi( line1 ) );
+                
+                typeNum++;
+            }
+            else if ( line0[ 0 ] == 'V' && getStringFromIndexWithDelim(line0, "IP=", 2, line1, 1024) )
+			{
+                //xml1->SetAttribute( "vip" , atoi( token ) );
+			}
+            else if ( line0[ 0 ] == 'O' && getStringFromIndexWithDelim(line0, "VE", 2, line1, 1024) )
+			{
+                //xml1->SetAttribute( "vip" , atoi( token ) );
+			}
+            else if ( line0[ 0 ] == 'T' && getStringFromIndexWithDelim(line0, "O:", 2, line1, 1024) )
+			{
+				xmlElement* xml2 = CreatXMLElement( doc , "to" );
+                xml1->LinkEndChild( xml2 );
+                
+                char token2[ 128 ];
+                getStringFromIndexWithDelim(token, ",", 1, token2, 128 );
+                int map = atoi( token2 );
+                getStringFromIndexWithDelim(token, ",", 2, token2, 128 );
+                int x = atoi( token2 );
+                getStringFromIndexWithDelim(token, ",", 3, token2, 128 );
+                int y = atoi( token2 );
+                
+                xml2->SetAttribute( "map" , map );
+                xml2->SetAttribute( "x" , x );
+                xml2->SetAttribute( "y" , y );
+                xml2 = NULL;
+			}
+            
+            else if ( line0[ 0 ] == 'G' && getStringFromIndexWithDelim( line0, "OLD>=", 2, line1 , 1024) )
+            {
+                char buffer[ 32 ];
+                
+                sprintf( buffer , "t%d" , typeNum );
+                xml1->SetAttribute( buffer , FREE_GOLD_MIN );
+                sprintf( buffer , "tv%d" , typeNum );
+                xml1->SetAttribute( buffer , atoi( line1 ) );
+                
+                typeNum++;
+            }
+            else if ( line0[ 0 ] == 'G' && getStringFromIndexWithDelim( line0, "OLD>", 2, line1 , 1024) )
+            {
+                char buffer[ 32 ];
+                
+                sprintf( buffer , "t%d" , typeNum );
+                xml1->SetAttribute( buffer , FREE_GOLD_MIN );
+                sprintf( buffer , "tv%d" , typeNum );
+                xml1->SetAttribute( buffer , atoi( line1 ) + 1 );
+                
+                typeNum++;
+            }
+
             
             else if ( line0[ 0 ] != '\0' && line0[ 0 ] != ' ' && line0[ 0 ] != '\r' )
             {
@@ -6406,6 +6558,31 @@ void ReadFree1( xmlElement* xml , xmlDocument* doc , char* token )
                 xml2->SetAttribute( "y" , y );
                 xml2 = NULL;
 			}
+            
+            else if ( line0[ 0 ] == 'G' && getStringFromIndexWithDelim( line0, "OLD>=", 2, line1 , 1024) )
+            {
+                char buffer[ 32 ];
+                
+                sprintf( buffer , "t%d" , typeNum );
+                xml1->SetAttribute( buffer , FREE_GOLD_MIN );
+                sprintf( buffer , "tv%d" , typeNum );
+                xml1->SetAttribute( buffer , atoi( line1 ) );
+                
+                typeNum++;
+            }
+            else if ( line0[ 0 ] == 'G' && getStringFromIndexWithDelim( line0, "OLD>", 2, line1 , 1024) )
+            {
+                char buffer[ 32 ];
+                
+                sprintf( buffer , "t%d" , typeNum );
+                xml1->SetAttribute( buffer , FREE_GOLD_MIN );
+                sprintf( buffer , "tv%d" , typeNum );
+                xml1->SetAttribute( buffer , atoi( line1 ) + 1 );
+                
+                typeNum++;
+            }
+
+            
             else if ( line0[ 0 ] != '\0' && line0[ 0 ] != ' ' && line0[ 0 ] != '\r' )
             {
                 printf( "%s \n" , line0 );
@@ -6440,9 +6617,11 @@ void ReadArg( string path , string name , string tem )
 	
 	string tempStr = xmlPath;
     
-	createdirectoryex( xmlPath.c_str() );
 	xmlPath += subPath;
+    string xmlPath1 = xmlPath.substr( 0 , xmlPath.find_last_of( "/" ) + 1 );
+    createdirectoryex( xmlPath1.c_str() );
 	xmlPath += ".arg";
+    
     
     int addEggID = 0;
     
@@ -6811,7 +6990,7 @@ void ReadArg( string path , string name , string tem )
                 xml2 = CreatXMLElement( doc , "free" );
                 xml1->LinkEndChild( xml2 );
                 
-                ReadFree1( xml2 , doc , token );
+                ReadFree( xml2 , doc , token );
                 xml2 = NULL;
                 continue;
             }
@@ -6896,7 +7075,19 @@ void ReadArg( string path , string name , string tem )
 			}
             if ( line[ 0 ] == 'A' && getStringFromIndexWithDelim(line, "ddItem:", 2, token, sizeof(token)) )
 			{
-				xml1->SetAttribute( "addItem" , token );
+                xmlElement* xml2 = CreatXMLElement( doc , "addItem" );
+                xml1->LinkEndChild( xml2 );
+                
+				char token1[ 512 ];
+                
+				int nn = 1;
+				while ( getStringFromIndexWithDelim( token , "," , nn , token1 , 512 ) )
+				{
+					char buff[ 32 ];
+					sprintf( buff , "i%d" , nn - 1 ); nn++;
+					xml2->SetAttribute( buff , atoi( token1 ) );
+				}
+                
                 continue;
 			}
             if ( line[ 0 ] == 'C' && getStringFromIndexWithDelim(line, "HANGEBBI:", 2, token, sizeof(token)) )
@@ -7207,13 +7398,14 @@ void ReadArg( string path , string name , string tem )
                 continue;
 			}
             
-            if ( line[ 0 ] != '{' )
+            if ( line[ 0 ] == '{' )
             {
-                xml1 = CreatXMLElement( doc , "t" );
+                xml1 = CreatXMLElement( doc , "trans" );
+                xml->LinkEndChild( xml1 );
                 continue;
             }
             
-            if ( line[ 0 ] != '}' )
+            if ( line[ 0 ] == '}' )
             {
                 xml1 = NULL;
                 continue;
@@ -7233,7 +7425,7 @@ void ReadArg( string path , string name , string tem )
                 xml2 = CreatXMLElement( doc , "free" );
                 xml1->LinkEndChild( xml2 );
                 
-                ReadFree1( xml2 , doc , token );
+                ReadFree( xml2 , doc , token );
                 xml2 = NULL;
                 continue;
 			}
@@ -7342,7 +7534,7 @@ void ReadArg( string path , string name , string tem )
         {
             if ( !xml )
             {
-                xml = CreatXMLElement( doc , "warp" );
+                xml = CreatXMLElement( doc , "warpMap" );
 				root->LinkEndChild( xml );
             }
             
@@ -7415,6 +7607,7 @@ void ReadArg( string path , string name , string tem )
                 if ( !xml1 )
                 {
                      xml1 = CreatXMLElement( doc , "noFree" );
+                    xml->LinkEndChild( xml1 );
                 }
                 
 				xml2 = CreatXMLElement( doc , "warp" );
@@ -7440,17 +7633,30 @@ void ReadArg( string path , string name , string tem )
 				xml2 = CreatXMLElement( doc , "npcPoint" );
                 xml1->LinkEndChild( xml2 );
                 
-                char token2[ 128 ];
-                getStringFromIndexWithDelim(token, ",", 1, token2, 128 );
-                int map = atoi( token2 );
-                getStringFromIndexWithDelim(token, ",", 2, token2, 128 );
-                int x = atoi( token2 );
-                getStringFromIndexWithDelim(token, ",", 3, token2, 128 );
-                int y = atoi( token2 );
+				char	token1[128];
                 
-                xml2->SetAttribute( "map" , map );
-                xml2->SetAttribute( "x" , x );
-                xml2->SetAttribute( "y" , y );
+				int n = 1;
+				while ( getStringFromIndexWithDelim(token, ";", n, token1, 128 ) )
+				{
+					char token2[ 128 ];
+					getStringFromIndexWithDelim(token1, ",", 1, token2, 128 );
+					int map = atoi( token2 );
+					getStringFromIndexWithDelim(token1, ",", 2, token2, 128 );
+					int x = atoi( token2 );
+					getStringFromIndexWithDelim(token1, ",", 3, token2, 128 );
+					int y = atoi( token2 );
+                    
+                    char buff[ 32 ];
+                    sprintf( buff , "map%d" , n - 1 );
+                    xml2->SetAttribute( buff , map );
+                    sprintf( buff , "x%d" , n - 1 );
+                    xml2->SetAttribute( buff , x );
+                    sprintf( buff , "y%d" , n - 1 );
+                    xml2->SetAttribute( buff , y );
+                    
+					n++;
+				}
+                
                 xml2 = NULL;
                 
                 continue;
@@ -7486,11 +7692,11 @@ void ReadArg( string path , string name , string tem )
                     
                     char buff[ 32 ];
                     sprintf( buff , "map%d" , n - 1 );
-                    xml->SetAttribute( buff , map );
+                    xml2->SetAttribute( buff , map );
                     sprintf( buff , "x%d" , n - 1 );
-                    xml->SetAttribute( buff , x );
+                    xml2->SetAttribute( buff , x );
                     sprintf( buff , "y%d" , n - 1 );
-                    xml->SetAttribute( buff , y );
+                    xml2->SetAttribute( buff , y );
                     
 					n++;
 				}
@@ -7524,7 +7730,19 @@ void ReadArg( string path , string name , string tem )
 			}
             if ( line[ 0 ] == 'A' && getStringFromIndexWithDelim(line, "ddItem:", 2, token, sizeof(token)) )
 			{
-				xml1->SetAttribute( "addItem" , token );
+                xmlElement* xml2 = CreatXMLElement( doc , "addItem" );
+                xml1->LinkEndChild( xml2 );
+                
+				char token1[ 512 ];
+                
+				int nn = 1;
+				while ( getStringFromIndexWithDelim( token , "," , nn , token1 , 512 ) )
+				{
+					char buff[ 32 ];
+					sprintf( buff , "i%d" , nn - 1 ); nn++;
+					xml2->SetAttribute( buff , atoi( token1 ) );
+				}
+                
                 continue;
 			}
             if ( line[ 0 ] == 'N' && getStringFromIndexWithDelim(line, "omalMsg:", 2, token, sizeof(token)) )
@@ -7659,7 +7877,7 @@ void ReadArg( string path , string name , string tem )
 			}
             if ( line[ 0 ] == 'P' && getStringFromIndexWithDelim(line, "ROFESSION:", 2, token, sizeof(token)) )
 			{
-                xml1->SetAttribute( "pro" , atoi( token ) );
+                xml1->SetAttribute( "profession" , atoi( token ) );
                 continue;
 			}
             

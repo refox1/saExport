@@ -718,8 +718,8 @@ bool getStringFromIndexWithDelim_body( char* src ,char* delim ,int index, char* 
 
 bool createdirectoryex( const char* lpszcreatepath )
 {
-	//std::string ss1 = "mkdir "; ss1 += lpszcreatepath;
-    //system( ss1.c_str() );
+	std::string ss1 = "mkdir -p "; ss1 += lpszcreatepath;
+    system( ss1.c_str() );
 
 	return true;
 }
