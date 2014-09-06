@@ -5492,7 +5492,6 @@ void ReadFree( xmlElement* xml , xmlDocument* doc , char* token )
                 char line2[ 320 ];
                 char line3[ 320 ];
                 
-                
                 xmlElement* xml2 = CreatXMLElement( doc , "pet" );
                 xml1->LinkEndChild( xml2 );
                 
@@ -6495,20 +6494,6 @@ void ReadArg( string path , string name , string tem )
             tem == "sin" || tem == "saveking2pk" ||
             tem == "bluestrong" )
 		{
-			// entype:2
-
-//        entype:2
-//        askbattlemsg1:什么！给我滚到旁边去！
-//        askbattlemsg2:还是你打算阻挠我们！
-//        askbattlemsg3:我们的等级可都是LV65以上的呀!即使这样还是有赢的自信
-//        askbattlemsg4:的话就放马过来吧!
-//        startmsg:放马过来!
-//        dieact:0
-//            end msg:
-//        enemyno:1283,1282,1284,1285,1286
-//        deniedmsg:什么!别妨碍我们、滚到旁边去!
-//            time=300
-//
             if ( !xml )
             {
                 xml = CreatXMLElement( doc , "enemy" );
@@ -6557,7 +6542,7 @@ void ReadArg( string path , string name , string tem )
             
             if ( line[ 0 ] == 'd' && getStringFromIndexWithDelim(line, "dieact:", 2, token, sizeof(token)) )
 			{
-                xml->SetAttribute( "die" , token );
+                xml->SetAttribute( "dieAction" , token );
                 continue;
 			}
             if ( line[ 0 ] == 'w' && getStringFromIndexWithDelim(line, "arpfl:", 2, token, sizeof(token)) )
@@ -7032,13 +7017,24 @@ void ReadArg( string path , string name , string tem )
             //            gotowin=100
             //            endbutton=
             //            endwin=
-            
-            if ( !xml )
-            {
-                xml = CreatXMLElement( doc , "riderMan" );
-				root->LinkEndChild( xml );
-            }
-            
+//            
+//            if ( !xml )
+//            {
+//                xml = CreatXMLElement( doc , "riderMan" );
+//				root->LinkEndChild( xml );
+//            }
+//            
+//            if ( line[ 0 ] == 'w' && getStringFromIndexWithDelim(line, "inno=", 2, token, sizeof(token)) )
+//			{
+//                xml->SetAttribute( "winNo" , token );
+//                continue;
+//			}
+//            
+//            if ( line[ 0 ] != '\0' && line[ 0 ] != ' ' && line[ 0 ] != '\r' )
+//            {
+//                printf( "%s \n" , line );
+//                assert( 0 );
+//            }
             
             continue;
         }
@@ -7055,7 +7051,7 @@ void ReadArg( string path , string name , string tem )
 				root->LinkEndChild( xml );
             }
             
-            if ( line[ 0 ] == 'S' && getStringFromIndexWithDelim(line, "Stone:LV", 2, token, sizeof(token)) )
+            if ( line[ 0 ] == 'S' && getStringFromIndexWithDelim(line, "tone:LV*", 2, token, sizeof(token)) )
 			{
                 xml->SetAttribute( "stoneLV" , token );
                 continue;
@@ -7087,7 +7083,7 @@ void ReadArg( string path , string name , string tem )
 				{
 					stringMap[ str ] = stringMap.size();
 				}
-				xml->SetAttribute( "luckMsg0" , stringMap[ str ] );
+				xml->SetAttribute( "luckyMsg0" , stringMap[ str ] );
                 continue;
 			}
             if ( line[ 0 ] == 'l' && getStringFromIndexWithDelim(line, "uck2:", 2, token, sizeof(token)) )
@@ -7097,7 +7093,7 @@ void ReadArg( string path , string name , string tem )
 				{
 					stringMap[ str ] = stringMap.size();
 				}
-				xml->SetAttribute( "luckMsg1" , stringMap[ str ] );
+				xml->SetAttribute( "luckyMsg1" , stringMap[ str ] );
                 continue;
 			}
             if ( line[ 0 ] == 'l' && getStringFromIndexWithDelim(line, "uck3:", 2, token, sizeof(token)) )
@@ -7107,7 +7103,7 @@ void ReadArg( string path , string name , string tem )
 				{
 					stringMap[ str ] = stringMap.size();
 				}
-				xml->SetAttribute( "luckMsg2" , stringMap[ str ] );
+				xml->SetAttribute( "luckyMsg2" , stringMap[ str ] );
                 continue;
 			}
             if ( line[ 0 ] == 'l' && getStringFromIndexWithDelim(line, "uck4:", 2, token, sizeof(token)) )
@@ -7117,7 +7113,7 @@ void ReadArg( string path , string name , string tem )
 				{
 					stringMap[ str ] = stringMap.size();
 				}
-				xml->SetAttribute( "luckMsg3" , stringMap[ str ] );
+				xml->SetAttribute( "luckyMsg3" , stringMap[ str ] );
                 continue;
 			}
             if ( line[ 0 ] == 'l' && getStringFromIndexWithDelim(line, "uck5:", 2, token, sizeof(token)) )
@@ -7127,7 +7123,7 @@ void ReadArg( string path , string name , string tem )
 				{
 					stringMap[ str ] = stringMap.size();
 				}
-				xml->SetAttribute( "luckMsg4" , stringMap[ str ] );
+				xml->SetAttribute( "luckyMsg4" , stringMap[ str ] );
                 continue;
 			}
 
