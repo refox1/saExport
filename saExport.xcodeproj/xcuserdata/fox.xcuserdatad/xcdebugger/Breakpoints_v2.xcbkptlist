@@ -10,91 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "saExport/hello.cpp"
-            timestampString = "431714012.547851"
+            timestampString = "431755450.7115"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "8009"
-            endingLineNumber = "8009"
-            landmarkName = "ReadArg( string path , string name , string tem )"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "saExport/hello.cpp"
-            timestampString = "431715481.474588"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "8069"
-            endingLineNumber = "8069"
-            landmarkName = "ReadArg( string path , string name , string tem )"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "saExport/hello.cpp"
-            timestampString = "431715482.203109"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "8070"
-            endingLineNumber = "8070"
-            landmarkName = "ReadArg( string path , string name , string tem )"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "saExport/hello.cpp"
-            timestampString = "431715482.721813"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "8071"
-            endingLineNumber = "8071"
-            landmarkName = "ReadArg( string path , string name , string tem )"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "saExport/hello.cpp"
-            timestampString = "431715483.049784"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "8072"
-            endingLineNumber = "8072"
-            landmarkName = "ReadArg( string path , string name , string tem )"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "saExport/hello.cpp"
-            timestampString = "431715483.377539"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "8073"
-            endingLineNumber = "8073"
+            startingLineNumber = "8357"
+            endingLineNumber = "8357"
             landmarkName = "ReadArg( string path , string name , string tem )"
             landmarkType = "7">
          </BreakpointContent>

@@ -8106,7 +8106,7 @@ void ReadArg( string path , string name , string tem )
         {
             if ( !xml )
             {
-                xml = CreatXMLElement( doc , "petfusion" );
+                xml = CreatXMLElement( doc , "petFusion" );
 				root->LinkEndChild( xml );
             }
             
@@ -8354,7 +8354,7 @@ void ReadArg( string path , string name , string tem )
                 getStringFromIndexWithDelim(line0, "=", 2, line1, 256);
                 xml1->SetAttribute( "pet" , line1 );
                 
-                getStringFromIndexWithDelim(token, ",", 2, line0, 256);
+                getStringFromIndexWithDelim(token, ",", 3, line0, 256);
                 getStringFromIndexWithDelim(line0, "=", 2, line1, 256);
                 getStringFromIndexWithDelim(line1, ".", 1, line2, 256);
                 xml1->SetAttribute( "present0" , line2 );
@@ -8367,7 +8367,7 @@ void ReadArg( string path , string name , string tem )
                 getStringFromIndexWithDelim(line1, ".", 5, line2, 256);
                 xml1->SetAttribute( "present4" , line2 );
                 
-                getStringFromIndexWithDelim(token, ",", 2, line0, 256);
+                getStringFromIndexWithDelim(token, ",", 4, line0, 256);
                 getStringFromIndexWithDelim(line0, "=", 2, line1, 256);
                 getStringFromIndexWithDelim(line1, ".", 1, line2, 256);
                 xml1->SetAttribute( "map" , line2 );
@@ -8396,7 +8396,7 @@ void ReadArg( string path , string name , string tem )
                 getStringFromIndexWithDelim(line0, "=", 2, line1, 256);
                 xml1->SetAttribute( "pet" , line1 );
                 
-                getStringFromIndexWithDelim(token, ",", 2, line0, 256);
+                getStringFromIndexWithDelim(token, ",", 3, line0, 256);
                 getStringFromIndexWithDelim(line0, "=", 2, line1, 256);
                 getStringFromIndexWithDelim(line1, ".", 1, line2, 256);
                 xml1->SetAttribute( "present0" , line2 );
@@ -8409,7 +8409,7 @@ void ReadArg( string path , string name , string tem )
                 getStringFromIndexWithDelim(line1, ".", 5, line2, 256);
                 xml1->SetAttribute( "present4" , line2 );
                 
-                getStringFromIndexWithDelim(token, ",", 2, line0, 256);
+                getStringFromIndexWithDelim(token, ",", 4, line0, 256);
                 getStringFromIndexWithDelim(line0, "=", 2, line1, 256);
                 getStringFromIndexWithDelim(line1, ".", 1, line2, 256);
                 xml1->SetAttribute( "map" , line2 );
@@ -8438,7 +8438,7 @@ void ReadArg( string path , string name , string tem )
                 getStringFromIndexWithDelim(line0, "=", 2, line1, 256);
                 xml1->SetAttribute( "pet" , line1 );
                 
-                getStringFromIndexWithDelim(token, ",", 2, line0, 256);
+                getStringFromIndexWithDelim(token, ",", 3, line0, 256);
                 getStringFromIndexWithDelim(line0, "=", 2, line1, 256);
                 getStringFromIndexWithDelim(line1, ".", 1, line2, 256);
                 xml1->SetAttribute( "present0" , line2 );
@@ -8451,7 +8451,7 @@ void ReadArg( string path , string name , string tem )
                 getStringFromIndexWithDelim(line1, ".", 5, line2, 256);
                 xml1->SetAttribute( "present4" , line2 );
                 
-                getStringFromIndexWithDelim(token, ",", 2, line0, 256);
+                getStringFromIndexWithDelim(token, ",", 4, line0, 256);
                 getStringFromIndexWithDelim(line0, "=", 2, line1, 256);
                 getStringFromIndexWithDelim(line1, ".", 1, line2, 256);
                 xml1->SetAttribute( "map" , line2 );
@@ -8480,7 +8480,7 @@ void ReadArg( string path , string name , string tem )
                 getStringFromIndexWithDelim(line0, "=", 2, line1, 256);
                 xml1->SetAttribute( "pet" , line1 );
                 
-                getStringFromIndexWithDelim(token, ",", 2, line0, 256);
+                getStringFromIndexWithDelim(token, ",", 3, line0, 256);
                 getStringFromIndexWithDelim(line0, "=", 2, line1, 256);
                 getStringFromIndexWithDelim(line1, ".", 1, line2, 256);
                 xml1->SetAttribute( "present0" , line2 );
@@ -8493,7 +8493,7 @@ void ReadArg( string path , string name , string tem )
                 getStringFromIndexWithDelim(line1, ".", 5, line2, 256);
                 xml1->SetAttribute( "present4" , line2 );
                 
-                getStringFromIndexWithDelim(token, ",", 2, line0, 256);
+                getStringFromIndexWithDelim(token, ",", 4, line0, 256);
                 getStringFromIndexWithDelim(line0, "=", 2, line1, 256);
                 getStringFromIndexWithDelim(line1, ".", 1, line2, 256);
                 xml1->SetAttribute( "map" , line2 );
