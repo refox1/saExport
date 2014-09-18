@@ -8579,7 +8579,7 @@ void ReadArg( string path , string name , string tem )
 				{
 					stringMap[ str ] = stringMap.size();
 				}
-				xml->SetAttribute( "nomalMainMsg" , stringMap[ str ] );
+				xml->SetAttribute( "normalMainMsg" , stringMap[ str ] );
                 continue;
 			}
             if ( line[ 0 ] == 'a' && getStringFromIndexWithDelim(line, "NomalMainMsg:", 2, token, sizeof(token)) )
@@ -8589,7 +8589,7 @@ void ReadArg( string path , string name , string tem )
 				{
 					stringMap[ str ] = stringMap.size();
 				}
-				xml->SetAttribute( "nomalMainMsg" , stringMap[ str ] );
+				xml->SetAttribute( "normalMainMsg" , stringMap[ str ] );
                 continue;
 			}
             
@@ -10660,7 +10660,7 @@ void ReadArg( string path , string name , string tem )
 				{
 					stringMap[ str ] = stringMap.size();
 				}
-				xml->SetAttribute( "nomalMainMsg" , stringMap[ str ] );
+				xml->SetAttribute( "normalMainMsg" , stringMap[ str ] );
                 continue;
 			}
             if ( line[ 0 ] == 'n' && getStringFromIndexWithDelim(line, "omalMainMsg:", 2, token, sizeof(token)) )
@@ -10670,7 +10670,7 @@ void ReadArg( string path , string name , string tem )
 				{
 					stringMap[ str ] = stringMap.size();
 				}
-				xml->SetAttribute( "nomalMainMsg" , stringMap[ str ] );
+				xml->SetAttribute( "normalMainMsg" , stringMap[ str ] );
                 continue;
 			}
             
@@ -11737,7 +11737,7 @@ void ReadArg( string path , string name , string tem )
             {
                 stringMap[ str ] = stringMap.size();
             }
-            xml->SetAttribute( "nomalMainMsg" , stringMap[ str ] );
+            xml->SetAttribute( "normalMainMsg" , stringMap[ str ] );
             
             continue;
         }
