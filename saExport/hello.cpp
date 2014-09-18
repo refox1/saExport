@@ -10681,7 +10681,7 @@ void ReadArg( string path , string name , string tem )
 				{
 					stringMap[ str ] = stringMap.size();
 				}
-				xml->SetAttribute( "nomalMainMsg" , stringMap[ str ] );
+				xml->SetAttribute( "normalMainMsg" , stringMap[ str ] );
             }
             
             
