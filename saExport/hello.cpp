@@ -42,7 +42,7 @@ extern void ReadArg( string path , string name , string tem );
 void		SaveItem()
 {
 	crtIFileSystem* fileSystem = crtManager::GetFileSystem();
-	crtIReadFile* readFile = fileSystem->CreateAndOpenFile( "C:\\work\\shiqicc95\\sss\\gmsv\\data\\itemset6.txt" );
+	crtIReadFile* readFile = fileSystem->CreateAndOpenFile( "/Users/fox/Desktop/saRes/ssss/gmsv/data/itemset6.txt" );
 // 	crtIReadFile* readImageFile = fileSystem->CreateAndOpenFile( "E:\\shiqicc95\\data\\adrn_136.bin" );
 // 	crtIReadFile* readDataFile = fileSystem->CreateAndOpenFile( "E:\\shiqicc95\\data\\real_136.bin" );
 	char read;
@@ -409,6 +409,13 @@ void		SaveItem()
 			subStr = strRead;
 			strRead.erase( 0 , n + 1 );
 			info.magic = atoi( subStr.c_str() );
+            
+            if ( subStr[ 0 ] == '\0' &&
+                subStr[ 1 ] == '0' &&
+                subStr[ 2 ] == ',' )
+            {
+                info.magic = -1;
+            }
 
 			n = strRead.find( "," );
 			strRead[ n ] = '\0';
@@ -2033,15 +2040,12 @@ void		SaveItem()
 			if ( info.autoResume[ 0 ] != '\0' )
 			element->SetAttribute( "autoResume" , info.autoResume.c_str() );
 
-			if ( info.id )
 			element->SetAttribute( "id" , info.id );
-			if ( info.img )
 			element->SetAttribute( "img" , info.img );
-			if ( info.sell )
 			element->SetAttribute( "sell" , info.sell );
-			if ( info.type )
 			element->SetAttribute( "type" , info.type );
-			if ( info.stage )
+
+            if ( info.stage )
 			element->SetAttribute( "stage" , info.stage );
 			if ( info.range )
 			element->SetAttribute( "range" , info.range );
@@ -2106,8 +2110,8 @@ void		SaveItem()
 			if ( info.attr )
 			element->SetAttribute( "attr" , info.attr );
 
-			if ( info.magic )
 			element->SetAttribute( "magic" , info.magic );
+            
 			if ( info.rare )
 			element->SetAttribute( "rare" , info.rare );
 			if ( info.mp )
@@ -2648,7 +2652,7 @@ void		SaveItem()
 		}
 	}
 
-	doc->Save( "c:\\work\\1.xml" , false );
+	doc->Save( "/Users/fox/Desktop/saExport/item.xml" , false );
 }
 
 
@@ -4474,6 +4478,7 @@ void ReadCreate( string path , string name )
 	xmlPath += subPath;
 	xmlPath += ".create";
 
+    int floorID = 0;
 
 	
 	char	line[20000];
@@ -4532,6 +4537,13 @@ void ReadCreate( string path , string name )
 		if ( getStringFromIndexWithDelim(line, "loorid=", 2, token, sizeof(token)) )
 		{
 			xml->SetAttribute( "map" , atoi( token ) );
+            
+            floorID = atoi( token );
+            if ( atoi( token ) == 2000 )
+            {
+                printf( "%s \n" , newPath.c_str() );
+                int n = 1;
+            }
 		}
 		else if ( getStringFromIndexWithDelim(line, "orncenter=", 2, token, sizeof(token)) )
 		{
@@ -4551,13 +4563,13 @@ void ReadCreate( string path , string name )
 			strcpy( line , token );
 
 			getStringFromIndexWithDelim( line , ",", 1, token, sizeof(token));
-			xml->SetAttribute( "bornCornerX" , atoi( token ) );
+			xml->SetAttribute( "bornCenterX" , atoi( token ) );
 			getStringFromIndexWithDelim( line , ",", 2, token, sizeof(token));
-			xml->SetAttribute( "bornCornerY" , atoi( token ) );
+			xml->SetAttribute( "bornCenterY" , atoi( token ) );
 			getStringFromIndexWithDelim( line , ",", 3, token, sizeof(token));
-			xml->SetAttribute( "bornCornerW" , atoi( token ) );
+			xml->SetAttribute( "bornCenterW" , atoi( token ) );
 			getStringFromIndexWithDelim( line , ",", 4, token, sizeof(token));
-			xml->SetAttribute( "bornCornerH" , atoi( token ) );
+			xml->SetAttribute( "bornCenterH" , atoi( token ) );
 		}
 		else if ( getStringFromIndexWithDelim(line, "ovecenter=", 2, token, sizeof(token)) )
 		{
@@ -4577,13 +4589,13 @@ void ReadCreate( string path , string name )
 			strcpy( line , token );
 
 			getStringFromIndexWithDelim( line , ",", 1, token, sizeof(token));
-			xml->SetAttribute( "moveCornerX" , atoi( token ) );
+			xml->SetAttribute( "moveCenterX" , atoi( token ) );
 			getStringFromIndexWithDelim( line , ",", 2, token, sizeof(token));
-			xml->SetAttribute( "moveCornerY" , atoi( token ) );
+			xml->SetAttribute( "moveCenterY" , atoi( token ) );
 			getStringFromIndexWithDelim( line , ",", 3, token, sizeof(token));
-			xml->SetAttribute( "moveCornerW" , atoi( token ) );
+			xml->SetAttribute( "moveCenterW" , atoi( token ) );
 			getStringFromIndexWithDelim( line , ",", 4, token, sizeof(token));
-			xml->SetAttribute( "moveCornerH" , atoi( token ) );
+			xml->SetAttribute( "moveCenterH" , atoi( token ) );
 		}
 		else if ( getStringFromIndexWithDelim(line, "reatenum=", 2, token, sizeof(token)) )
 		{
@@ -4596,6 +4608,11 @@ void ReadCreate( string path , string name )
 		else if ( getStringFromIndexWithDelim(line, "raphicname=", 2, token, sizeof(token)) )
 		{
 			xml->SetAttribute( "img" , atoi( token ) );
+            
+            if ( floorID == 2000 )
+            {
+                printf( "img %d " , atoi( token ) );
+            }
 		}
 		else if ( line[ 0 ] == 't' && getStringFromIndexWithDelim(line, "ime=", 2, token, sizeof(token)) )
 		{
@@ -4625,6 +4642,11 @@ void ReadCreate( string path , string name )
 		else if ( getStringFromIndexWithDelim(line, "gnoreinvincible=", 2, token, sizeof(token)) )
 		{
 			xml->SetAttribute( "ignoreInvincible" , atoi( token ) );
+            
+            if ( floorID == 2000 )
+            {
+                printf( "ignoreInvincible %d " , atoi( token ) );
+            }
 		}
 		else if ( getStringFromIndexWithDelim(line, "nemy=", 2, token, sizeof(token)) )
 		{
@@ -4633,6 +4655,12 @@ void ReadCreate( string path , string name )
 			getStringFromIndexWithDelim( line , "|", 1, token, sizeof(token));
 			xml->SetAttribute( "template" , token );
 			string str = token;
+            
+            if ( floorID == 2000 )
+            {
+                printf( "template %s " , atoi( token ) );
+            }
+            
 			if ( npcTemplateMap.find( str ) != npcTemplateMap.end() )
 			{
 			}
@@ -4887,8 +4915,16 @@ void ReadFree( xmlElement* xml , xmlDocument* doc , char* token )
         check = ",";
     }
     
+    int n = 0;
+    
     while ( getStringFromIndexWithDelim( token , (char*)check.c_str() , nnss2 , buffer , 1024 ) )
     {
+        if ( n > 2 )
+        {
+            n++;
+        }
+        n++;
+        
         xmlElement* xml1 = CreatXMLElement( doc , "f" );
         xml->LinkEndChild( xml1 );
         
@@ -7431,7 +7467,7 @@ void ReadArg( string path , string name , string tem )
 			}
             if ( line[ 0 ] == 'D' && getStringFromIndexWithDelim(line, "elGold:", 2, token, sizeof(token)) )
 			{
-                xml->SetAttribute( "delGold" , atoi( token ) );
+                xml1->SetAttribute( "delGold" , atoi( token ) );
                 continue;
 			}
             if ( line[ 0 ] == 'W' && getStringFromIndexWithDelim(line, "ARPPOINT:", 2, token, sizeof(token)) )
@@ -9085,7 +9121,7 @@ void ReadArg( string path , string name , string tem )
 				{
 					stringMap[ str ] = stringMap.size();
 				}
-				xml1->SetAttribute( "nomalMsg" , stringMap[ str ] );
+				xml1->SetAttribute( "normalMsg" , stringMap[ str ] );
                 continue;
 			}
             if ( line[ 0 ] == 'S' && getStringFromIndexWithDelim(line, "toneLessMsg:", 2, token, sizeof(token)) )
@@ -9284,14 +9320,32 @@ void ReadArg( string path , string name , string tem )
                 
                 char buffer[ 32 ];
                 char line1[ 320 ];
+                char line2[ 320 ];
                 
                 int n = 1;
+
                 while ( getStringFromIndexWithDelim( token , ",", n, line1 , 256) )
                 {
-                    sprintf( buffer , "i%d" , n - 1 );
-                    xml2->SetAttribute( buffer , line1 );
+                    if ( getStringFromIndexWithDelim( line1 , "*", 2, line2 , 256) )
+                    {
+                        getStringFromIndexWithDelim( line1, "*", 1, line2 , 256);
+                        sprintf( buffer , "i%d" , n - 1 );
+                        xml2->SetAttribute( buffer , line2 );
+                        
+                        getStringFromIndexWithDelim( line1, "*", 2, line2 , 256);
+                        sprintf( buffer , "n%d" , n - 1 );
+                        xml2->SetAttribute( buffer , line2 );
+                    }
+                    else
+                    {
+                        sprintf( buffer , "i%d" , n - 1 );
+                        xml2->SetAttribute( buffer , line1 );
+                        sprintf( buffer , "n%d" , n - 1 );
+                        xml2->SetAttribute( buffer , 1 );
+                    }
                     n++;
                 }
+                xml2 = NULL;
                 continue;
             }
             if ( line[ 0 ] == 'G' && getStringFromIndexWithDelim( line, "etPet:", 2, token , 1024) )
@@ -10028,7 +10082,14 @@ void ReadArg( string path , string name , string tem )
             continue;
         }
         
-        if ( tem == "FreePetSkill" || tem == "petskillshop" )
+        
+        
+        if ( tem == "petskillshop"  )
+        {
+            continue;
+        }
+        
+        if ( tem == "FreePetSkill" )
         {
             if ( !xml )
             {
@@ -10690,9 +10751,13 @@ void ReadArg( string path , string name , string tem )
         }
         if ( tem == "npcgen_shop" )
         {
+            if ( name.find( "ss_2000_67_62" ) != -1 )
+            {
+                int n = 1;
+            }
             if ( !xml )
             {
-                xml = CreatXMLElement( doc , "professionShop" );
+                xml = CreatXMLElement( doc , "itemShop" );
 				root->LinkEndChild( xml );
             }
             
@@ -10916,7 +10981,7 @@ void ReadArg( string path , string name , string tem )
                 char token1[128];
                 char token2[128];
                 
-                xml1 = CreatXMLElement( doc , "itemListNo" );
+                xml1 = CreatXMLElement( doc , "limitNo" );
                 xml->LinkEndChild( xml1 );
                 
 				int n = 1;
@@ -10943,7 +11008,10 @@ void ReadArg( string path , string name , string tem )
                     {
                         sprintf( buff , "i%d" , n1 - 1 );
                         n1++;
-                        xml1->SetAttribute( buff , atoi( token1 ) );
+                        if ( atoi( token1 ) > 0 )
+                        {
+                            xml1->SetAttribute( buff , atoi( token1 ) );
+                        }
                     }
                     n++;
 				}
@@ -10965,6 +11033,37 @@ void ReadArg( string path , string name , string tem )
 			}
             if ( line[ 0 ] == 'L' && getStringFromIndexWithDelim(line, "imitItemType:", 2, token, sizeof(token)) )
 			{
+                string str = token;
+                
+                if ( str == "OFFENCE" )
+                {
+                    xml->SetAttribute( "limitType" , "1" );
+                }
+                else if( str == "OFFENCE\r" )
+                {
+                    xml->SetAttribute( "limitType" , "1" );
+                }
+                else if( str == "DEFENCE" )
+                {
+                    xml->SetAttribute( "limitType" , "2" );
+                }
+                else if ( str == "ACCESSORY" )
+                {
+                    xml->SetAttribute( "limitType" , "3" );
+                }
+                else if ( str == "TRUE" )
+                {
+                    xml->SetAttribute( "limitType" , "4" );
+                }
+                else if ( str == "" )
+                {
+                    xml->SetAttribute( "limitType" , "0" );
+                }
+                else
+                {
+                    assert( 0 );
+                }
+                
                 continue;
 			}
             
@@ -11099,7 +11198,7 @@ void ReadArg( string path , string name , string tem )
 				{
 					stringMap[ str ] = stringMap.size();
 				}
-				xml->SetAttribute( "nomalMsg" , stringMap[ str ] );
+				xml->SetAttribute( "normalMsg" , stringMap[ str ] );
                 continue;
 			}
             if ( line[ 0 ] == 'R' && getStringFromIndexWithDelim(line, "equestMsg:", 2, token, sizeof(token)) )
@@ -11150,14 +11249,31 @@ void ReadArg( string path , string name , string tem )
                 
                 char buffer[ 32 ];
                 char line1[ 320 ];
+                char line2[ 320 ];
                 
                 int n = 1;
                 while ( getStringFromIndexWithDelim( token , ",", n, line1 , 256) )
                 {
-                    sprintf( buffer , "i%d" , n - 1 );
-                    xml2->SetAttribute( buffer , atoi( line1 ) );
+                    if ( getStringFromIndexWithDelim( line1 , "*", 2, line2 , 256) )
+                    {
+                        getStringFromIndexWithDelim( line1, "*", 1, line2 , 256);
+                        sprintf( buffer , "i%d" , n - 1 );
+                        xml2->SetAttribute( buffer , line2 );
+                        
+                        getStringFromIndexWithDelim( line1, "*", 2, line2 , 256);
+                        sprintf( buffer , "n%d" , n - 1 );
+                        xml2->SetAttribute( buffer , line2 );
+                    }
+                    else
+                    {
+                        sprintf( buffer , "i%d" , n - 1 );
+                        xml2->SetAttribute( buffer , line1 );
+                        sprintf( buffer , "n%d" , n - 1 );
+                        xml2->SetAttribute( buffer , 1 );
+                    }
                     n++;
                 }
+                xml2 = NULL;
                 continue;
             }
             
@@ -11332,13 +11448,31 @@ void ReadArg( string path , string name , string tem )
                 char buffer[ 32 ];
                 char line1[ 320 ];
                 
+                char line2[ 320 ];
+                
                 int n = 1;
                 while ( getStringFromIndexWithDelim( token , ",", n, line1 , 256) )
                 {
-                    sprintf( buffer , "i%d" , n - 1 );
-                    xml2->SetAttribute( buffer , line1 );
+                    if ( getStringFromIndexWithDelim( line1 , "*", 2, line2 , 256) )
+                    {
+                        getStringFromIndexWithDelim( line1, "*", 1, line2 , 256);
+                        sprintf( buffer , "i%d" , n - 1 );
+                        xml2->SetAttribute( buffer , line2 );
+                        
+                        getStringFromIndexWithDelim( line1, "*", 2, line2 , 256);
+                        sprintf( buffer , "n%d" , n - 1 );
+                        xml2->SetAttribute( buffer , line2 );
+                    }
+                    else
+                    {
+                        sprintf( buffer , "i%d" , n - 1 );
+                        xml2->SetAttribute( buffer , line1 );
+                        sprintf( buffer , "n%d" , n - 1 );
+                        xml2->SetAttribute( buffer , 1 );
+                    }
                     n++;
                 }
+                xml2 = NULL;
                 continue;
             }
             if ( line[ 0 ] == 'W' && getStringFromIndexWithDelim(line, "arp:", 2, token, sizeof(token)) )
@@ -11484,14 +11618,19 @@ void ReadArg( string path , string name , string tem )
                 xml2 = CreatXMLElement( doc , "petSkill" );
                 xml->LinkEndChild( xml2 );
                 
-                int nn = 1;
-                if ( getStringFromIndexWithDelim( token , ",", nn, line1 , 256) )
+                int nn = 1; int c = 0;
+                while ( getStringFromIndexWithDelim( token , ",", nn, line1 , 256) )
                 {
                     char buff[ 32 ];
-					sprintf( buff , "s%d" , nn - 1 ); nn++;
-					xml2->SetAttribute( buff , atoi( line1 ) );
+                    sprintf( buff , "s%d" , c ); nn++;
+                    
+                    if ( atoi( line1 ) > 0 )
+                    {
+                        xml2->SetAttribute( buff , atoi( line1 ) );
+                        c++;
+                    }
                 }
-                
+                xml2 = NULL;
                 continue;
 			}
             
@@ -12990,7 +13129,7 @@ bool SaveMagic()
 	int     i;
 	FILE* fp;
 
-	fp = fopen( "C:\\work\\shiqicc95\\sss\\gmsv\\data\\magic.txt" , "r");
+	fp = fopen( "/Users/fox/Desktop/saRes/ssss/gmsv/data/magic.txt" , "r");
 	if (fp == NULL)
 	{
 		return false;
@@ -13035,10 +13174,14 @@ bool SaveMagic()
 		getStringFromIndexWithDelim(line, ",", 4, token, sizeof(token));
 		string option = token;
 
-		if ( fun == "MAGIC_Recovery" || 
+        if ( fun == "MAGIC_Ressurect" )
+        {
+            xml->SetAttribute( "type" , 0 );
+            xml->SetAttribute( "power" , token );
+        }
+		else if ( fun == "MAGIC_Recovery" ||
 			fun == "MAGIC_OtherRecovery" ||
-			fun == "MAGIC_Recovery" || 
-			fun == "MAGIC_Ressurect" )
+			fun == "MAGIC_Recovery" )
 		{
 			xml->SetAttribute( "type" , 1 );
 			xml->SetAttribute( "power" , token );
@@ -13293,11 +13436,10 @@ bool SaveMagic()
 		else if ( fun == "MAGIC_AttSkill" )
 		{
 			xml->SetAttribute( "type" , 9 );
-
 		}
 		else if ( fun == "MAGIC_ToCallDragon" )
 		{
-			xml->SetAttribute( "type" , 9 );
+			xml->SetAttribute( "type" , 10 );
 
 			int n = atoi( option.c_str() ) ;
 			xml->SetAttribute( "dragon" , n );
@@ -13308,12 +13450,12 @@ bool SaveMagic()
 		}
 		else if ( fun == "MAGIC_Metamo" )
 		{
-			xml->SetAttribute( "type" , 10 );
+			xml->SetAttribute( "type" , 11 );
 			xml->SetAttribute( "second" , option.c_str() );
 		}
 		else if ( fun == "MAGIC_MagicStatusChange" )
 		{
-			xml->SetAttribute( "type" , 11 );
+			xml->SetAttribute( "type" , 12 );
 			
 			if ( option.find( "魔抗" ) == 0 )
 			{
@@ -13342,7 +13484,7 @@ bool SaveMagic()
 		}
 		else if ( fun == "MAGIC_StatusChange2" )
 		{
-			xml->SetAttribute( "type" , 12 );
+			xml->SetAttribute( "type" , 13 );
 		}
 		else if ( fun.size() )
 		{
@@ -13359,10 +13501,10 @@ bool SaveMagic()
 		xml->SetAttribute( "target" , token );
 
 		getStringFromIndexWithDelim(line, ",", 8, token, sizeof(token));
-		if ( atoi( token ) )
-		{
-			xml->SetAttribute( "targetDead" , token );
-		}
+		xml->SetAttribute( "targetDead" , token );
+        
+        getStringFromIndexWithDelim(line, ",", 9, token, sizeof(token));
+        xml->SetAttribute( "magicFlag" , token );
 		
 		
 
@@ -13370,7 +13512,7 @@ bool SaveMagic()
 	}
 	fclose(fp);
 
-	doc->Save( "c:\\work\\1.xml" , false );
+	doc->Save( "/Users/fox/Desktop/saExport/magic.xml" , false );
 
 	return true;
 }
@@ -13392,7 +13534,7 @@ bool SaveSkill(void)
 	int     i;
 	FILE* fp;
 
-	fp = fopen( "C:\\work\\shiqicc95\\sss\\gmsv\\data\\petskill2.txt" , "r");
+	fp = fopen( "/Users/fox/Desktop/saRes/ssss/gmsv/data/petskill2.txt" , "r");
 	if (fp == NULL)
 	{
 		return false;
@@ -13729,6 +13871,9 @@ bool SaveSkill(void)
 			xml->SetAttribute( "status" , 1 );
 		}
 
+        getStringFromIndexWithDelim(line, ",", 6, token, sizeof(token));
+        xml->SetAttribute( "code" , token );
+        
 		getStringFromIndexWithDelim(line, ",", 7, token, sizeof(token));
 		xml->SetAttribute( "id" , token );
 
@@ -13750,7 +13895,7 @@ bool SaveSkill(void)
 	}
 	fclose(fp);
 
-	doc->Save( "c:\\work\\1.xml" , false );
+	doc->Save( "/Users/fox/Desktop/saExport/skill.xml" , false );
 
 	return true;
 }
@@ -13829,6 +13974,77 @@ bool SaveQuestion(void)
 }
 
 
+bool SaveSkillCode(void)
+{
+    xmlDocument* doc = CreatXMLDocument();
+    xmlElement* root = CreatXMLElement( doc , "root" );
+    doc->LinkEndChild( root );
+    
+    
+    
+    char	line[20000];
+    char	token[16384];
+    int		listindex =0;
+    int     i;
+    FILE* fp;
+    
+    fp = fopen( "/Users/fox/Desktop/saRes/ssss/gmsv/data/skillcode 2.txt" , "r");
+    if (fp == NULL)
+    {
+        return false;
+    }
+    
+    map< int , int > mmm;
+    
+    while(1){
+        line[0]='\0';
+        if (fgets(line, sizeof(line), fp) == NULL)	break;
+        //print("\n %s ", line);
+        chop(line);
+        
+        if( line[0] == '#' )
+            continue;
+        for( i=0; i<strlen(line); i++ ){
+            if( line[i] == '#' ){
+                line[i] = '\0';
+                break;
+            }
+        }
+        
+        
+        xmlElement* xml = CreatXMLElement( doc , "s" );
+        root->LinkEndChild( xml );
+        
+        //wstring str = AnsitoUnicode( token );
+        
+        getStringFromIndexWithDelim(line, " ", 1, token, sizeof(token));
+        xml->SetAttribute( "name" , token );
+        getStringFromIndexWithDelim(line, " ", 2, token, sizeof(token));
+        xml->SetAttribute( "petID" , atoi( token ) );
+        getStringFromIndexWithDelim(line, " ", 3, token, sizeof(token));
+        xml->SetAttribute( "baseID" , atoi( token ) );
+        getStringFromIndexWithDelim(line, " ", 4, token, sizeof(token));
+        
+        string str = token;
+        
+        if ( str.length() > 0 )
+        {
+            str.erase( str.begin() + str.length() - 1 );
+        }
+        xml->SetAttribute( "code" , str.c_str() );
+
+        
+        listindex++;
+    }
+    fclose(fp);
+    
+    doc->Save( "/Users/fox/Desktop/saExport/skillcode.xml" , false );
+    
+    return true;
+}
+
+
+
 bool SaveRace(void)
 {
 	xmlDocument* doc = CreatXMLDocument();
@@ -13892,9 +14108,37 @@ bool SaveRace(void)
 	return true;
 }
 
+string&   replace_all(string&   str,const   string&   old_value,const   string&   new_value)
+{
+    while(true)   {
+        string::size_type   pos(0);
+        if(   (pos=str.find(old_value))!=string::npos   )
+            str.replace(pos,old_value.length(),new_value);
+        else   break;
+    }
+    return   str;
+}
+
+wstring&   wreplace_all( wstring&   str,const   wstring&   old_value,const   wstring&   new_value)
+{
+    while(true)   {
+        wstring::size_type   pos(0);
+        if(   (pos=str.find(old_value))!=wstring::npos   )
+            str.replace(pos,old_value.length(),new_value);
+        else   break;
+    }
+    return   str;
+}
 
 int		main()
 {
+    
+    SaveMagic();
+    return 0;
+    
+//    SaveSkillCode();
+//    return 0;
+    
  	crtIFileSystem* fileSystem = crtManager::GetFileSystem();
 
     ftw( "/Users/fox/Desktop/saRes/ssss/gmsv/data/npc" , fn , 500 );
@@ -13929,11 +14173,25 @@ int		main()
 	{
 		char buff[ 32 ];
         sprintf( buff , "%d" , i );
-		wstring w = AnsitoUnicode( buff );
-		writeFile->Write( w.c_str() , w.size() * 4 );
-		writeFile->Write( L"=" , 4 );
-		writeFile->Write( vww[ i ].c_str()  , vww[ i ].size() * 4 );
-		writeFile->Write( L"\n" , 4 );
+		wstring w = L"Npc";
+        w += AnsitoUnicode( buff );
+        w += L",";
+        w += wreplace_all( vww[ i ] , L"," , L"，" );
+        w += L"\r\n";
+        
+
+        
+        wchar_t* pc = (wchar_t*)w.c_str();
+        
+        while ( *pc )
+        {
+            writeFile->Write( pc , 2 );
+            pc++;
+        }
+//		writeFile->Write( w.c_str() , w.size() * 2 );
+//		writeFile->Write( L"," , 2 );
+//		writeFile->Write( vww[ i ].c_str()  , vww[ i ].size() * 2 );
+//		writeFile->Write( L"\n" , 2 );
 	}
 
 	writeFile->Release();
@@ -13948,15 +14206,355 @@ int		main()
 	{
 		NpcTemplate& tempalte1 = iter->second;
 
-		xmlElement* xml1 = CreatXMLElement( doc , "t" );
+        replace_all( tempalte1.templateName , "\r" , "" );
+        replace_all( tempalte1.nobody , "\r" , "" );
+        replace_all( tempalte1.nosee , "\r" , "" );
+        replace_all( tempalte1.name , "\r" , "" );
+        replace_all( tempalte1.fun , "\r" , "" );
+        replace_all( tempalte1.imgName , "\r" , "" );
+
+        xmlElement* xml1 = CreatXMLElement( doc , "t" );
 		root->LinkEndChild( xml1 );
+        
+        int fun = 0;
+        
+        if ( tempalte1.fun == "BodyLan" )
+        {
+            fun = 100;
+        }
+        else if ( tempalte1.fun == "Duelranking" )
+        {
+            fun = 36;
+        }
+        else if ( tempalte1.fun == "NPC_FreePetSkill" )
+        {
+            fun = 16;
+        }
+        else if ( tempalte1.fun == "NPC_GambleBank" )
+        {
+            fun = 25;
+        }
+        else if ( tempalte1.fun == "ItemchangeMan" )
+        {
+            fun = 14;
+        }
+        else if ( tempalte1.fun == "NPC_GambleMaster" )
+        {
+            fun = 26;
+        }
+        else if ( tempalte1.fun == "NPC_GambleRoulette" )
+        {
+            fun = 27;
+        }
+        else if ( tempalte1.fun == "Action" )
+        {
+            fun = 28;
+        }
+        else if ( tempalte1.fun == "welfare" )
+        {
+            fun = 29;
+        }
+        else if ( tempalte1.fun == "Airplane" )
+        {
+            fun = 30;
+        }
+        else if ( tempalte1.fun == "NPCEnemy" )
+        {
+            fun = 3;
+        }
+        else if ( tempalte1.fun == "Auctioneer" )
+        {
+            fun = 31;
+        }
+        else if ( tempalte1.fun == "BigSmallMaster" )
+        {
+            fun = 32;
+        }
+        else if ( tempalte1.fun == "BigSmallPet" )
+        {
+            fun = 33;
+        }
+        else if ( tempalte1.fun == "Bus" )
+        {
+            fun = 34;
+        }
+        else if ( tempalte1.fun == "ExChangeMan" )
+        {
+            fun = 35;
+        }
+        else if ( tempalte1.fun == "ExChageMan" )
+        {
+            fun = 35;
+        }
+        else if ( tempalte1.fun == "Familyman" )
+        {
+            fun = 23;
+        }
+        else if ( tempalte1.fun == "FmLetter" )
+        {
+            fun = 37;
+        }
+        else if ( tempalte1.fun == "LuckyMan" )
+        {
+            fun = 22;
+        }
+        else if ( tempalte1.fun == "ManorSman" )
+        {
+            fun = 38;
+        }
+        else if ( tempalte1.fun == "WarpMan" )
+        {
+            fun = 0;
+        }
+        else if ( tempalte1.fun == "Alldoman" )
+        {
+            fun = 39;
+        }
+        else if ( tempalte1.fun == "CheckMan" )
+        {
+            fun = 40;
+        }
+        else if ( tempalte1.fun == "NPC_NewNpcMan" )
+        {
+            fun = 73;
+        }
+        else if ( tempalte1.fun == "PetFusion" )
+        {
+            fun = 18;
+        }
+        else if ( tempalte1.fun == "transmigration" )
+        {
+            fun = 41;
+        }
+        else if ( tempalte1.fun == "BlackSmith" )
+        {
+            fun = 42;
+        }
+        else if ( tempalte1.fun == "Box" )
+        {
+            fun = 43;
+        }
+        else if ( tempalte1.fun == "Charm" )
+        {
+            fun = 8;
+        }
+        else if ( tempalte1.fun == "Class01" )
+        {
+            fun = 44;
+        }
+        else if ( tempalte1.fun == "Dengon" )
+        {
+            fun = 11;
+        }
+        else if ( tempalte1.fun == "Door" )
+        {
+            fun = 45;
+        }
+        else if ( tempalte1.fun == "Doorman" )
+        {
+            fun = 46;
+        }
+        else if ( tempalte1.fun == "FmDengon" )
+        {
+            fun = 47;
+        }
+        else if ( tempalte1.fun == "FmHealer" )
+        {
+            fun = 48;
+        }
+        else if ( tempalte1.fun == "FMPKCallMan" )
+        {
+            fun = 49;
+        }
+        else if ( tempalte1.fun == "FMPKMan" )
+        {
+            fun = 50;
+        }
+        else if ( tempalte1.fun == "FMWarpMan" )
+        {
+            fun = 51;
+        }else if ( tempalte1.fun == "Gun" )
+        {
+            fun = 52;
+        }else if ( tempalte1.fun == "Healer" )
+        {
+            fun = 7;
+        }else if ( tempalte1.fun == "Identifier" )
+        {
+            fun = 53;
+        }else if ( tempalte1.fun == "Janken" )
+        {
+            fun = 54;
+        }else if ( tempalte1.fun == "Keyman" )
+        {
+            fun = 55;
+        }else if ( tempalte1.fun == "ItemShop" )
+        {
+            fun = 56;
+        }else if ( tempalte1.fun == "TownPeople" )
+        {
+            fun = 57;
+        }else if ( tempalte1.fun == "Mic" )
+        {
+            fun = 58;
+        }else if ( tempalte1.fun == "Movewall" )
+        {
+            fun = 59;
+        }else if ( tempalte1.fun == "Msg" )
+        {
+            fun = 60;
+        }else if ( tempalte1.fun == "Msg2" )
+        {
+            fun = 61;
+        }else if ( tempalte1.fun == "Oldman" )
+        {
+            fun = 62;
+        }else if ( tempalte1.fun == "PetShop" )
+        {
+            fun = 9;
+        }
+        else if ( tempalte1.fun == "PetShop" )
+        {
+            fun = 9;
+        }
+        else if ( tempalte1.fun == "PetShop" )
+        {
+            fun = 9;
+        }
+        else if ( tempalte1.fun == "PetShop" )
+        {
+            fun = 9;
+        }
+        else if ( tempalte1.fun == "PetShop" )
+        {
+            fun = 9;
+        }
+        else if ( tempalte1.fun == "PetShop" )
+        {
+            fun = 9;
+        }
+        else if ( tempalte1.fun == "PetShop" )
+        {
+            fun = 9;
+        }
+        else if ( tempalte1.fun == "PetShop" )
+        {
+            fun = 9;
+        }
+        else if ( tempalte1.fun == "PetShop" )
+        {
+            fun = 9;
+        }
+        else if ( tempalte1.fun == "PetShop" )
+        {
+            fun = 9;
+        }
+        else if ( tempalte1.fun == "PetShop" )
+        {
+            fun = 9;
+        }
+        else if ( tempalte1.fun == "PetShop" )
+        {
+            fun = 9;
+        }
+        else if ( tempalte1.fun == "Bankman" )
+        {
+            fun = 24;
+        }
+        else if ( tempalte1.fun == "PetSkillShop" )
+        {
+            fun = 17;
+        }
+        else if ( tempalte1.fun == "PoolItemShop" )
+        {
+            fun = 12;
+        }
+        else if ( tempalte1.fun == "Quiz" )
+        {
+            fun = 63;
+        }
+        else if ( tempalte1.fun == "RoomAdmin" )
+        {
+            fun = 64;
+        }
+        else if ( tempalte1.fun == "SavePoint" )
+        {
+            fun = 2;
+        }
+        else if ( tempalte1.fun == "Ship" )
+        {
+            fun = 65;
+        }
+        else if ( tempalte1.fun == "SignBoard" )
+        {
+            fun = 10;
+        }
+        else if ( tempalte1.fun == "StepSwitch" )
+        {
+            fun = 66;
+        }
+        else if ( tempalte1.fun == "Temple" )
+        {
+            fun = 67;
+        }
+        else if ( tempalte1.fun == "TimeMan" )
+        {
+            fun = 21;
+        }
+        else if ( tempalte1.fun == "Warp" )
+        {
+            fun = 1;
+        }
+        else if ( tempalte1.fun == "WindowHealer" )
+        {
+            fun = 68;
+        }
+        else if ( tempalte1.fun == "PetRaceMaster" )
+        {
+            fun = 69;
+        }
+        else if ( tempalte1.fun == "PetRacePet" )
+        {
+            fun = 70;
+        }
+        else if ( tempalte1.fun == "Riderman" )
+        {
+            fun = 71;
+        }
+        else if ( tempalte1.fun == "Scheduleman" )
+        {
+            fun = 72;
+        }
+        else if ( tempalte1.fun == "VipShop" )
+        {
+            fun = 74;
+        }
+        else if ( tempalte1.fun == "TranserMan" )
+        {
+            fun = 75;
+        }
+        else if ( tempalte1.fun == "Windowman" )
+        {
+            fun = 19;
+        }
+        else if ( tempalte1.fun == "" )
+        {
+            fun = 74;
+        }
+        else
+        {
+            assert( 0 );
+        }
+
+        
+
 
 		xml1->SetAttribute( "template" , tempalte1.templateName.c_str() );
 		xml1->SetAttribute( "name" , tempalte1.name.c_str() );
 		xml1->SetAttribute( "nobody" , tempalte1.nobody.c_str() );
 		xml1->SetAttribute( "nosee" , tempalte1.nosee.c_str() );
 		xml1->SetAttribute( "type" , tempalte1.type.c_str() );
-		xml1->SetAttribute( "fun" , tempalte1.fun.c_str() );
+		xml1->SetAttribute( "fun" , fun );
 		xml1->SetAttribute( "hp" , tempalte1.hp.c_str() );
 		xml1->SetAttribute( "mp" , tempalte1.mp.c_str() );
 		xml1->SetAttribute( "str" , tempalte1.str.c_str() );

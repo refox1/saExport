@@ -1,0 +1,316 @@
+<root>
+    <m name="﻿待机" des="什么也不做" type="1" code="" id="0" field="1" target="5" useType="2" gold="500" />
+    <m name="攻击" des="通常攻击" type="2" code="" id="1" field="1" target="6" useType="2" gold="1000" />
+    <m name="防御" des="通常防御" code="" id="2" field="1" target="5" useType="2" gold="1000" />
+    <m name="破除防御" des="对采取防敌人攻击可能" type="3" code="" id="3" field="1" target="6" useType="2" gold="1500" />
+    <m name="连续攻击" des="两次连续攻击" type="4" turn="2" code="" id="10" field="1" target="6" useType="2" gold="2000" />
+    <m name="三段攻击" des="3回合连续攻击" type="4" turn="3" code="" id="11" field="1" target="6" useType="2" gold="5000" />
+    <m name="T四段攻击" des="4回连续攻击" type="4" turn="4" code="Te" id="12" field="1" target="6" useType="2" gold="15000" />
+    <m name="T五段攻击" des="5回连续攻击" type="4" turn="5" code="Tf" id="13" field="1" target="6" useType="2" gold="25000" />
+    <m name="六段攻击" des="6回连续攻击" type="4" turn="6" code="" id="14" field="1" target="6" useType="2" gold="225000" />
+    <m name="T七段攻击" des="7回连续攻击" type="4" turn="7" code="" id="15" field="1" target="6" useType="2" gold="625000" />
+    <m name="T八段攻击" des="8回连续攻击" type="4" turn="8" code="" id="16" field="1" target="6" useType="2" gold="625000" />
+    <m name="T九段攻击" des="9回连续攻击" type="4" turn="9" code="" id="17" field="1" target="6" useType="2" gold="1625000" />
+    <m name="T十段攻击" des="10回连续攻击" type="4" turn="10" code="" id="18" field="1" target="6" useType="2" gold="2005000" />
+    <m name="忠犬" des="保护主人不受到敌人的直接攻击" type="5" ATK="0" code="" id="20" field="1" target="7" useType="2" gold="2500" />
+    <m name="T忠犬" des="保护主人 攻击下降10%防御上升40%" type="5" ATK="0" DEF="0" code="Tg" id="21" field="1" target="7" useType="2" gold="2500" />
+    <m name="T忠犬2" des="保护主人 攻击上升50%防御上升100%" type="5" ATK="0" DEF="0" code="" id="22" field="1" target="7" useType="2" gold="2500" />
+    <m name="突击" des="1回合储存力量　　　 下次攻击时　　　 就会有两倍的攻击力" type="6" turn="1" ATK="0" code="" id="30" field="1" target="6" useType="2" gold="4000" />
+    <m name="双重突击" des="2回合储存力量 　　　下次攻击时 　　　就会有两倍以上的攻击力" type="6" turn="2" ATK="0" code="" id="31" field="1" target="6" useType="2" gold="8000" />
+    <m name="一击必杀" des="给予两倍的攻击伤害但是命中率下降" type="7" CRT="0" MISS="0" code="" id="39" field="1" target="6" useType="2" gold="25000" />
+    <m name="一击必杀" des="给予两倍的攻击伤害但是命中率下降" type="7" CRT="0" MISS="0" code="" id="40" field="1" target="6" useType="2" gold="2500" />
+    <m name="T一击必杀改" des="给予3倍的攻击伤害但是命中率下降" type="7" CRT="0" MISS="0" code="Ta" id="41" field="1" target="6" useType="2" gold="25000" />
+    <m name="T一击必杀改2" des="给予4倍的攻击伤害但是命中率下降" type="7" CRT="0" MISS="0" code="" id="42" field="1" target="6" useType="2" gold="25000" />
+    <m name="背水之战其之１" des="防御力减30%　　攻击力变成+30%" type="8" ATK="0" DEF="0" code="" id="50" field="1" target="6" useType="2" gold="2000" />
+    <m name="背水之战其之２" des="防御力减50%　　攻击力变成+50%" type="8" ATK="0" DEF="0" code="" id="51" field="1" target="6" useType="2" gold="2500" />
+    <m name="T背水之战之其３" des="防御力变成-50%　　攻击力变成+80%" type="8" ATK="0" DEF="0" code="Tb" id="52" field="1" target="6" useType="2" gold="30000" />
+    <m name="背水之战之其３" des="防御力变成-60%　　攻击力变成+65%" type="8" ATK="0" DEF="0" code="" id="53" field="1" target="6" useType="2" gold="100000" />
+    <m name="T背水之战之其４" des="防御力变成-70%　　攻击力变成+100%" type="8" ATK="0" DEF="0" code="" id="54" field="1" target="6" useType="2" gold="130000" />
+    <m name="毒攻击" des="攻击力减30%三回合前后让敌人中毒" type="9" ATK="0" turn="3" status="2" code="" id="60" field="1" target="6" useType="2" gold="2500" />
+    <m name="猛毒攻击" des="攻击力减50%五回合前后让敌人中毒" type="9" ATK="0" turn="5" status="2" code="" id="61" field="1" target="6" useType="2" gold="4000" />
+    <m name="石化攻击" des="攻击力减30%三回合前后让敌人石化" type="9" ATK="0" turn="3" status="4" code="" id="80" field="1" target="6" useType="2" gold="2300" />
+    <m name="混乱攻击" des="攻击力减30%三回合前后让敌人混乱" type="9" ATK="0" turn="3" code="" id="90" field="1" target="6" useType="2" gold="2000" />
+    <m name="泥醉攻击" des="攻击力减30%三回合前后让敌人酒醉" type="9" ATK="0" turn="3" status="6" code="" id="100" field="1" target="6" useType="2" gold="2000" />
+    <m name="催眠攻击" des="攻击力减30%三回合前后让敌人沉睡" type="9" ATK="0" turn="3" code="" id="110" field="1" target="6" useType="2" gold="2500" />
+    <m name="麻痹攻击" des="攻击力减50%两回合前后让敌人麻痹" type="9" ATK="0" turn="2" status="3" code="" id="111" field="1" target="6" useType="2" gold="2500" />
+    <m name="虚弱攻击" des="攻击力减50%九回合前后让敌人虚弱" type="9" ATK="0" turn="9" status="11" code="" id="112" field="1" target="6" useType="2" gold="2500" />
+    <m name="眼镜蛇之吻" des="提高30%攻击力并有一定几率造成对方中剧毒" type="9" ATK="0" turn="9" status="8" code="" id="113" field="1" target="6" useType="2" gold="4000" />
+    <m name="淬毒之爪" des="大幅提升攻击力 并造成对手身中剧毒" type="9" ATK="0" turn="6" status="8" code="" id="114" field="1" target="6" useType="2" gold="4000" />
+    <m name="地球一周" des="此技能由于有bug！已被gm取消！现在替代为背水2" type="8" ATK="0" DEF="0" code="" id="120" field="1" target="6" useType="2" gold="2500" />
+    <m name="T地球一周" des="一回合从敌人背后以两倍攻击力攻击" ATK="0" code="" id="121" field="1" target="6" useType="2" gold="2000" />
+    <m name="旅程伙伴" des="把一只恐龙当作是伙伴当场带走" type="11" code="" id="130" field="1" target="7" useType="2" gold="3000" />
+    <m name="偷窃" des="偷窃" type="12" code="" id="140" field="1" target="7" useType="2" gold="0" />
+    <m name="不防守战法" des="自己不进行攻击　　反击跟回避率　　　　　就会变的非常高" type="13" MISS="0" BACK="0" CRT="0" code="" id="150" field="1" target="5" useType="2" gold="3000" />
+    <m name="T不防守战法2" des="自己不进行攻击　　反击跟回避率　　　　　就会变的非常高" type="13" MISS="0" BACK="0" CRT="0" code="Tc" id="151" field="1" target="5" useType="2" gold="15000" />
+    <m name="T不防守战法3" des="自己不进行攻击　　反击跟回避率　　　　　就会变的非常高" type="13" MISS="0" BACK="0" CRT="0" code="Td" id="152" field="1" target="5" useType="2" gold="25000" />
+    <m name="加工" des="合成素材制作道具" type="14" code="" id="200" field="2" target="0" useType="1" gold="1500" />
+    <m name="料理" des="使用素材制作料理" type="14" code="" id="201" field="2" target="0" useType="1" gold="1000" />
+    <m name="落马术" des="落马" type="16" ATK="0" code="Ca" id="210" field="1" target="6" useType="2" gold="3000" />
+    <m name="捐献" des="要求对方捐献石币" type="17" code="Aa" id="211" field="1" target="7" useType="2" gold="3500" />
+    <m name="移行换位" des="四回合内闪避率上升10%　有效时间四回合" code="" id="212" field="1" target="0" useType="2" gold="1000" />
+    <m name="E岩石撞击" des="地魔法LV1" type="18" magic="301" item="19647" code="" id="301" field="1" target="7" useType="2" gold="0" />
+    <m name="E落石撞击" des="地魔法LV2" type="18" magic="302" item="19648" code="" id="302" field="1" target="7" useType="2" gold="0" />
+    <m name="E土石流" des="地魔法LV3-1" type="18" magic="303" item="19649" code="" id="303" field="1" target="7" useType="2" gold="0" />
+    <m name="E巨岩撞击" des="地魔法LV3-2" type="18" magic="304" item="19650" code="" id="304" field="1" target="7" useType="2" gold="0" />
+    <m name="E地震" des="地魔法LV3-3" type="18" magic="305" item="19651" code="" id="305" field="1" target="7" useType="2" gold="0" />
+    <m name="E陨石冲击" des="地魔法LV4" type="18" magic="306" item="19652" code="" id="306" field="1" target="7" useType="2" gold="0" />
+    <m name="E水柱" des="水魔法LV1" type="18" magic="307" item="19653" code="" id="307" field="1" target="7" useType="2" gold="0" />
+    <m name="E水刃" des="水魔法LV2" type="18" magic="308" item="19654" code="" id="308" field="1" target="7" useType="2" gold="0" />
+    <m name="E大冰山" des="水魔法LV3-1" type="18" magic="309" item="19655" code="" id="309" field="1" target="7" useType="2" gold="0" />
+    <m name="E沸点攻击" des="水魔法LV3-2" type="18" magic="310" item="19656" code="" id="310" field="1" target="7" useType="2" gold="0" />
+    <m name="E暴风雪" des="水魔法LV3-3" type="18" magic="311" item="19657" code="" id="311" field="1" target="7" useType="2" gold="0" />
+    <m name="E冰天雪地" des="水魔法LV4" type="18" magic="312" item="19658" code="" id="312" field="1" target="7" useType="2" gold="0" />
+    <m name="E火球" des="火魔法LV1" type="18" magic="313" item="19659" code="" id="313" field="1" target="7" useType="2" gold="0" />
+    <m name="E火焰连弹" des="火魔法LV2" type="18" magic="314" item="19660" code="" id="314" field="1" target="7" useType="2" gold="0" />
+    <m name="E蒸汽喷射" des="火魔法LV3-1" type="18" magic="315" item="19661" code="" id="315" field="1" target="7" useType="2" gold="0" />
+    <m name="E火焰风爆" des="火魔法LV3-2" type="18" magic="316" item="19662" code="" id="316" field="1" target="7" useType="2" gold="0" />
+    <m name="E熔岩爆发" des="火魔法LV3-3" type="18" magic="317" item="19663" code="" id="317" field="1" target="7" useType="2" gold="0" />
+    <m name="E火山爆发" des="火魔法LV4" type="18" magic="318" item="19664" code="" id="318" field="1" target="7" useType="2" gold="0" />
+    <m name="E风刃" des="风魔法LV1" type="18" magic="319" item="19665" code="" id="319" field="1" target="7" useType="2" gold="0" />
+    <m name="E真空刃" des="风魔法LV2" type="18" magic="320" item="19666" code="" id="320" field="1" target="7" useType="2" gold="0" />
+    <m name="E龙卷风" des="风魔法LV3-1" type="18" magic="321" item="19667" code="" id="321" field="1" target="7" useType="2" gold="0" />
+    <m name="E暴风烈刃" des="风魔法LV3-2" type="18" magic="322" item="19668" code="" id="322" field="1" target="7" useType="2" gold="0" />
+    <m name="E暴风冰刃" des="风魔法LV3-3" type="18" magic="323" item="19669" code="" id="323" field="1" target="7" useType="2" gold="0" />
+    <m name="E南极飓风" des="风魔法LV4" type="18" magic="324" item="19670" code="" id="324" field="1" target="7" useType="2" gold="0" />
+    <m name="E毁天灭地" des="魔法LV5" type="18" magic="325" item="19671" code="" id="325" field="1" target="7" useType="2" gold="0" />
+    <m name="E复活术" des="ENEMY专属复活术LV1" type="19" code="Ea" id="500" field="1" target="2" useType="2" gold="0" />
+    <m name="E回复技" des="ENEMY专属回复技LV1" type="20" code="Eb" id="501" field="1" target="2" useType="2" gold="0" />
+    <m name="E招唤" des="ENEMY专属招唤LV1" type="21" code="Ec" id="502" field="1" target="2" useType="2" gold="0" />
+    <m name="嗜血技" des="攻击力下降30%　　　 并将伤害值的50%化为己用" type="23" ATK="-30" HP="50" code="Ba" id="503" field="1" target="6" useType="2" gold="2000" />
+    <m name="嗜血技2" des="攻击力下降20%　　　 并将伤害值的70%化为己用" type="23" ATK="-20" HP="70" code="Bb" id="504" field="1" target="6" useType="2" gold="0" />
+    <m name="嗜血技3" des="攻击力下降10%　　　 并将伤害值的100%化为己用" type="23" ATK="-10" HP="100" code="Bc" id="505" field="1" target="6" useType="2" gold="0" />
+    <m name="MP攻击" des="攻击力下降50%　　　 并损害对方50%的MP" code="Bd" id="506" field="1" target="6" useType="2" gold="2000" />
+    <m name="MP攻击2" des="攻击力下降50%　　　 并损害对方75%的MP" code="Be" id="507" field="1" target="6" useType="2" gold="0" />
+    <m name="MP攻击3" des="攻击力下降50%　　　 并损害对方100%的MP" code="Bf" id="508" field="1" target="6" useType="2" gold="0" />
+    <m name="石化攻击" des="攻击力减30%九回合前后让敌人石化" type="9" ATK="0" turn="9" status="4" code="" id="509" field="1" target="6" useType="2" gold="2300" />
+    <m name="混乱攻击" des="攻击力减30%九回合前后让敌人混乱" type="9" ATK="0" turn="9" code="" id="510" field="1" target="6" useType="2" gold="2000" />
+    <m name="催眠攻击" des="攻击力减30%九回合前后让敌人沉睡" type="9" ATK="0" turn="9" code="" id="511" field="1" target="6" useType="2" gold="2500" />
+    <m name="麻痹攻击" des="攻击力减30%九回合前后让敌人麻痹" type="9" ATK="0" turn="9" status="3" code="" id="512" field="1" target="6" useType="2" gold="2500" />
+    <m name="剧毒攻击" des="攻击力减30%九回合前后让敌人麻痹" type="9" ATK="0" turn="9" status="8" code="" id="513" field="1" target="6" useType="2" gold="4000" />
+    <m name="天罗地网" des="攻击力减30%九回合前后让敌人麻痹" type="9" ATK="0" turn="9" status="3" code="" id="514" field="1" target="6" useType="2" gold="4000" />
+    <m name="T狂暴攻击" des="防御率下降 攻击力和敏捷上升 给予敌人愤怒一击" type="22" MISS="0" ATK="0" DEF="0" code="" id="515" field="1" target="6" useType="2" gold="1000" />
+    <m name="回旋踢" des="攻击力上升99% 回旋攻击对方一排敌人" ATK="0" code="" id="516" field="1" target="1" useType="2" gold="3000" />
+    <m name="叹息之击" des="瞬间提升自身的敏捷 并有一定几率让敌人不得动弹" ATK="0" turn="3" status="3" code="" id="517" field="1" target="1" useType="2" gold="5000" />
+    <m name="狂怒之爪1阶" des="用爪子疯狂攻击敌人 但防御和命中会稍微下降" type="22" MISS="0" ATK="0" DEF="0" code="" id="518" field="1" target="6" useType="2" gold="1000" />
+    <m name="狂怒之爪2阶" des="用爪子狂暴攻击敌人 但防御和命中会中等下降" type="22" MISS="0" ATK="0" DEF="0" code="" id="519" field="1" target="6" useType="2" gold="1000" />
+    <m name="狂怒之爪3阶" des="用爪子猛烈攻击敌人 但防御和命中会大幅下降" type="22" MISS="0" ATK="0" DEF="0" code="" id="520" field="1" target="6" useType="2" gold="1000" />
+    <m name="憾甲一击" des="使时无视敌方装备防御攻击前后方敌人，使用时攻上升30%防御下降50%" ATK="0" code="" id="521" field="1" target="7" useType="2" gold="10000" />
+    <m name="净化之舞" des="全部状态异常回复 (一方全体)" type="30" code="" id="522" field="1" target="2" useType="2" gold="20000" />
+    <m name="元气" des="回覆我方全体体力" type="30" code="" id="523" field="1" target="2" useType="2" gold="20000" />
+    <m name="" des="" code="" id="" field="" target="" useType="" gold="" />
+    <m name="修复" des="修复损坏的道具装备" type="25" code="" id="540" field="2" target="0" useType="1" gold="300" />
+    <m name="狂暴攻击" des="防御力减30%　　攻击力加100%　　　　　 命中率下降30%" type="22" MISS="0" ATK="0" DEF="0" code="Wa" id="541" field="1" target="6" useType="2" gold="1000" />
+    <m name="疾速攻击" des="防御力减30%　　敏捷变成加+30%" type="26" DEF="0" code="Qa" id="542" field="1" target="6" useType="2" gold="1000" />
+    <m name="破除防御之2" des="敌防御时攻+30%　　敌非防御时攻-30%" code="Ai" id="543" field="1" target="6" useType="2" gold="1000" />
+    <m name="地属性强化攻击" des="对地属性强化20%攻击" type="27" earth="20" code="" id="544" field="1" target="6" useType="2" gold="2000" />
+    <m name="水属性强化攻击" des="对水属性强化20%攻击" type="27" water="20" code="" id="545" field="1" target="6" useType="2" gold="2000" />
+    <m name="火属性强化攻击" des="对火属性强化20%攻击" type="27" fire="20" code="" id="546" field="1" target="6" useType="2" gold="2000" />
+    <m name="风属性强化攻击" des="对风属性强化20%攻击" type="27" wind="20" code="" id="547" field="1" target="6" useType="2" gold="2000" />
+    <m name="地属性转换攻击" des="转换自己为地属性" type="28" earth="100" code="" id="548" field="1" target="6" useType="2" gold="2000" />
+    <m name="水属性转换攻击" des="转换自己为水属性" type="28" water="100" code="" id="549" field="1" target="6" useType="2" gold="2000" />
+    <m name="火属性转换攻击" des="转换自己为火属性" type="28" fire="100" code="" id="550" field="1" target="6" useType="2" gold="2000" />
+    <m name="风属性转换攻击" des="转换自己为风属性" type="28" wind="100" code="" id="551" field="1" target="6" useType="2" gold="2000" />
+    <m name="铁壁" des="提高己方全体防御力30%3回合　　" type="29" turn="0" DEF="3" status="1" code="Af" id="552" field="1" target="2" useType="2" gold="0" />
+    <m name="T陨石冲击" des="地魔法LV4" type="18" magic="356" item="19403" code="" id="553" field="1" target="7" useType="2" gold="0" />
+    <m name="T冰天雪地" des="水魔法LV4" type="18" magic="357" item="19404" code="" id="554" field="1" target="7" useType="2" gold="0" />
+    <m name="T火山爆发" des="火魔法LV4" type="18" magic="358" item="19405" code="" id="555" field="1" target="7" useType="2" gold="0" />
+    <m name="T南极飓风" des="风魔法LV4" type="18" magic="359" item="19406" code="" id="556" field="1" target="7" useType="2" gold="0" />
+    <m name="T毁天灭地" des="全魔法LV5" type="18" magic="360" item="19407" code="" id="557" field="1" target="7" useType="2" gold="0" />
+    <m name="全体剧毒" des="敌全体中毒6回合 第7回合前未解则阵亡" turn="6" status="8" code="" id="558" field="1" target="3" useType="2" gold="0" />
+    <m name="全体沉默" des="敌全体无法使用咒术6回合" turn="6" status="10" code="" id="559" field="1" target="3" useType="2" gold="8000000" />
+    <m name="全体魔障" des="敌全体4回合无法行动" turn="4" status="9" code="" id="560" field="1" target="3" useType="2" gold="8000000" />
+    <m name="群猪乱拱" des="攻击力下降20% 有一定几率让对方眩晕" ATK="0" code="Bo" id="561" field="1" target="3" useType="3" gold="10000" />
+    <m name="搅浪" des="乱数攻击对手5次 攻防下降" code="Bp" id="562" field="1" target="1" useType="2" gold="0" />
+    <m name="粘粘有鱼" des="攻击力下降20% 有几率网住对方" ATK="0" DEF="0" code="Bq" id="563" field="1" target="3" useType="3" gold="10000" />
+    <m name="肆无忌蛋" des="攻击力上升5%   丢鸡蛋攻击敌方全体 附加睡眠效果" ATK="0" code="" id="564" field="1" target="3" useType="3" gold="20000" />
+    <m name="铜墙" des="提高我方全体防御力50%5回合　　" type="29" turn="0" DEF="5" status="1" code="" id="565" field="1" target="2" useType="2" gold="0" />
+    <m name="爪狂" des="用爪子疯狂攻击敌人 但防御和命中会稍微下降" type="22" MISS="0" ATK="0" DEF="0" code="" id="566" field="1" target="6" useType="2" gold="1000" />
+    <m name="狂犬病" des="提升自身攻击力 并附加眩晕效果" ATK="0" code="Jd" id="567" field="1" target="3" useType="3" gold="10000" />
+    <m name="" des="" code="" id="" field="" target="" useType="" gold="" />
+    <m name="针锋相对-地" des="对地属性强化300%攻击" type="27" earth="300" code="" id="568" field="1" target="6" useType="2" gold="2000" />
+    <m name="针锋相对-水" des="对水属性强化300%攻击" type="27" water="300" code="" id="569" field="1" target="6" useType="2" gold="2000" />
+    <m name="针锋相对-火" des="对火属性强化300%攻击" type="27" fire="300" code="" id="570" field="1" target="6" useType="2" gold="2000" />
+    <m name="针锋相对-风" des="对风属性强化300%攻击" type="27" wind="300" code="" id="571" field="1" target="6" useType="2" gold="2000" />
+    <m name="" des="" code="" id="" field="" target="" useType="" gold="" />
+    <m name="镶宝石" des="将提炼出的宝石镶在精工装备上" code="Da" id="572" field="2" target="0" useType="1" gold="3000" />
+    <m name="救援" des="牺牲自己50%的HP　　补至他人身上" code="Br" id="573" field="1" target="1" useType="2" gold="0" />
+    <m name="E啮齿术" des="破坏对方装备武器" code="Ed" id="574" field="1" target="6" useType="2" gold="0" />
+    <m name="虚弱" des="被攻击者三回合内攻防敏下降20%" turn="5" status="11" code="Ga" id="575" field="1" target="6" useType="2" gold="3000" />
+    <m name="全体虚弱" des="敌全体三回合内攻防敏下降20%" turn="5" status="11" code="" id="576" field="1" target="3" useType="2" gold="0" />
+    <m name="剧毒" des="敌单体中毒5回合　　第六回合前未解则阵亡" turn="5" status="8" code="" id="577" field="1" target="6" useType="2" gold="0" />
+    <m name="全体剧毒" des="敌全体中毒5回合　　第六回合前未解则阵亡" turn="5" status="8" code="" id="578" field="1" target="3" useType="2" gold="0" />
+    <m name="魔障" des="敌单体两回合无法行动" turn="2" status="9" code="" id="579" field="1" target="6" useType="2" gold="0" />
+    <m name="沉默" des="敌单体无法使用咒术三回合" turn="3" status="10" code="Ra" id="580" field="1" target="6" useType="2" gold="1000" />
+    <m name="大吼" des="对年兽吼叫　　可吓跑年兽　　雷龙专用技" code="" id="581" field="1" target="6" useType="2" gold="3000" />
+    <m name="自爆攻击" des="牺牲自己　　提高50%命中率　　造成三倍损伤" DEF="0" code="" id="582" field="1" target="6" useType="2" gold="5000" />
+    <m name="破除沉默" des="解除沉默状态" type="24" status="10" code="Ah" id="583" field="1" target="2" useType="2" gold="2000" />
+    <m name="剧毒治疗" des="解除剧毒状态" type="24" status="8" code="" id="584" field="1" target="2" useType="2" gold="5000" />
+    <m name="祝福" des="祝福我方全体" type="30" code="Ub" id="585" field="1" target="2" useType="2" gold="2000" />
+    <m name="诅咒" des="诅咒敌方全体" type="30" code="Uc" id="586" field="1" target="3" useType="2" gold="2000" />
+    <m name="力固四方" des="待机一回合后将属性调成克对方属性" code="Ud" id="587" field="1" target="5" useType="2" gold="3000" />
+    <m name="E嗜血技" des="攻击力下降50%　　　 并将伤害值的500%化为己用" type="23" ATK="-50" HP="500" code="" id="588" field="1" target="6" useType="2" gold="0" />
+    <m name="E憾甲一击" des="使时无视敌方装备防御攻击前后方敌人，使用时攻上升60%防御下降20%" ATK="0" code="" id="589" field="1" target="7" useType="2" gold="10000" />
+    <m name="虎啸" des="瞬间提高攻击及速度 并有一定几率将对方网住" ATK="0" turn="2" code="" id="590" field="1" target="1" useType="2" gold="5000" />
+    <m name="" des="" code="" id="" field="" target="" useType="" gold="" />
+    <m name="破除魔障" des="解除魔障状态" type="24" status="9" code="" id="591" field="1" target="1" useType="2" gold="5000" />
+    <m name="净化" des="解除所有异常状态" type="24" status="1" code="" id="592" field="1" target="2" useType="2" gold="8000" />
+    <m name="破除虚弱" des="解除虚弱状态" type="24" status="11" code="" id="593" field="1" target="2" useType="2" gold="5000" />
+    <m name="究极魔障" des="敌全体三回合无法行动" turn="3" status="9" code="" id="594" field="1" target="3" useType="2" gold="0" />
+    <m name="闪避术" des="三回合内闪避率上升60　　有效时间三回合" code="Ha" id="595" field="1" target="0" useType="2" gold="1000" />
+    <m name="撕裂伤口3" des="撕裂旧伤口 增加70%伤害" code="" id="596" field="1" target="1" useType="2" gold="10000" />
+    <m name="暗月变身" des="变身后增加100%的攻击力跟敏捷  魔法防御值减半  有效时间五回合　　　" ATK="0" DEF="0" code="Ia" id="600" field="1" target="5" useType="2" gold="1000" />
+    <m name="大地铠甲" des="我方全体防御力三回合内提升15%" code="Ja" id="601" field="1" target="2" useType="2" gold="2500" />
+    <m name="水灵滋润" des="我方全体体力300回复" code="Ka" id="602" field="1" target="2" useType="2" gold="2500" />
+    <m name="火焰威能" des="我方全体攻击力三回合内提升10%" code="La" id="603" field="1" target="2" useType="2" gold="2500" />
+    <m name="风之吹息" des="我方全体敏捷力三回合内提升15%" code="Ma" id="604" field="1" target="2" useType="2" gold="2500" />
+    <m name="三重突击" des="3回合储存力量 　　　下次攻击时 　　　就会有三倍以上的攻击力" type="6" turn="3" ATK="0" code="" id="605" field="1" target="6" useType="2" gold="8500" />
+    <m name="怯战" des="攻击力30%下降  防御力50%下降  命中之敌会逃跑" code="Na" id="606" field="1" target="6" useType="2" gold="3000" />
+    <m name="旅程伙伴2" des="把一只恐龙当作是伙伴当场带走 忠诚度60以下成功率100%" type="11" code="" id="607" field="1" target="7" useType="2" gold="5000" />
+    <m name="E旅程伙伴3" des="把一只恐龙当作是伙伴当场带走 忠诚度80以下成功率100%" type="11" code="" id="608" field="1" target="7" useType="2" gold="3000" />
+    <m name="采光术" des="将对方之光的精灵吸收到自己身上" code="" id="609" field="1" target="7" useType="2" gold="5000" />
+    <m name="破镜重圆" des="将对方之镜的精灵吸收到自己身上" code="" id="610" field="1" target="7" useType="2" gold="5000" />
+    <m name="穿透术" des="将对方之守的精灵吸收到自己身上" code="" id="611" field="1" target="7" useType="2" gold="5000" />
+    <m name="魔之诅咒" des="待机一回合  可将属性调成克对方属性" code="Oa" id="612" field="1" target="5" useType="2" gold="3000" />
+    <m name="狂乱暴走" des="乱数攻击对手3次 攻20% 防30% 下降" code="" id="613" field="1" target="1" useType="2" gold="0" />
+    <m name="栗子连激" des="乱数连续投掷栗子3~5颗" code="Pa" id="614" field="1" target="1" useType="2" gold="2000" />
+    <m name="撕裂伤口1" des="撕裂旧伤口 增加20%伤害" code="Sa" id="615" field="1" target="1" useType="2" gold="10000" />
+    <m name="撕裂伤口2" des="撕裂旧伤口 增加50%伤害" code="Sb" id="616" field="1" target="1" useType="2" gold="10000" />
+    <m name="毒煞蔓延" des="让对手中毒 且有机会传染到周围的人" code="Ua" id="617" field="1" target="1" useType="2" gold="5000" />
+    <m name="音波冲击" des="攻击宠物时 可贯穿伤害至人物身上 伤害值为1/2" code="Va" id="618" field="1" target="1" useType="2" gold="3000" />
+    <m name="回旋攻击" des="攻击力下降20% 可攻击敌方一排" ATK="0" code="Xa" id="619" field="1" target="1" useType="2" gold="3000" />
+    <m name="威吓攻击" des="攻击力下降30% 敏捷下降30% 有60%的机率使对手麻痹一回合" ATK="0" turn="1" status="3" code="Ya" id="620" field="1" target="1" useType="2" gold="5000" />
+    <m name="追迹攻击" des="对手在第一次攻击闪避的话 将会80%的机率发动第二次攻击" ATK="0" code="" id="621" field="1" target="1" useType="2" gold="3000" />
+    <m name="针刺外皮" des="可令攻击者受到1/2的伤害" code="Ab" id="622" field="1" target="0" useType="2" gold="5000" />
+    <m name="浴血狂袭" des="Hp50%以下时才可使用 攻敏上升20% 会心一击上升30% 吸收伤害30%转Hp" code="Aj" id="623" field="1" target="6" useType="2" gold="5000" />
+    <m name="火线猎杀" des="敌一排火焰攻击" code="Ad" id="624" field="1" target="1" useType="2" gold="5000" />
+    <m name="媚惑术" des="使宠物变成小狐狸" code="Ae" id="625" field="1" target="1" useType="2" gold="3000" />
+    <m name="手下留情" des="使对方Hp剩下一点 不会将对方致死" code="" id="626" field="1" target="1" useType="2" gold="10000" />
+    <m name="难得糊涂" des="随机让对方产生异常状态或回复" type="30" code="Ag" id="627" field="1" target="3" useType="2" gold="2000" />
+    <m name="乌力化" des="在一定时间内使对方变成乌力" code="" id="628" field="1" target="7" useType="2" gold="5000" />
+    <m name="难得糊涂改" des="随机让对方产生异常状态" type="30" code="Ag" id="629" field="1" target="3" useType="2" gold="2000" />
+    <m name="地灵威能" des="可招唤地精灵魔法威力的技能" type="30" code="Ak" id="630" field="1" target="3" useType="2" gold="2000" />
+    <m name="乌力化" des="在一定时间内使对方变成乌力" code="Al" id="631" field="1" target="7" useType="2" gold="20000" />
+    <m name="逆转" des="反转属性" type="30" code="Am" id="632" field="1" target="1" useType="2" gold="5000" />
+    <m name="群蝠四窜" des="吸血" code="" id="633" field="1" target="3" useType="2" gold="5000" />
+    <m name="分身地裂" des="全体攻击" code="" id="634" field="1" target="3" useType="1" gold="5000" />
+    <m name="黑乌力化" des="在一定时间内使对方变成黑乌力" code="An" id="635" field="1" target="7" useType="2" gold="20000" />
+    <m name="狂狮怒吼" des="使用时攻下降50% 敏上升30% 使敌方宠物受到惊吓回到宠物栏" ATK="0" code="Ao" id="636" field="1" target="7" useType="2" gold="10000" />
+    <m name="净化之舞" des="全部状态异常回复 (一方全体)" type="30" code="Ap" id="637" field="1" target="2" useType="2" gold="20000" />
+    <m name="群蜂乱舞" des="攻击力下降20% 全体麻痹一回合" ATK="0" status="3" code="Aq" id="638" field="1" target="3" useType="3" gold="10000" />
+    <m name="蚁葬" des="使敌方死亡宠物回到宠物栏，无法再参与战斗" code="Ar" id="639" field="1" target="10" useType="2" gold="10000" />
+    <m name="憾甲一击" des="使时无视敌方装备防御攻击前后方敌人，使用时攻上升30%防御下降50%" ATK="0" code="Re" id="640" field="1" target="7" useType="2" gold="10000" />
+    <m name="群蜂乱舞改" des="BUG技能已限制！" ATK="0" status="3" code="As" id="641" field="1" target="3" useType="3" gold="10000" />
+    <m name="觉醒" des="命中率与回避率上升30% 攻防敏上升5%" ATK="0" DEF="0" code="Aw" id="642" field="1" target="7" useType="3" gold="10000" />
+    <m name="蛊惑" des="使忠诚低于40之敌宠反攻敌方阵营" code="Gh" id="643" field="1" target="7" useType="3" gold="10000" />
+    <m name="煽动" des="使忠诚较低的敌人宠物反攻敌方阵营" code="" id="644" field="1" target="7" useType="3" gold="10000" />
+    <m name="初级元气" des="回覆我方全体体力" type="30" code="Gz" id="645" field="1" target="2" useType="2" gold="20000" />
+    <m name="元气" des="回覆我方全体体力" type="30" code="Av" id="646" field="1" target="2" useType="2" gold="20000" />
+    <m name="栗子连激改" des="乱数连续投掷栗子6~8颗" code="Pa" id="647" field="1" target="1" useType="2" gold="20000" />
+    <m name="配药" des="随机医治我方全体异常状态" type="30" code="Ax" id="648" field="1" target="2" useType="2" gold="20000" />
+    <m name="肆无忌蛋" des="攻击力下降25%   丢鸡蛋攻击敌方全体 附加睡眠效果" ATK="0" code="Ay" id="649" field="1" target="3" useType="3" gold="20000" />
+    <m name="狂猫乱抓" des="猫人专属技能   攻击力下降5% 全体麻痹2回合" ATK="0" status="3" code="Zx" id="650" field="1" target="3" useType="3" gold="10000" />
+    <m name="愤怒" des="防御率下降 攻击力和敏捷上升 给予敌人愤怒一击" type="22" MISS="0" ATK="0" DEF="0" code="Bg" id="651" field="1" target="6" useType="2" gold="1000" />
+    <m name="疯狂攻击术" des="防御力减50%　攻击力加60%　 命中率下降50%" type="22" MISS="0" ATK="0" DEF="0" code="101413 101741" id="652" field="1" target="6" useType="2" gold="1000" />
+    <m name="T回旋攻击" des="攻击力上升40% 可攻击敌方一排" ATK="0" code="Xb" id="653" field="1" target="1" useType="2" gold="3000" />
+    <m name="肆无忌蛋" des="攻击力下降30%   丢海宠蛋攻击敌方全体 附加石化效果" ATK="0" status="4" code="Az" id="654" field="1" target="3" useType="3" gold="20000" />
+    <m name="撕裂伤口3" des="撕裂旧伤口 增加70%伤害" code="Sc" id="655" field="1" target="1" useType="2" gold="10000" />
+    <m name="撕裂伤口4" des="撕裂旧伤口 增加100%伤害" code="Sd" id="656" field="1" target="1" useType="2" gold="10000" />
+    <m name="撕裂伤口5" des="撕裂旧伤口 增加150%伤害" code="Se" id="657" field="1" target="1" useType="2" gold="10000" />
+    <m name="玄武铁壁" des="提高己方全体防御力50%3回合　　" type="29" turn="0" DEF="3" status="1" code="" id="658" field="1" target="2" useType="2" gold="0" />
+    <m name="T浴血狂袭" des="任何时候都可使用 攻敏上升20% 会心一击上升30% 吸收伤害100%转Hp" code="" id="659" field="1" target="6" useType="2" gold="5000" />
+    <m name="卡沃之甲" des="我方全体防御力4回合内提升60%" code="Jb" id="660" field="1" target="2" useType="2" gold="2500" />
+    <m name="T水灵滋润" des="我方单体体力800回复" code="" id="661" field="1" target="1" useType="2" gold="112500" />
+    <m name="卡沃之怒" des="我方全体攻击力4回合内提升30%" code="Jc" id="662" field="1" target="2" useType="2" gold="2500" />
+    <m name="T风之吹息" des="我方单体敏捷力4回合内提升40%" code="" id="663" field="1" target="1" useType="2" gold="112500" />
+    <m name="龙战于野" des="机械人龙专属技能 攻击下降30% 全体麻痹2回合" ATK="0" status="3" code="Jf" id="664" field="1" target="3" useType="3" gold="10000" />
+    <m name="T狂暴攻击" des="防御力减20%　　攻击力加200%　　　　　 命中率下降10%" type="22" MISS="0" ATK="0" DEF="0" code="" id="665" field="1" target="6" useType="2" gold="1000" />
+    <m name="T憾甲一击" des="使时无视敌方装备防御攻击前后方敌人，使用时攻-60%防御下降20%" ATK="0" code="Rf" id="666" field="1" target="7" useType="2" gold="10000" />
+    <m name="青龙摆尾" des="攻击力上升60% 可攻击敌方一排" ATK="0" code="" id="667" field="1" target="1" useType="2" gold="3000" />
+    <m name="白虎之怒" des="攻击力下降15% 附加睡眠效果3回合" ATK="0" code="" id="668" field="1" target="3" useType="3" gold="200000" />
+    <m name="朱雀之怒" des="攻击力下降15% 附加石化效果3回合" ATK="0" status="4" code="" id="669" field="1" target="3" useType="3" gold="200000" />
+    <m name="破釜沉舟" des="攻击力上升150%防御下降99%" type="8" ATK="0" DEF="0" code="Je" id="670" field="1" target="6" useType="2" gold="130000" />
+    <m name="暴走" des="防御力减25%　　攻击力加120%　　　　　 命中率下降10%" type="22" MISS="0" ATK="0" DEF="0" code="" id="671" field="1" target="6" useType="2" gold="1000" />
+    <m name="全体沉默" des="敌全体无法使用咒术三回合" turn="3" status="10" code="" id="672" field="1" target="3" useType="2" gold="8000000" />
+    <m name="全体魔障" des="敌全体两回合无法行动" turn="2" status="9" code="" id="673" field="1" target="3" useType="2" gold="8000000" />
+    <m name="虎虎生威" des="攻击力提高50% 敏捷上升30% 有60%的机率使对手麻痹两回合" ATK="0" turn="2" status="3" code="Bh" id="674" field="1" target="1" useType="2" gold="5000" />
+    <m name="E大地的精灵" des="魔法LV5" type="18" magic="194" item="2987" code="" id="675" field="1" target="7" useType="2" gold="0" />
+    <m name="E水的精灵" des="魔法LV5" type="18" magic="204" item="2988" code="" id="676" field="1" target="7" useType="2" gold="0" />
+    <m name="E火炎的精灵" des="魔法LV5" type="18" magic="214" item="2989" code="" id="677" field="1" target="7" useType="2" gold="0" />
+    <m name="E疾风的精灵" des="魔法LV5" type="18" magic="224" item="2990" code="" id="678" field="1" target="7" useType="2" gold="0" />
+    <m name="E极光的精灵" des="魔法LV5" type="18" magic="241" item="2991" code="" id="679" field="1" target="7" useType="2" gold="0" />
+    <m name="E咒灵术" des="1击必杀" type="18" magic="399" item="2992" code="" id="688" field="1" target="7" useType="2" gold="0" />
+    <m name="E收魂" des="1击必杀" type="18" magic="400" item="21181" code="" id="689" field="1" target="7" useType="2" gold="0" />
+    <m name="逆转攻击-地" des="转换自己为地属性攻击对方" type="28" earth="100" code="" id="697" field="1" target="6" useType="2" gold="2000" />
+    <m name="逆转攻击-水" des="转换自己为水属性攻击对方" type="28" water="100" code="" id="698" field="1" target="6" useType="2" gold="2000" />
+    <m name="逆转攻击-火" des="转换自己为火属性攻击对方" type="28" fire="100" code="" id="699" field="1" target="6" useType="2" gold="2000" />
+    <m name="逆转攻击-风" des="转换自己为风属性攻击对方" type="28" wind="100" code="" id="700" field="1" target="6" useType="2" gold="2000" />
+    <m name="裂地" des="将战场变为地属性 " type="30" code="Mb" id="701" field="1" target="2" useType="2" gold="20000" />
+    <m name="涌泉" des="将战场变为水属性 " type="30" code="Mc" id="702" field="1" target="2" useType="2" gold="20000" />
+    <m name="熔炎" des="将战场变为火属性 " type="30" code="Md" id="703" field="1" target="2" useType="2" gold="20000" />
+    <m name="激风" des="将战场变为风属性 " type="30" code="Me" id="704" field="1" target="2" useType="2" gold="20000" />
+    <m name="调和" des="将全体回复成无属性" type="30" code="Mf" id="705" field="1" target="2" useType="2" gold="20000" />
+    <m name="剧毒攻击" des="攻击力加20%六回合前后让敌人中剧毒" type="9" ATK="0" turn="6" status="8" code="" id="707" field="1" target="6" useType="2" gold="4000" />
+    <m name="石化攻击" des="攻击力减30%九回合前后让敌人石化" type="9" ATK="0" turn="9" status="4" code="" id="708" field="1" target="6" useType="2" gold="2300" />
+    <m name="混乱攻击" des="攻击力减30%六回合前后让敌人混乱" type="9" ATK="0" turn="6" code="" id="709" field="1" target="6" useType="2" gold="2000" />
+    <m name="催眠攻击" des="攻击力减30%六回合前后让敌人沉睡" type="9" ATK="0" turn="6" code="" id="710" field="1" target="6" useType="2" gold="2500" />
+    <m name="亢奋" des="暂时提高攻击力 并有一定几率让对手瘫痪" type="9" ATK="0" turn="9" status="11" code="Bi" id="711" field="1" target="6" useType="2" gold="2500" />
+    <m name="亢奋" des="暂时提高攻击力 并有一定几率让对手麻痹" type="9" ATK="0" turn="2" status="3" code="Bj" id="712" field="1" target="6" useType="2" gold="2500" />
+    <m name="Q雷分身" des="雷尔宝宝的分身术 使敌人魔障2回合" ATK="0" status="9" code="Qb" id="713" field="1" target="3" useType="3" gold="10000" />
+    <m name="分身术" des="海盗宝宝的分身术 使敌人睡眠6回合" ATK="0" code="Qc" id="714" field="1" target="3" useType="3" gold="10000" />
+    <m name="分身术" des="忍者宝宝的分身术 使敌人石化6回合" ATK="0" status="4" code="Qd" id="715" field="1" target="3" useType="3" gold="10000" />
+    <m name="分身术" des="奶牛宝宝的分身术 使敌人虚弱9回合" ATK="0" status="11" code="Qe" id="716" field="1" target="3" useType="3" gold="10000" />
+    <m name="神之祝福" des="我方全体体力700回复" code="Qg" id="717" field="1" target="2" useType="2" gold="0" />
+    <m name="" des="" code="" id="" field="" target="" useType="" gold="" />
+    <m name="Q雷之怒" des="无视敌人防御 攻击前后方敌人，使用时攻上升50%防御下降50%" ATK="0" code="" id="718" field="1" target="7" useType="2" gold="10000" />
+    <m name="分身术" des="绅士猪的分身术 使敌人混乱6回合" ATK="0" code="" id="719" field="1" target="3" useType="3" gold="10000" />
+    <m name="" des="" code="" id="" field="" target="" useType="" gold="" />
+    <m name="虎王怒吼" des="怒吼后攻击力暴增 对敌人分手攻击 并附加眩晕4回合效果" ATK="0" code="" id="720" field="1" target="3" useType="3" gold="10000" />
+    <m name="" des="" code="" id="" field="" target="" useType="" gold="" />
+    <m name="卧虎藏龙" des="2D虎专属技能   攻击力上升 全体麻痹3回合" ATK="0" status="3" code="Hi" id="721" field="1" target="3" useType="3" gold="10000" />
+    <m name="" des="" code="" id="" field="" target="" useType="" gold="" />
+    <m name="地之祝福" des="我方全体体防御力6回合内提升50%" code="Qf" id="790" field="1" target="1" useType="2" gold="112500" />
+    <m name="炎之祝福" des="我方全体攻击力6回合内提升30%" code="Qh" id="791" field="1" target="1" useType="2" gold="112500" />
+    <m name="风之祝福" des="我方全体敏捷力6回合内提升30%" code="Qi" id="792" field="1" target="1" useType="2" gold="112500" />
+    <m name="" des="" code="" id="" field="" target="" useType="" gold="" />
+    <m name="福星高照" des="提高己方全体防御力60%3回合　　" type="29" turn="0" DEF="3" status="1" code="Tz" id="793" field="1" target="2" useType="2" gold="0" />
+    <m name="T水灵滋润" des="我方全体体力800回复" code="" id="794" field="1" target="2" useType="2" gold="2500" />
+    <m name="" des="" code="" id="" field="" target="" useType="" gold="" />
+    <m name="土系魔法初级" des="土系魔法初级" type="30" code="Cb" id="800" field="1" target="6" useType="2" gold="20000" />
+    <m name="土系魔法中级" des="土系魔法中级" type="30" code="Cc" id="801" field="1" target="8" useType="2" gold="20000" />
+    <m name="土系魔法高级" des="土系魔法高级" type="30" code="Cd" id="802" field="1" target="3" useType="2" gold="20000" />
+    <m name="水系魔法初级" des="水系魔法初级" type="30" code="Ce" id="803" field="1" target="6" useType="2" gold="20000" />
+    <m name="水系魔法中级" des="水系魔法中级" type="30" code="Cf" id="804" field="1" target="8" useType="2" gold="20000" />
+    <m name="水系魔法高级" des="水系魔法高级" type="30" code="Cg" id="805" field="1" target="3" useType="2" gold="20000" />
+    <m name="火系魔法初级" des="火系魔法初级" type="30" code="Ch" id="806" field="1" target="6" useType="2" gold="20000" />
+    <m name="火系魔法中级" des="火系魔法中级" type="30" code="Ci" id="807" field="1" target="8" useType="2" gold="20000" />
+    <m name="火系魔法高级" des="火系魔法高级" type="30" code="Cj" id="808" field="1" target="3" useType="2" gold="20000" />
+    <m name="风系魔法初级" des="风系魔法初级" type="30" code="Ck" id="809" field="1" target="6" useType="2" gold="20000" />
+    <m name="风系魔法中级" des="风系魔法中级" type="30" code="Cl" id="810" field="1" target="8" useType="2" gold="20000" />
+    <m name="风系魔法高级" des="风系魔法高级" type="30" code="Cm" id="811" field="1" target="3" useType="2" gold="20000" />
+    <m name="天罗地网术" des="黑暗战士专署攻击技能 分身攻击后一定几率将对方网住" ATK="0" code="Db" id="812" field="1" target="3" useType="3" gold="10000" />
+    <m name="天罗地网术" des="黑暗战士专署攻击技能 分身攻击后一定几率将对方网住" ATK="0" code="Dc" id="813" field="1" target="3" useType="3" gold="10000" />
+    <m name="天罗地网术" des="黑暗战士专署攻击技能 分身攻击后一定几率将对方网住" ATK="0" code="Dd" id="814" field="1" target="3" useType="3" gold="10000" />
+    <m name="天罗地网术" des="黑暗战士专署攻击技能 分身攻击后一定几率将对方网住" ATK="0" code="De" id="815" field="1" target="3" useType="3" gold="10000" />
+    <m name="天罗地网术" des="黑暗战士专署攻击技能 分身攻击后一定几率将对方网住" ATK="0" code="Df" id="816" field="1" target="3" useType="3" gold="10000" />
+    <m name="天罗地网术" des="黑暗战士专署攻击技能 分身攻击后一定几率将对方网住" ATK="0" code="Dg" id="817" field="1" target="3" useType="3" gold="10000" />
+    <m name="天罗地网术" des="黑暗战士专署攻击技能 分身攻击后一定几率将对方网住" ATK="0" code="Dh" id="818" field="1" target="3" useType="3" gold="10000" />
+    <m name="天罗地网术" des="黑暗战士专署攻击技能 分身攻击后一定几率将对方网住" ATK="0" code="Di" id="819" field="1" target="3" useType="3" gold="10000" />
+    <m name="天罗地网术" des="黑暗战士专署攻击技能 分身攻击后一定几率将对方网住" ATK="0" code="Dj" id="820" field="1" target="3" useType="3" gold="10000" />
+    <m name="天罗地网术" des="黑暗战士专署攻击技能 分身攻击后一定几率将对方网住" ATK="0" code="Dk" id="821" field="1" target="3" useType="3" gold="10000" />
+    <m name="天罗地网术" des="黑暗战士专署攻击技能 分身攻击后一定几率将对方网住" ATK="0" code="Dl" id="822" field="1" target="3" useType="3" gold="10000" />
+    <m name="天罗地网术" des="黑暗战士专署攻击技能 分身攻击后一定几率将对方网住" ATK="0" code="Dm" id="823" field="1" target="3" useType="3" gold="10000" />
+    <m name="恐吓" des="使用时攻下降50% 敏上升50% 使敌方宠物受到恐吓回到宠物栏" ATK="0" code="Dn" id="824" field="1" target="7" useType="2" gold="10000" />
+    <m name="地属性强化攻击" des="对地属性强化99999%攻击" type="27" earth="9999" code="" id="825" field="1" target="6" useType="2" gold="2000" />
+    <m name="水属性强化攻击" des="对水属性强化99999%攻击" type="27" water="9999" code="" id="826" field="1" target="6" useType="2" gold="2000" />
+    <m name="火属性强化攻击" des="对火属性强化99999%攻击" type="27" fire="9999" code="" id="827" field="1" target="6" useType="2" gold="2000" />
+    <m name="风属性强化攻击" des="对风属性强化99999%攻击" type="27" wind="9999" code="" id="828" field="1" target="6" useType="2" gold="2000" />
+    <m name="T龙战于野" des="3D人龙专属技能 攻击上升30% 全体麻痹2回合" ATK="0" status="3" code="Kb" id="1030" field="1" target="3" useType="3" gold="10000" />
+    <m name="乌龟龙火焰" des="火焰攻击暴增 对敌人分手攻击 并附加眩晕4回合效果" ATK="0" code="Kd" id="1031" field="1" target="3" useType="3" gold="10000" />
+    <m name="近藏化" des="在一定时间内使对方变成近藏" code="Kf" id="1032" field="1" target="7" useType="2" gold="20000" />
+    <m name="雷斯特分身" des="雷斯特的分身术 使敌人魔障4回合" ATK="0" status="9" code="Kr" id="1033" field="1" target="3" useType="3" gold="10000" />
+    <m name="隐身术" des="六回合内闪避率上升90　　有效时间六回合" code="Kt" id="1034" field="1" target="0" useType="2" gold="1000" />
+    <m name="精灵召唤" des="精灵专属技能   攻击力上升 全体麻痹4回合" ATK="0" status="3" code="Ky" id="1035" field="1" target="3" useType="3" gold="10000" />
+    <m name="山贼攻击" des="山贼攻击暴增 对敌人分手攻击 并附加眩晕2回合效果" ATK="0" code="" id="1036" field="1" target="3" useType="3" gold="10000" />
+    <m name="老鼠齐心" des="齐心攻击暴增 对敌人分手攻击 并附加眩晕4回合效果" ATK="0" code="" id="1037" field="1" target="3" useType="3" gold="10000" />
+    <m name="儱王怒吼" des="怒吼后攻击力暴增 对敌人分手攻击 并附加眩晕4回合效果" ATK="0" code="" id="1038" field="1" target="3" useType="3" gold="10000" />
+</root>

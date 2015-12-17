@@ -1,0 +1,335 @@
+<root>
+    <m name="﻿治愈的精灵 Lv1" des="耐久力回复 80 (自己)" type="1" power="80" id="0" field="0" target="0" targetDead="0" magicFlag="" />
+    <m name="治愈的精灵 Lv2" des="耐久力回复 160 (自己)" type="1" power="160" id="1" field="0" target="0" targetDead="0" magicFlag="" />
+    <m name="治愈的精灵 Lv3" des="耐久力回复 320 (自己)" type="1" power="320" id="2" field="0" target="0" targetDead="0" magicFlag="" />
+    <m name="治愈的精灵 Lv4" des="耐久力回复 480 (自己)" type="1" power="480" id="3" field="0" target="0" targetDead="0" magicFlag="" />
+    <m name="治愈的精灵 Lv5" des="耐久力回复 800 (自己)" type="1" power="800" id="4" field="0" target="0" targetDead="0" magicFlag="" />
+    <m name="治愈的精灵 Lv6" des="耐久力回复 1160 (自己)" type="1" power="1160" id="5" field="0" target="0" targetDead="0" magicFlag="" />
+    <m name="滋润的精灵 Lv1" des="耐久力回复 65 (单人)" type="1" power="65" id="10" field="0" target="1" targetDead="0" magicFlag="" />
+    <m name="滋润的精灵 Lv2" des="耐久力回复 130 (单人)" type="1" power="130" id="11" field="0" target="1" targetDead="0" magicFlag="" />
+    <m name="滋润的精灵 Lv3" des="耐久力回复 260 (单人)" type="1" power="260" id="12" field="0" target="1" targetDead="0" magicFlag="" />
+    <m name="滋润的精灵 Lv4" des="耐久力回复 390 (单人)" type="1" power="390" id="13" field="0" target="1" targetDead="0" magicFlag="" />
+    <m name="滋润的精灵 Lv5" des="耐久力回复 650 (单人)" type="1" power="650" id="14" field="0" target="1" targetDead="0" magicFlag="" />
+    <m name="滋润的精灵 Lv6" des="耐久力回复 880 (单人)" type="1" power="880" id="15" field="0" target="1" targetDead="0" magicFlag="" />
+    <m name="滋润的精灵 Lv7" des="耐久力回复 1080 (单人)" type="1" power="1080" id="16" field="0" target="1" targetDead="0" magicFlag="" />
+    <m name="滋润的精灵 Lv8" des="耐久力回复 1280 (单人)" type="1" power="1280" id="17" field="0" target="1" targetDead="0" magicFlag="" />
+    <m name="滋润的精灵 Lv9" des="耐久力回复 1540 (单人)" type="1" power="1540" id="18" field="0" target="1" targetDead="0" magicFlag="" />
+    <m name="滋润的精灵 Lv10" des="耐久力回复 1880 (单人)" type="1" power="1880" id="19" field="0" target="1" targetDead="0" magicFlag="" />
+    <m name="恩惠的精灵 Lv1" des="耐久力回复 50  (一方全体)" type="1" power="50" id="20" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="恩惠的精灵 Lv2" des="耐久力回复 100 (一方全体)" type="1" power="100" id="21" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="恩惠的精灵 Lv3" des="耐久力回复 200 (一方全体)" type="1" power="200" id="22" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="恩惠的精灵 Lv4" des="耐久力回复 320 (一方全体)" type="1" power="300" id="23" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="恩惠的精灵 Lv5" des="耐久力回复 420 (一方全体)" type="1" power="420" id="24" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="恩惠的精灵 Lv6" des="耐久力回复 600 (一方全体)" type="1" power="600" id="25" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="恩惠的精灵 Lv7" des="耐久力回复 800 (一方全体)" type="1" power="720" id="26" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="恩惠的精灵 Lv8" des="耐久力回复 980 (一方全体)" type="1" power="840" id="27" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="恩惠的精灵 Lv9" des="耐久力回复 1180 (一方全体)" type="1" power="960" id="28" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="恩惠的精灵 Lv10" des="耐久力回复 1360 (一方全体)" type="1" power="1080" id="29" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="恩惠的精灵 Lv11" des="耐久力回复 1560 (一方全体)" type="1" power="1200" id="30" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="恩惠的精灵 Lv12" des="耐久力回复 1800 (一方全体)" type="1" power="1640" id="31" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="复活精灵 Lv1" des="气绝状态回复 100 (单人)" type="0" power="100" id="50" field="1" target="1" targetDead="1" magicFlag="" />
+    <m name="复活精灵 Lv2" des="气绝状态回复 300 (单人)" type="0" power="300" id="51" field="1" target="1" targetDead="1" magicFlag="" />
+    <m name="复活精灵 Lv3" des="气绝状态回复 500 (单人)" type="0" power="500" id="52" field="1" target="1" targetDead="1" magicFlag="" />
+    <m name="复活精灵 Lv4" des="气绝状态回复 700 (单人)" type="0" power="700" id="53" field="1" target="1" targetDead="1" magicFlag="" />
+    <m name="复活精灵 Lv5" des="气绝状态回复 900 (单人)" type="0" power="900" id="54" field="1" target="1" targetDead="1" magicFlag="" />
+    <m name="复活精灵 Lv6" des="气绝状态回复 1200 (单人)" type="0" power="1200" id="55" field="1" target="1" targetDead="1" magicFlag="" />
+    <m name="复活精灵 Lv7" des="气绝状态回复 1500 (单人)" type="0" power="1500" id="56" field="1" target="1" targetDead="1" magicFlag="" />
+    <m name="复活精灵 Lv8" des="气绝状态回复 1800 (单人)" type="0" power="1800" id="57" field="1" target="1" targetDead="1" magicFlag="" />
+    <m name="复活精灵 Lv9" des="气绝状态回复 9999 (单人)" type="0" power="9999" id="58" field="1" target="1" targetDead="1" magicFlag="" />
+    <m name="复活精灵 Lv10" des="气绝状态回复 9999 (一方全体)" type="0" power="9999" id="59" field="1" target="1" targetDead="1" magicFlag="" />
+    <m name="高等净化精灵Lv1" des="全部状态异常回复 (单人)" type="3" statusRec="1" id="60" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="高等净化精灵Lv2" des="全部状态异常回复 (一方全体)" type="3" statusRec="1" id="61" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="净化精灵(毒)Lv1" des="毒状态回复 (单人)" type="3" statusRec="2" id="70" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="净化精灵(毒)Lv2" des="毒状态回复 (一方全体)" type="3" statusRec="2" id="71" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="净化精灵(麻痹)Lv1" des="回复一人麻痹状态" type="3" statusRec="3" id="80" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="净化精灵(麻痹)Lv2" des="回复全体麻痹状态" type="3" statusRec="3" id="81" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="净化精灵(石化)Lv1" des="石化状态回复 (单人)" type="3" statusRec="4" id="90" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="净化精灵(石化)Lv2" des="石化状态回复 (一方全体)" type="3" statusRec="4" id="91" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="净化精灵(混乱)Lv1" des="混乱状态回复 (单人)" type="3" statusRec="5" id="100" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="净化精灵(混乱)Lv2" des="混乱状态回复 (一方全体)" type="3" statusRec="5" id="101" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="净化精灵(酒醉)Lv1" des="酒醉状态回复 (单人)" type="3" statusRec="6" id="110" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="净化精灵(酒醉)Lv2" des="酒醉状态回复 (一方全体)" type="3" statusRec="6" id="111" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="净化精灵(睡眠)Lv1" des="睡眠状态回复 (单人)" type="3" statusRec="7" id="120" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="净化精灵(睡眠)Lv2" des="睡眠状态回复 (一方全体)" type="3" statusRec="7" id="121" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="猛毒的精灵 Lv1" des="中毒状态 3回合前后 (单人)" type="2" status="2" turn="3" per="20" id="130" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="猛毒的精灵 Lv2" des="中毒状态 3回合前后 (单人)" type="2" status="2" turn="3" per="25" id="131" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="猛毒的精灵 Lv3" des="中毒状态4回合前后 (单人)" type="2" status="2" turn="4" per="25" id="132" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="猛毒的精灵 Lv4" des="中毒状态4回合前后 (单人)" type="2" status="2" turn="4" per="30" id="133" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="猛毒的精灵 Lv5" des="中毒状态5回合前后 (单人)" type="2" status="2" turn="5" per="25" id="134" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="毒雾的精灵 Lv1" des="中毒状态 3回合前后 (一方全体)" type="2" status="2" turn="3" per="20" id="135" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="毒雾的精灵 Lv2" des="中毒状态 3回合前后 (一方全体)" type="2" status="2" turn="3" per="25" id="136" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="毒雾的精灵 Lv3" des="中毒状态 4回合前后 (一方全体)" type="2" status="2" turn="4" per="25" id="137" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="毒雾的精灵 Lv4" des="中毒状态 4回合前后 (一方全体)" type="2" status="2" turn="4" per="30" id="138" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="毒雾的精灵 Lv5" des="中毒状态 5回合前后 (一方全体)" type="2" status="2" turn="5" per="25" id="139" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="硬化的精灵 Lv1" des="石化状态 3回合前后 (单人)" type="2" status="4" turn="3" per="15" id="150" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="硬化的精灵 Lv2" des="石化状态 3回合前后 (单人)" type="2" status="4" turn="3" per="20" id="151" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="硬化的精灵 Lv3" des="石化状态 4回合前后 (单人)" type="2" status="4" turn="4" per="25" id="152" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="硬化的精灵 Lv4" des="石化状态 4回合前后 (单人)" type="2" status="4" turn="4" per="30" id="153" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="硬化的精灵 Lv5" des="石化状态 5回合前后 (单人)" type="2" status="4" turn="5" per="25" id="154" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="石化的精灵 Lv1" des="石化状态 3回合前后 (一方全体)" type="2" status="4" turn="3" per="15" id="155" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="石化的精灵 Lv2" des="石化状态 3回合前后 (一方全体)" type="2" status="4" turn="3" per="20" id="156" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="石化的精灵 Lv3" des="石化状态 4回合前后 (一方全体)" type="2" status="4" turn="4" per="25" id="157" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="石化的精灵 Lv4" des="石化状态 4回合前后 (一方全体)" type="2" status="4" turn="4" per="30" id="158" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="石化的精灵 Lv5" des="石化状态 5回合前后 (一方全体)" type="2" status="4" turn="5" per="25" id="159" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="混乱的精灵 Lv1" des="混乱状态 3回合前后 (单人)" type="2" status="5" turn="3" per="20" id="160" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="混乱的精灵 Lv2" des="混乱状态 3回合前后 (单人)" type="2" status="5" turn="3" per="25" id="161" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="混乱的精灵 Lv3" des="混乱状态 4回合前后 (单人)" type="2" status="5" turn="4" per="25" id="162" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="混乱的精灵 Lv4" des="混乱状态 4回合前后 (单人)" type="2" status="5" turn="4" per="30" id="163" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="混乱的精灵 Lv5" des="混乱状态 5回合前后 (单人)" type="2" status="5" turn="5" per="25" id="164" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="混迷的精灵 Lv1" des="混乱状态 3回合前后 (一方全体)" type="2" status="5" turn="3" per="20" id="165" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="混迷的精灵 Lv2" des="混乱状态 3回合前后 (一方全体)" type="2" status="5" turn="3" per="25" id="166" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="混迷的精灵 Lv3" des="混乱状态 4回合前后 (一方全体)" type="2" status="5" turn="4" per="25" id="167" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="混迷的精灵 Lv4" des="混乱状态 4回合前后 (一方全体)" type="2" status="5" turn="4" per="30" id="168" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="混迷的精灵 Lv5" des="混乱状态 5回合前后 (一方全体)" type="2" status="5" turn="5" per="25" id="169" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="酒的精灵 Lv1" des="酒醉状态 3回合前后 (单人)" type="2" status="6" turn="3" per="20" id="170" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="酒的精灵 Lv2" des="酒醉状态 3回合前后 (单人)" type="2" status="6" turn="3" per="25" id="171" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="酒的精灵 Lv3" des="酒醉状态 4回合前后 (单人)" type="2" status="6" turn="4" per="25" id="172" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="酒的精灵 Lv4" des="酒醉状态 4回合前后 (单人)" type="2" status="6" turn="4" per="30" id="173" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="酒的精灵 Lv5" des="酒醉状态 5回合前后 (单人)" type="2" status="6" turn="5" per="25" id="174" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="酩酊的精灵 Lv1" des="酒醉状态 3回合前后 (一方全体)" type="2" status="6" turn="3" per="20" id="175" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="酩酊的精灵 Lv2" des="酒醉状态 3回合前后 (一方全体)" type="2" status="6" turn="3" per="25" id="176" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="酩酊的精灵 Lv3" des="酒醉状态 4回合前后 (一方全体)" type="2" status="6" turn="4" per="25" id="177" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="酩酊的精灵 Lv4" des="酒醉状态 4回合前后 (一方全体)" type="2" status="6" turn="4" per="30" id="178" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="酩酊的精灵 Lv5" des="酒醉状态 5回合前后 (一方全体)" type="2" status="6" turn="5" per="25" id="179" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="睡眠的精灵 Lv1" des="睡眠状态 3回合前后 (单人)" type="2" status="7" turn="3" per="20" id="180" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="睡眠的精灵 Lv2" des="睡眠状态 3回合前后 (单人)" type="2" status="7" turn="3" per="25" id="181" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="睡眠的精灵 Lv3" des="睡眠状态 4回合前后 (单人)" type="2" status="7" turn="4" per="25" id="182" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="睡眠的精灵 Lv4" des="睡眠状态 4回合前后 (单人)" type="2" status="7" turn="4" per="30" id="183" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="睡眠的精灵 Lv5" des="睡眠状态 5回合前后 (单人)" type="2" status="7" turn="5" per="25" id="184" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="昏睡的精灵 Lv1" des="睡眠状态 3回合前后 (一方全体)" type="2" status="7" turn="3" per="20" id="185" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="昏睡的精灵 Lv2" des="睡眠状态 3回合前后 (一方全体)" type="2" status="7" turn="3" per="25" id="186" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="昏睡的精灵 Lv3" des="睡眠状态 4回合前后 (一方全体)" type="2" status="7" turn="4" per="25" id="187" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="昏睡的精灵 Lv4" des="睡眠状态 4回合前后 (一方全体)" type="2" status="7" turn="4" per="30" id="188" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="昏睡的精灵 Lv5" des="睡眠状态 5回合前后 (一方全体)" type="2" status="7" turn="5" per="25" id="189" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="大地的精灵 Lv1" des="地属性优遇 60% 3回合 (全体)" type="4" attr="1" attrPer="60" turn="3" id="190" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="大地的精灵 Lv2" des="地属性优遇 70% 3回合 (全体)" type="4" attr="1" attrPer="70" turn="3" id="191" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="大地的精灵 Lv3" des="地属性优遇 80% 4回合 (全体)" type="4" attr="1" attrPer="80" turn="4" id="192" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="大地的精灵 Lv4" des="地属性优遇 90% 4回合 (全体)" type="4" attr="1" attrPer="90" turn="4" id="193" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="大地的精灵 Lv5" des="地属性优遇100% 5回合 (全体)" type="4" attr="1" attrPer="100" turn="5" id="194" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="大地的精灵 Lv6" des="地属性优遇100% 9回合 (全体)" type="4" attr="1" attrPer="100" turn="9" id="195" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="水的精灵 Lv1" des="水属性优遇60% 3回合 (全体)" type="4" attr="2" attrPer="60" turn="3" id="200" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="水的精灵 Lv2" des="水属性优遇 70% 3回合 (全体)" type="4" attr="2" attrPer="70" turn="3" id="201" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="水的精灵 Lv3" des="水属性优遇 80% 4回合 (全体)" type="4" attr="2" attrPer="80" turn="4" id="202" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="水的精灵 Lv4" des="水属性优遇 90% 4回合 (全体)" type="4" attr="2" attrPer="90" turn="4" id="203" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="水的精灵 Lv5" des="水属性优遇100% 5回合 (全体)" type="4" attr="2" attrPer="100" turn="5" id="204" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="水的精灵 Lv5" des="水属性优遇100% 9回合 (全体)" type="4" attr="2" attrPer="100" turn="9" id="205" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="火炎的精灵 Lv1" des="火属性优遇 60% 3回合 (全体)" type="4" attr="3" attrPer="60" turn="3" id="210" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="火炎的精灵 Lv2" des="火属性优遇 70% 3回合 (全体)" type="4" attr="3" attrPer="70" turn="3" id="211" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="火炎的精灵 Lv3" des="火属性优遇 80% 4回合 (全体)" type="4" attr="3" attrPer="80" turn="4" id="212" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="火炎的精灵 Lv4" des="火属性优遇 90% 4回合 (全体)" type="4" attr="3" attrPer="90" turn="4" id="213" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="火炎的精灵 Lv5" des="火属性优遇100% 5回合 (全体)" type="4" attr="3" attrPer="100" turn="5" id="214" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="火炎的精灵 Lv5" des="火属性优遇100% 9回合 (全体)" type="4" attr="3" attrPer="100" turn="9" id="215" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="疾风的精灵 Lv1" des="风属性优遇 60% 3回合 (全体)" type="4" attr="4" attrPer="60" turn="3" id="220" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="疾风的精灵 Lv2" des="风属性优遇 70% 3回合 (全体)" type="4" attr="4" attrPer="70" turn="3" id="221" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="疾风的精灵 Lv3" des="风属性优遇 80% 4回合 (全体)" type="4" attr="4" attrPer="80" turn="4" id="222" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="疾风的精灵 Lv4" des="风属性优遇 90% 4回合 (全体)" type="4" attr="4" attrPer="90" turn="4" id="223" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="疾风的精灵 Lv5" des="风属性优遇100% 5回合 (全体)" type="4" attr="4" attrPer="100" turn="5" id="224" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="疾风的精灵 Lv5" des="风属性优遇100% 9回合 (全体)" type="4" attr="4" attrPer="100" turn="9" id="225" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="调和的精灵" des="回复成无属性 (全体)" type="4" attr="0" id="230" field="1" target="4" targetDead="0" magicFlag="" />
+    <m name="彩虹的精灵" des="属性反转 (单人)" type="5" id="240" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="极光的精灵" des="属性反转 (全体)" type="5" id="241" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="光的精灵 Lv1" des="攻击吸收1次 (单人)" type="6" magicStatus="1" turn="1" id="250" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="光的精灵 Lv2" des="攻击吸收2次 (单人)" type="6" magicStatus="1" turn="2" id="251" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="光的精灵 Lv3" des="攻击吸收3次 (单人)" type="6" magicStatus="1" turn="3" id="252" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="全体光的精灵 Lv1" des="攻击吸收1次 (一方全体)" type="6" magicStatus="1" turn="1" id="253" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="全体光的精灵 Lv2" des="攻击吸收2次 (一方全体)" type="6" magicStatus="1" turn="2" id="254" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="全体光的精灵 Lv3" des="攻击吸收3次 (一方全体)" type="6" magicStatus="1" turn="3" id="255" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="镜子的精灵 Lv1" des="攻击反射1次 (单人)" type="6" magicStatus="2" turn="1" id="260" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="镜子的精灵 Lv2" des="攻击反射2次 (单人)" type="6" magicStatus="2" turn="2" id="261" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="镜子的精灵 Lv3" des="攻击反射3次 (单人)" type="6" magicStatus="2" turn="3" id="262" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="全体镜子的精灵 Lv1" des="攻击反射1次 (单人)" type="6" magicStatus="2" turn="1" id="263" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="全体镜子的精灵 Lv2" des="攻击反射2次 (单人)" type="6" magicStatus="2" turn="2" id="264" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="全体镜子的精灵 Lv3" des="攻击反射3次 (单人)" type="6" magicStatus="2" turn="3" id="265" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="守护的精灵" des="攻击无效2次 (单人)" type="6" magicStatus="3" turn="2" id="270" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="守护的精灵" des="攻击无效3次 (单人)" type="6" magicStatus="3" turn="3" id="271" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="守护的精灵" des="攻击无效5次 (单人)" type="6" magicStatus="3" turn="5" id="272" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="全体守护的精灵" des="攻击无效2次 (单人)" type="6" magicStatus="3" turn="2" id="273" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="全体守护的精灵" des="攻击无效3次 (单人)" type="6" magicStatus="3" turn="3" id="274" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="全体守护的精灵" des="攻击无效5次 (单人)" type="6" magicStatus="3" turn="5" id="275" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="复活光精灵 Lv1" des="气绝状态回复 100　　　攻击吸收 1次 (单人)" type="7" magicStatus="1" power="100" turn="1" id="280" field="1" target="1" targetDead="1" magicFlag="" />
+    <m name="复活镜精灵 Lv1" des="气绝状态回复 100　　　直接攻击反射 1次 (单人)" type="7" magicStatus="1" power="100" turn="1" id="290" field="1" target="1" targetDead="1" magicFlag="" />
+    <m name="复活守护精灵 Lv1" des="气绝状态的回复 100　　　攻击无效 2次 (单人)" type="7" magicStatus="1" power="100" turn="2" id="300" field="1" target="1" targetDead="1" magicFlag="" />
+    <m name="岩石撞击" des="地魔法LV1" type="8" attr="1" power="0" level="100" id="301" field="1" target="1" targetDead="0" magicFlag="8" />
+    <m name="落石撞击" des="地魔法LV2" type="8" attr="1" power="0" level="150" id="302" field="1" target="9" targetDead="0" magicFlag="9" />
+    <m name="土石流" des="地魔法LV3-1" type="8" attr="1" power="0" level="165" id="303" field="1" target="10" targetDead="0" magicFlag="10" />
+    <m name="巨岩撞击" des="地魔法LV3-2" type="8" attr="1" power="0" level="185" id="304" field="1" target="9" targetDead="0" magicFlag="11" />
+    <m name="地震" des="地魔法LV3-3" type="8" attr="1" power="0" level="200" id="305" field="1" target="11" targetDead="0" magicFlag="12" />
+    <m name="陨石冲击" des="地魔法LV4" type="8" attr="1" power="0" level="250" id="306" field="1" target="11" targetDead="0" magicFlag="13" />
+    <m name="水柱" des="水魔法LV1" type="8" attr="2" power="0" level="100" id="307" field="1" target="9" targetDead="0" magicFlag="14" />
+    <m name="水刃" des="水魔法LV2" type="8" attr="2" power="0" level="150" id="308" field="1" target="9" targetDead="0" magicFlag="15" />
+    <m name="大冰山" des="水魔法LV3-1" type="8" attr="2" power="0" level="165" id="309" field="1" target="9" targetDead="0" magicFlag="16" />
+    <m name="沸点攻击" des="水魔法LV3-2" type="8" attr="2" power="0" level="185" id="310" field="1" target="9" targetDead="0" magicFlag="17" />
+    <m name="暴风雪" des="水魔法LV3-3" type="8" attr="2" power="0" level="200" id="311" field="1" target="9" targetDead="0" magicFlag="18" />
+    <m name="冰天雪地" des="水魔法LV4" type="8" attr="2" power="0" level="250" id="312" field="1" target="11" targetDead="0" magicFlag="19" />
+    <m name="火球" des="火魔法LV1" type="8" attr="3" power="0" level="100" id="313" field="1" target="9" targetDead="0" magicFlag="2" />
+    <m name="火焰连弹" des="火魔法LV2" type="8" attr="3" power="0" level="150" id="314" field="1" target="9" targetDead="0" magicFlag="3" />
+    <m name="蒸汽喷射" des="火魔法LV3-1" type="8" attr="3" power="0" level="165" id="315" field="1" target="9" targetDead="0" magicFlag="4" />
+    <m name="火焰风爆" des="火魔法LV3-2" type="8" attr="3" power="0" level="185" id="316" field="1" target="9" targetDead="0" magicFlag="5" />
+    <m name="熔岩爆发" des="火魔法LV3-3" type="8" attr="3" power="0" level="200" id="317" field="1" target="11" targetDead="0" magicFlag="6" />
+    <m name="火山爆发" des="火魔法LV4" type="8" attr="3" power="0" level="200" id="318" field="1" target="11" targetDead="0" magicFlag="7" />
+    <m name="风刃" des="风魔法LV1" type="8" attr="4" power="0" level="100" id="319" field="1" target="9" targetDead="0" magicFlag="20" />
+    <m name="真空刃" des="风魔法LV2" type="8" attr="4" power="0" level="150" id="320" field="1" target="9" targetDead="0" magicFlag="21" />
+    <m name="龙卷风" des="风魔法LV3-1" type="8" attr="4" power="0" level="165" id="321" field="1" target="10" targetDead="0" magicFlag="22" />
+    <m name="暴风烈刃" des="风魔法LV3-2" type="8" attr="4" power="0" level="165" id="322" field="1" target="9" targetDead="0" magicFlag="23" />
+    <m name="暴风冰刃" des="风魔法LV3-3" type="8" attr="4" power="0" level="200" id="323" field="1" target="11" targetDead="0" magicFlag="24" />
+    <m name="南极飓风" des="风魔法LV4" type="8" attr="4" power="0" level="250" id="324" field="1" target="11" targetDead="0" magicFlag="25" />
+    <m name="毁天灭地" des="魔法LV5" type="8" attr="3" power="0" level="350" id="325" field="1" target="11" targetDead="0" magicFlag="26" />
+    <m name="破除防御" des="对采取防敌人攻击可能" type="9" id="326" field="1" target="1" targetDead="0" magicFlag="0" />
+    <m name="突击" des="1回合储存力量就会有两倍的攻击力" type="9" id="327" field="1" target="1" targetDead="0" magicFlag="0" />
+    <m name="一击必杀" des="给予两倍的攻击伤害但是命中率下降" type="9" id="328" field="1" target="1" targetDead="0" magicFlag="0" />
+    <m name="背水之战其之１" des="防御力减30%　　攻击力变成+30%" type="9" id="329" field="1" target="1" targetDead="0" magicFlag="0" />
+    <m name="不防守战法" des="自己不进行攻击反击跟回避率就会变的非常高" type="9" id="330" field="1" target="1" targetDead="0" magicFlag="0" />
+    <m name="变幻的精灵 Lv1" des="变身成自己的宠物一分钟" type="11" second="60" id="350" field="0" target="1" targetDead="0" magicFlag="0" />
+    <m name="变幻的精灵 Lv2" des="变身成自己的宠物二分钟" type="11" second="120" id="351" field="0" target="1" targetDead="0" magicFlag="0" />
+    <m name="变幻的精灵 Lv3" des="变身成自己的宠物三分钟" type="11" second="180" id="352" field="0" target="1" targetDead="0" magicFlag="0" />
+    <m name="變幻的精靈 Lv10" des="變身成自己的寵物一天" type="11" second="86400" id="355" field="0" target="1" targetDead="0" magicFlag="0" />
+    <m name="T陨石冲击" des="地魔法LV4" type="8" attr="1" power="0" level="600" id="356" field="1" target="11" targetDead="0" magicFlag="13" />
+    <m name="T冰天雪地" des="水魔法LV4" type="8" attr="2" power="0" level="600" id="357" field="1" target="11" targetDead="0" magicFlag="19" />
+    <m name="T火山爆发" des="火魔法LV4" type="8" attr="3" power="0" level="600" id="358" field="1" target="11" targetDead="0" magicFlag="7" />
+    <m name="T南极飓风" des="风魔法LV4" type="8" attr="4" power="0" level="600" id="359" field="1" target="11" targetDead="0" magicFlag="25" />
+    <m name="T毁天灭地" des="全魔法LV5" type="8" attr="3" power="0" level="900" id="360" field="1" target="11" targetDead="0" magicFlag="26" />
+    <m name="虚弱" des="被攻击者三回合内防御跟敏捷下降20%" type="2" status="11" turn="3" per="50" id="390" field="1" target="1" targetDead="0" magicFlag="0" />
+    <m name="全体虚弱" des="敌全体三回合内防御跟敏捷下降20%" type="2" status="11" turn="3" per="50" id="391" field="1" target="8" targetDead="0" magicFlag="0" />
+    <m name="魔法防御 Lv1" des="提升全魔法抗性+20%三回合我方单体" type="12" attr="5" turn="0" per="3" id="392" field="1" target="1" targetDead="0" magicFlag="0" />
+    <m name="魔法防御 Lv2" des="提升全魔法抗性+20%三回合我方全体" type="12" attr="5" turn="0" per="3" id="393" field="1" target="8" targetDead="0" magicFlag="0" />
+    <m name="奔龙阵" des="招唤巴朵兰恩攻击敌方单体" type="10" dragon="100373" power="300" id="394" field="1" target="9" targetDead="0" magicFlag="0" />
+    <m name="强恩阵" des="招唤强恩攻击敌方一排" type="10" dragon="100401" power="300" id="395" field="1" target="10" targetDead="0" magicFlag="1" />
+    <m name="奔雷阵" des="招唤雷龙群攻击敌方全体" type="10" dragon="101422" power="400" id="396" field="1" target="11" targetDead="0" magicFlag="2" />
+    <m name="魔障" des="使敌全体一回合无法行动" type="2" status="9" turn="1" per="50" id="397" field="1" target="3" targetDead="0" magicFlag="0" />
+    <m name="沉默" des="使敌全体无法使用咒术3回合" type="2" status="10" turn="3" per="50" id="398" field="1" target="3" targetDead="0" magicFlag="0" />
+    <m name="E咒灵术" des="E咒灵术" type="10" dragon="101633" power="99999" id="399" field="1" target="11" targetDead="0" magicFlag="2" />
+    <m name="E收魂" des="E收魂" type="10" dragon="101772" power="99999" id="400" field="1" target="11" targetDead="0" magicFlag="2" />
+    <m name="净化精灵(剧毒)Lv1" des="剧毒状态回复 (单人)" type="3" statusRec="8" id="402" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="净化精灵(剧毒)Lv2" des="剧毒状态回复 (一方全体)" type="3" statusRec="8" id="403" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="净化精灵(魔障)Lv1" des="魔障状态回复 (单人)" type="3" statusRec="9" id="404" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="净化精灵(魔障)Lv2" des="魔障状态回复 (一方全体)" type="3" statusRec="9" id="405" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="净化精灵(沉默)Lv1" des="沉默状态回复 (单人)" type="3" statusRec="10" id="406" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="净化精灵(沉默)Lv2" des="沉默状态回复 (一方全体)" type="3" statusRec="10" id="407" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="净化精灵(虚弱)Lv1" des="虚弱状态回复 (单人)" type="3" statusRec="11" id="408" field="1" target="1" targetDead="0" magicFlag="" />
+    <m name="净化精灵(虚弱)Lv2" des="虚弱状态回复 (一方全体)" type="3" statusRec="11" id="409" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="变幻的精灵 Lv4" des="变身成自己的宠物十分钟" type="11" second="600" id="410" field="0" target="1" targetDead="0" magicFlag="0" />
+    <m name="破除沉默" des="解除沉默状态" type="3" statusRec="10" id="411" field="1" target="8" targetDead="0" magicFlag="0" />
+    <m name="毒雾的精灵 Lv6" des="中毒状态 6回合前后 (一方全体)" type="2" status="2" turn="6" per="25" id="412" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="石化的精灵 Lv6" des="石化状态 6回合前后 (一方全体)" type="2" status="4" turn="6" per="25" id="413" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="混迷的精灵 Lv6" des="混乱状态 6回合前后 (一方全体)" type="2" status="5" turn="6" per="25" id="414" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="酩酊的精灵 Lv6" des="酒醉状态 6回合前后 (一方全体)" type="2" status="6" turn="6" per="25" id="415" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="昏睡的精灵 Lv6" des="睡眠状态 6回合前后 (一方全体)" type="2" status="7" turn="6" per="25" id="416" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="冰之精灵Lv1" des="冰抗性提升10  3回合(单人)" type="12" attr="2" turn="0" per="3" id="417" field="1" target="1" targetDead="0" magicFlag="0" />
+    <m name="电之精灵Lv1" des="电抗性提升10  3回合(单人)" type="12" attr="3" turn="0" per="3" id="418" field="1" target="1" targetDead="0" magicFlag="0" />
+    <m name="火之精灵Lv1" des="火抗性提升10  3回合(单人)" type="12" attr="4" turn="0" per="3" id="419" field="1" target="1" targetDead="0" magicFlag="0" />
+    <m name="冰之精灵Lv2" des="冰抗性提升10  3回合(一方全体)" type="12" attr="2" turn="0" per="3" id="420" field="1" target="8" targetDead="0" magicFlag="0" />
+    <m name="电之精灵Lv2" des="电抗性提升10  3回合(一方全体)" type="12" attr="3" turn="0" per="3" id="421" field="1" target="8" targetDead="0" magicFlag="0" />
+    <m name="火之精灵Lv2" des="火抗性提升10  3回合(一方全体)" type="12" attr="4" turn="0" per="3" id="422" field="1" target="8" targetDead="0" magicFlag="0" />
+    <m name="毒雾的精灵 Lv7" des="中毒状态 6回合前后 (一方全体)" type="2" status="2" turn="6" per="30" id="423" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="毒雾的精灵 Lv8" des="中毒状态 7回合前后 (一方全体)" type="2" status="2" turn="7" per="35" id="424" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="石化的精灵 Lv7" des="石化状态 6回合前后 (一方全体)" type="2" status="4" turn="6" per="30" id="425" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="石化的精灵 Lv8" des="石化状态 7回合前后 (一方全体)" type="2" status="4" turn="7" per="35" id="426" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="混迷的精灵 Lv7" des="混乱状态 6回合前后 (一方全体)" type="2" status="5" turn="6" per="30" id="427" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="混迷的精灵 Lv8" des="混乱状态 7回合前后 (一方全体)" type="2" status="5" turn="7" per="35" id="428" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="酩酊的精灵 Lv7" des="酒醉状态 6回合前后 (一方全体)" type="2" status="6" turn="6" per="30" id="429" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="酩酊的精灵 Lv8" des="酒醉状态 7回合前后 (一方全体)" type="2" status="6" turn="7" per="35" id="430" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="昏睡的精灵 Lv7" des="睡眠状态 6回合前后 (一方全体)" type="2" status="7" turn="6" per="30" id="431" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="昏睡的精灵 Lv8" des="睡眠状态 7回合前后 (一方全体)" type="2" status="7" turn="7" per="35" id="432" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="瘫痪的精灵 Lv1" des="敌单体三回合内防御跟敏捷下降20%" type="2" status="11" turn="3" per="30" id="433" field="1" target="1" targetDead="0" magicFlag="0" />
+    <m name="瘫痪的精灵 Lv2" des="敌单体五回合内防御跟敏捷下降20%" type="2" status="11" turn="5" per="40" id="434" field="1" target="1" targetDead="0" magicFlag="0" />
+    <m name="瘫痪的精灵 Lv3" des="敌单体七回合内防御跟敏捷下降20%" type="2" status="11" turn="7" per="50" id="435" field="1" target="1" targetDead="0" magicFlag="0" />
+    <m name="虚弱的精灵 Lv1" des="敌全体三回合内防御跟敏捷下降20%" type="2" status="11" turn="3" per="20" id="436" field="1" target="8" targetDead="0" magicFlag="0" />
+    <m name="虚弱的精灵 Lv2" des="敌全体四回合内防御跟敏捷下降20%" type="2" status="11" turn="4" per="25" id="437" field="1" target="8" targetDead="0" magicFlag="0" />
+    <m name="虚弱的精灵 Lv3" des="敌全体五回合内防御跟敏捷下降20%" type="2" status="11" turn="5" per="30" id="438" field="1" target="8" targetDead="0" magicFlag="0" />
+    <m name="艾巴登之咒 Lv1" des="被攻击者两回合无法行动" type="2" status="9" turn="2" per="10" id="439" field="1" target="1" targetDead="0" magicFlag="0" />
+    <m name="艾巴登之咒 Lv2" des="被攻击者两回合无法行动" type="2" status="9" turn="2" per="15" id="440" field="1" target="1" targetDead="0" magicFlag="0" />
+    <m name="艾巴登之咒 Lv3" des="被攻击者两回合无法行动" type="2" status="9" turn="2" per="20" id="441" field="1" target="1" targetDead="0" magicFlag="0" />
+    <m name="沉默的精灵 Lv1" des="被攻击者无法使用咒术3回合" type="2" status="10" turn="3" per="15" id="442" field="1" target="1" targetDead="0" magicFlag="0" />
+    <m name="沉默的精灵 Lv2" des="被攻击者无法使用咒术3回合" type="2" status="10" turn="3" per="20" id="443" field="1" target="1" targetDead="0" magicFlag="0" />
+    <m name="沉默的精灵 Lv3" des="被攻击者无法使用咒术3回合" type="2" status="10" turn="3" per="30" id="444" field="1" target="1" targetDead="0" magicFlag="0" />
+    <m name="封咒的精灵 Lv1" des="使敌全体无法使用咒术3回合" type="2" status="10" turn="3" per="10" id="445" field="1" target="8" targetDead="0" magicFlag="0" />
+    <m name="封咒的精灵 Lv2" des="使敌全体无法使用咒术3回合" type="2" status="10" turn="3" per="15" id="446" field="1" target="8" targetDead="0" magicFlag="0" />
+    <m name="封咒的精灵 Lv2" des="使敌全体无法使用咒术3回合" type="2" status="10" turn="3" per="20" id="447" field="1" target="8" targetDead="0" magicFlag="0" />
+    <m name="剧毒" des="被攻击者三回合内防御跟敏捷下降20%" type="13" id="448" field="1" target="1" targetDead="0" magicFlag="0" />
+    <m name="全体剧毒" des="敌全体三回合内防御跟敏捷下降20%" type="13" id="449" field="1" target="8" targetDead="0" magicFlag="0" />
+    <m name="魔法防御 Lv1" des="提升全魔法抗性+90%三回合我方单体" type="12" attr="5" turn="0" per="3" id="460" field="1" target="1" targetDead="0" magicFlag="0" />
+    <m name="魔法防御 Lv2" des="提升全魔法抗性+50%三回合我方全体" type="12" attr="5" turn="0" per="3" id="461" field="1" target="8" targetDead="0" magicFlag="0" />
+    <m name="毒雾的精灵" des="敌人全体中毒9回合" type="2" status="2" turn="9" per="90" id="463" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="石化的精灵" des="敌人全体石化3回合" type="2" status="4" turn="3" per="20" id="464" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="混迷的精灵" des="敌人全体混乱6回合" type="2" status="5" turn="3" per="20" id="465" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="酩酊的精灵" des="敌人全体醉酒9回合" type="2" status="6" turn="5" per="50" id="466" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="昏睡的精灵" des="敌人全体昏睡3回合" type="2" status="7" turn="3" per="20" id="467" field="1" target="8" targetDead="0" magicFlag="" />
+    <m name="虚弱的精灵" des="敌人全体虚弱6回合" type="2" status="11" turn="5" per="50" id="468" field="1" target="8" targetDead="0" magicFlag="0" />
+    <m name="沉默的精灵" des="敌人全体无法使用咒术3回合" type="2" status="10" turn="3" per="80" id="469" field="1" target="8" targetDead="0" magicFlag="0" />
+    <m name="地魔法LV1" des="地魔法LV1" type="8" attr="1" power="0" level="50" id="470" field="1" target="9" targetDead="0" magicFlag="9" />
+    <m name="地魔法LV1" des="地魔法LV1" type="8" attr="1" power="0" level="100" id="471" field="1" target="9" targetDead="0" magicFlag="9" />
+    <m name="地魔法LV1" des="地魔法LV1" type="8" attr="1" power="0" level="260" id="472" field="1" target="9" targetDead="0" magicFlag="9" />
+    <m name="地魔法LV1" des="地魔法LV1" type="8" attr="1" power="0" level="500" id="473" field="1" target="9" targetDead="0" magicFlag="9" />
+    <m name="地魔法LV1" des="地魔法LV1" type="8" attr="1" power="0" level="700" id="474" field="1" target="9" targetDead="0" magicFlag="9" />
+    <m name="地魔法LV1" des="地魔法LV1" type="8" attr="1" power="0" level="980" id="475" field="1" target="9" targetDead="0" magicFlag="9" />
+    <m name="地魔法LV1" des="地魔法LV1" type="8" attr="1" power="0" level="1160" id="476" field="1" target="9" targetDead="0" magicFlag="9" />
+    <m name="地魔法LV1" des="地魔法LV1" type="8" attr="1" power="0" level="1440" id="477" field="1" target="9" targetDead="0" magicFlag="9" />
+    <m name="地魔法LV2" des="地魔法LV2" type="8" attr="1" power="0" level="120" id="480" field="1" target="10" targetDead="0" magicFlag="10" />
+    <m name="地魔法LV2" des="地魔法LV2" type="8" attr="1" power="0" level="240" id="481" field="1" target="10" targetDead="0" magicFlag="10" />
+    <m name="地魔法LV2" des="地魔法LV2" type="8" attr="1" power="0" level="360" id="482" field="1" target="10" targetDead="0" magicFlag="10" />
+    <m name="地魔法LV2" des="地魔法LV2" type="8" attr="1" power="0" level="480" id="483" field="1" target="10" targetDead="0" magicFlag="10" />
+    <m name="地魔法LV2" des="地魔法LV2" type="8" attr="1" power="0" level="640" id="484" field="1" target="10" targetDead="0" magicFlag="10" />
+    <m name="地魔法LV3" des="地魔法LV3" type="8" attr="1" power="0" level="100" id="490" field="1" target="11" targetDead="0" magicFlag="12" />
+    <m name="地魔法LV3" des="地魔法LV3" type="8" attr="1" power="0" level="200" id="491" field="1" target="11" targetDead="0" magicFlag="12" />
+    <m name="地魔法LV3" des="地魔法LV3" type="8" attr="1" power="0" level="300" id="492" field="1" target="11" targetDead="0" magicFlag="12" />
+    <m name="地魔法LV3" des="地魔法LV3" type="8" attr="1" power="0" level="440" id="493" field="1" target="11" targetDead="0" magicFlag="12" />
+    <m name="水魔法LV1" des="水魔法LV1" type="8" attr="2" power="0" level="50" id="500" field="1" target="9" targetDead="0" magicFlag="16" />
+    <m name="水魔法LV1" des="水魔法LV1" type="8" attr="2" power="0" level="100" id="501" field="1" target="9" targetDead="0" magicFlag="16" />
+    <m name="水魔法LV1" des="水魔法LV1" type="8" attr="2" power="0" level="260" id="502" field="1" target="9" targetDead="0" magicFlag="16" />
+    <m name="水魔法LV1" des="水魔法LV1" type="8" attr="2" power="0" level="500" id="503" field="1" target="9" targetDead="0" magicFlag="16" />
+    <m name="水魔法LV1" des="水魔法LV1" type="8" attr="2" power="0" level="700" id="504" field="1" target="9" targetDead="0" magicFlag="16" />
+    <m name="水魔法LV1" des="水魔法LV1" type="8" attr="2" power="0" level="980" id="505" field="1" target="9" targetDead="0" magicFlag="16" />
+    <m name="水魔法LV1" des="水魔法LV1" type="8" attr="2" power="0" level="1160" id="506" field="1" target="9" targetDead="0" magicFlag="16" />
+    <m name="水魔法LV1" des="水魔法LV1" type="8" attr="2" power="0" level="1440" id="507" field="1" target="9" targetDead="0" magicFlag="16" />
+    <m name="水魔法LV2" des="水魔法LV2" type="8" attr="2" power="0" level="120" id="510" field="1" target="10" targetDead="0" magicFlag="18" />
+    <m name="水魔法LV2" des="水魔法LV2" type="8" attr="2" power="0" level="240" id="511" field="1" target="10" targetDead="0" magicFlag="18" />
+    <m name="水魔法LV2" des="水魔法LV2" type="8" attr="2" power="0" level="360" id="512" field="1" target="10" targetDead="0" magicFlag="18" />
+    <m name="水魔法LV2" des="水魔法LV2" type="8" attr="2" power="0" level="480" id="513" field="1" target="10" targetDead="0" magicFlag="18" />
+    <m name="水魔法LV2" des="水魔法LV2" type="8" attr="2" power="0" level="640" id="514" field="1" target="10" targetDead="0" magicFlag="18" />
+    <m name="水魔法LV3" des="水魔法LV3" type="8" attr="2" power="0" level="100" id="520" field="1" target="11" targetDead="0" magicFlag="19" />
+    <m name="水魔法LV3" des="水魔法LV3" type="8" attr="2" power="0" level="200" id="521" field="1" target="11" targetDead="0" magicFlag="19" />
+    <m name="水魔法LV3" des="水魔法LV3" type="8" attr="2" power="0" level="300" id="522" field="1" target="11" targetDead="0" magicFlag="19" />
+    <m name="水魔法LV3" des="水魔法LV3" type="8" attr="2" power="0" level="440" id="523" field="1" target="11" targetDead="0" magicFlag="19" />
+    <m name="火魔法LV1" des="火魔法LV1" type="8" attr="3" power="0" level="50" id="530" field="1" target="9" targetDead="0" magicFlag="3" />
+    <m name="火魔法LV1" des="火魔法LV1" type="8" attr="3" power="0" level="100" id="531" field="1" target="9" targetDead="0" magicFlag="3" />
+    <m name="火魔法LV1" des="火魔法LV1" type="8" attr="3" power="0" level="260" id="532" field="1" target="9" targetDead="0" magicFlag="3" />
+    <m name="火魔法LV1" des="火魔法LV1" type="8" attr="3" power="0" level="500" id="533" field="1" target="9" targetDead="0" magicFlag="3" />
+    <m name="火魔法LV1" des="火魔法LV1" type="8" attr="3" power="0" level="700" id="534" field="1" target="9" targetDead="0" magicFlag="3" />
+    <m name="火魔法LV1" des="火魔法LV1" type="8" attr="3" power="0" level="980" id="535" field="1" target="9" targetDead="0" magicFlag="3" />
+    <m name="火魔法LV1" des="火魔法LV1" type="8" attr="3" power="0" level="1160" id="536" field="1" target="9" targetDead="0" magicFlag="3" />
+    <m name="火魔法LV1" des="火魔法LV1" type="8" attr="3" power="0" level="1440" id="537" field="1" target="9" targetDead="0" magicFlag="3" />
+    <m name="火魔法LV2" des="火魔法LV2" type="8" attr="3" power="0" level="120" id="540" field="1" target="10" targetDead="0" magicFlag="6" />
+    <m name="火魔法LV2" des="火魔法LV2" type="8" attr="3" power="0" level="240" id="541" field="1" target="10" targetDead="0" magicFlag="6" />
+    <m name="火魔法LV2" des="火魔法LV2" type="8" attr="3" power="0" level="360" id="542" field="1" target="10" targetDead="0" magicFlag="6" />
+    <m name="火魔法LV2" des="火魔法LV2" type="8" attr="3" power="0" level="480" id="543" field="1" target="10" targetDead="0" magicFlag="6" />
+    <m name="火魔法LV2" des="火魔法LV2" type="8" attr="3" power="0" level="640" id="544" field="1" target="10" targetDead="0" magicFlag="6" />
+    <m name="火魔法LV3" des="火魔法LV3" type="8" attr="3" power="0" level="100" id="550" field="1" target="11" targetDead="0" magicFlag="26" />
+    <m name="火魔法LV3" des="火魔法LV3" type="8" attr="3" power="0" level="200" id="551" field="1" target="11" targetDead="0" magicFlag="26" />
+    <m name="火魔法LV3" des="火魔法LV3" type="8" attr="3" power="0" level="300" id="552" field="1" target="11" targetDead="0" magicFlag="26" />
+    <m name="火魔法LV3" des="火魔法LV3" type="8" attr="3" power="0" level="440" id="553" field="1" target="11" targetDead="0" magicFlag="26" />
+    <m name="风魔法LV1" des="风魔法LV1" type="8" attr="4" power="0" level="50" id="560" field="1" target="9" targetDead="0" magicFlag="23" />
+    <m name="风魔法LV1" des="风魔法LV1" type="8" attr="4" power="0" level="100" id="561" field="1" target="9" targetDead="0" magicFlag="23" />
+    <m name="风魔法LV1" des="风魔法LV1" type="8" attr="4" power="0" level="260" id="562" field="1" target="9" targetDead="0" magicFlag="23" />
+    <m name="风魔法LV1" des="风魔法LV1" type="8" attr="4" power="0" level="500" id="563" field="1" target="9" targetDead="0" magicFlag="23" />
+    <m name="风魔法LV1" des="风魔法LV1" type="8" attr="4" power="0" level="700" id="564" field="1" target="9" targetDead="0" magicFlag="23" />
+    <m name="风魔法LV1" des="风魔法LV1" type="8" attr="4" power="0" level="980" id="565" field="1" target="9" targetDead="0" magicFlag="23" />
+    <m name="风魔法LV1" des="风魔法LV1" type="8" attr="4" power="0" level="1160" id="566" field="1" target="9" targetDead="0" magicFlag="23" />
+    <m name="风魔法LV1" des="风魔法LV1" type="8" attr="4" power="0" level="1440" id="567" field="1" target="9" targetDead="0" magicFlag="23" />
+    <m name="风魔法LV2" des="风魔法LV2" type="8" attr="4" power="0" level="120" id="570" field="1" target="10" targetDead="0" magicFlag="24" />
+    <m name="风魔法LV2" des="风魔法LV2" type="8" attr="4" power="0" level="240" id="571" field="1" target="10" targetDead="0" magicFlag="24" />
+    <m name="风魔法LV2" des="风魔法LV2" type="8" attr="4" power="0" level="360" id="572" field="1" target="10" targetDead="0" magicFlag="24" />
+    <m name="风魔法LV2" des="风魔法LV2" type="8" attr="4" power="0" level="480" id="573" field="1" target="10" targetDead="0" magicFlag="24" />
+    <m name="风魔法LV2" des="风魔法LV2" type="8" attr="4" power="0" level="640" id="574" field="1" target="10" targetDead="0" magicFlag="24" />
+    <m name="风魔法LV3" des="风魔法LV3" type="8" attr="4" power="0" level="100" id="580" field="1" target="11" targetDead="0" magicFlag="25" />
+    <m name="风魔法LV3" des="风魔法LV3" type="8" attr="4" power="0" level="200" id="581" field="1" target="11" targetDead="0" magicFlag="25" />
+    <m name="风魔法LV3" des="风魔法LV3" type="8" attr="4" power="0" level="300" id="582" field="1" target="11" targetDead="0" magicFlag="25" />
+    <m name="风魔法LV3" des="风魔法LV3" type="8" attr="4" power="0" level="440" id="583" field="1" target="11" targetDead="0" magicFlag="25" />
+    <m name="" des="" id="" field="" target="" targetDead="" magicFlag="" />
+    <m name="" des="" id="" field="" target="" targetDead="" magicFlag="" />
+    <m name="" des="" id="" field="" target="" targetDead="" magicFlag="" />
+    <m name="" des="" id="" field="" target="" targetDead="" magicFlag="" />
+    <m name="" des="" id="" field="" target="" targetDead="" magicFlag="" />
+    <m name="" des="" id="" field="" target="" targetDead="" magicFlag="" />
+    <m name="" des="" id="" field="" target="" targetDead="" magicFlag="" />
+    <m name="" des="" id="" field="" target="" targetDead="" magicFlag="" />
+</root>

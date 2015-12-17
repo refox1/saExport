@@ -467,13 +467,18 @@ char * ScanOneByte( char *src, char delim )
 
 	for( ;src[0] != '\0'; src ++ ){
 
-		if( IS_2BYTEWORD( src[0] ) ){
-
-			if( src[1] != 0 ){
-				src ++;
-			}
-			continue;
-		}
+//		if( IS_2BYTEWORD( src[0] ) ){
+//
+//			if( src[1] != 0 ){
+//                
+//				src ++;
+////                if( src[0] == delim ){
+////                    src++;
+////                    return (src);
+////                }
+//			}
+//			continue;
+//		}
 
 		if( src[0] == delim ){
 			return src;
@@ -530,6 +535,14 @@ void strcpysafe( char* dest ,size_t n ,const char* src )
 void strncpysafe( char* dest , const size_t n ,
 				 const char* src ,const int length )
 {
+    for ( int i = 0 ; i < length ; ++i )
+    {
+        dest[ i ] = src[ i ];
+    }
+    dest[ length ] = 0;
+    
+    return;
+    
 	int Short;
 	Short = ::min( (int)strlen( src ) , length );
 
