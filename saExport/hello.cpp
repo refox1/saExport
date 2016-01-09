@@ -7379,7 +7379,7 @@ void ReadArg( string path , string name , string tem )
             if ( line[ 0 ] == 'w' && getStringFromIndexWithDelim(line, "inno=", 2, token, sizeof(token)) )
             {
                 xml1 = CreatXMLElement( doc , "win" );
-                xml1->LinkEndChild( xml1 );
+                xml->LinkEndChild( xml1 );
                 xml1->SetAttribute( "No" , token );
                 
                 messageNum = 0;
