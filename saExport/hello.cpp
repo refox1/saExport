@@ -7367,6 +7367,145 @@ void ReadArg( string path , string name , string tem )
         }
         if ( tem == "windowman" )
         {
+            static int messageNum = 0;
+            static int winNum = 0;
+            
+            if ( !xml )
+            {
+                xml = CreatXMLElement( doc , "windowMan" );
+                root->LinkEndChild( xml );
+            }
+            
+            if ( line[ 0 ] == 'w' && getStringFromIndexWithDelim(line, "inno=", 2, token, sizeof(token)) )
+            {
+                xml1 = CreatXMLElement( doc , "win" );
+                xml1->LinkEndChild( xml1 );
+                xml1->SetAttribute( "No" , token );
+                
+                messageNum = 0;
+                winNum = 0;
+                
+                continue;
+            }
+            
+            if ( line[ 0 ] == 'm' && getStringFromIndexWithDelim(line, "essage=", 2, token, sizeof(token)) )
+            {
+                if ( atoi(token) > 0 )
+                {
+                    continue;
+                }
+                
+                char buff[ 256 ];
+                sprintf( buff , "msg%d" , messageNum ); messageNum++;
+                
+                wstring str = AnsitoUnicode( token );
+                if ( stringMap.find( str ) == stringMap.end() )
+                {
+                    stringMap[ str ] = stringMap.size();
+                }
+                xml1->SetAttribute( buff , stringMap[ str ] );
+                
+                continue;
+            }
+            
+            if ( line[ 0 ] == 's' && getStringFromIndexWithDelim(line, "elected=", 2, token, sizeof(token)) )
+            {
+                xml2 = CreatXMLElement( doc , "w" );
+                xml1->LinkEndChild( xml2 );
+                xml2->SetAttribute( "select", atoi(token) );
+                continue;
+            }
+            
+            if ( line[ 0 ] == 'n' && getStringFromIndexWithDelim(line, "extpressed=", 2, token, sizeof(token)) )
+            {
+                xml2 = CreatXMLElement( doc , "w" );
+                xml1->LinkEndChild( xml2 );
+                xml2->SetAttribute( "next", atoi(token) );
+                continue;
+            }
+            
+            if ( line[ 0 ] == 'p' && getStringFromIndexWithDelim(line, "revpressed=", 2, token, sizeof(token)) )
+            {
+                xml2 = CreatXMLElement( doc , "w" );
+                xml1->LinkEndChild( xml2 );
+                xml2->SetAttribute( "prev", atoi(token) );
+                continue;
+            }
+
+            if ( line[ 0 ] == 'y' && getStringFromIndexWithDelim(line, "espressed=", 2, token, sizeof(token)) )
+            {
+                xml2 = CreatXMLElement( doc , "w" );
+                xml1->LinkEndChild( xml2 );
+                xml2->SetAttribute( "yes", atoi(token) );
+                continue;
+            }
+            
+            if ( line[ 0 ] == 'e' && getStringFromIndexWithDelim(line, "ndwin=", 2, token, sizeof(token)) )
+            {
+                xml1->SetAttribute( "endWin", atoi(token) );
+                continue;
+            }
+            
+            
+            if ( line[ 0 ] == 'g' && getStringFromIndexWithDelim(line, "otowin=", 2, token, sizeof(token)) )
+            {
+                xml2->SetAttribute( "goto", atoi(token) );
+                continue;
+            }
+            if ( line[ 0 ] == 'e' && getStringFromIndexWithDelim(line, "ndbutton=", 2, token, sizeof(token)) )
+            {
+                xml2->SetAttribute( "end", atoi(token) );
+                continue;
+            }
+            
+            if ( line[ 0 ] == 'w' && getStringFromIndexWithDelim(line, "intype=", 2, token, sizeof(token)) )
+            {
+                xml1->SetAttribute( "type" , atoi( token ) );
+                continue;
+            }
+
+            if ( line[ 0 ] == 'b' && getStringFromIndexWithDelim(line, "uttontype=", 2, token, sizeof(token)) )
+            {
+                string bt = token;
+                
+                if ( bt == "none" )
+                {
+                    xml1->SetAttribute( "buttonType" , 0 );
+                }
+                else if ( bt == "next" )
+                {
+                    xml1->SetAttribute( "buttonType" , 1 );
+                }
+                else if ( bt == "ok|prev" )
+                {
+                    xml1->SetAttribute( "buttonType" , 2 );
+                }
+                else if ( bt == "no|yes" )
+                {
+                    xml1->SetAttribute( "buttonType" , 3 );
+                }
+                else if ( bt == "ok" )
+                {
+                    xml1->SetAttribute( "buttonType" , 4 );
+                }
+                else if ( bt == "ok|next" )
+                {
+                    xml1->SetAttribute( "buttonType" , 5 );
+                }
+                else
+                {
+                    assert( 0 );
+                }
+                
+                continue;
+            }
+            
+            if ( line[ 0 ] != '\0' && line[ 0 ] != ' ' && line[ 0 ] != '\r' )
+            {
+                printf( "%s \n" , line );
+                assert( 0 );
+            }
+            
             continue;
         }
         
