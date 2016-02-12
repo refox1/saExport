@@ -451,12 +451,14 @@ void		SaveItem()
             strRead[ n ] = '\0';
             subStr = strRead;
             strRead.erase( 0 , n + 1 );
-            
+            info.hit = atoi( subStr.c_str() );
+
             n = strRead.find( "," );
             strRead[ n ] = '\0';
             subStr = strRead;
             strRead.erase( 0 , n + 1 );
-            
+            info.miss = atoi( subStr.c_str() );
+
             n = strRead.find( "," );
             strRead[ n ] = '\0';
             subStr = strRead;
@@ -2203,6 +2205,10 @@ void		SaveItem()
                 element->SetAttribute( "attackRank" , info.attackRank );
             if ( info.weight )
                 element->SetAttribute( "weight" , info.weight );
+            if ( info.hit )
+                element->SetAttribute( "hit" , info.hit );
+            if ( info.miss )
+                element->SetAttribute( "miss" , info.miss );
             
             
             if ( info.Poison1 )
@@ -2268,7 +2274,7 @@ void		SaveItem()
                 
                 int t = 0;
                 
-                if ( str.find( "石" ) == 0 )
+                if ( str.find( "石" ) == 0 && str.find( "石化" ) != 0 )
                 {
                     t = 0;
                 }
@@ -2333,9 +2339,17 @@ void		SaveItem()
                 {
                     t = 20;
                 }
-                else if ( str.find( "混乱" ) == 0 )
+                else if ( str.find( "麻痹" ) == 0 )
+                {
+                    t = 21;
+                }
+                else if ( str.find( "石化" ) == 0 )
                 {
                     t = 22;
+                }
+                else if ( str.find( "混乱" ) == 0 )
+                {
+                    t = 23;
                 }
                 else if ( str.find( "酒醉" ) == 0 )
                 {
@@ -3967,7 +3981,7 @@ fvoid		SaveMonsterBase()
                 
                 int t = 0;
                 
-                if ( str.find( "石" ) == 0 )
+                if ( str.find( "石" ) == 0 && str.find( "石化" ) != 0 )
                 {
                     t = 0;
                 }
@@ -4564,7 +4578,6 @@ void ReadCreate( string path , string name )
     
     int floorID = 0;
     
-    
     char	line[20000];
     char	token[16384];
     int		listindex =0;
@@ -4713,6 +4726,14 @@ void ReadCreate( string path , string name )
         else if ( getStringFromIndexWithDelim(line, "ame=", 2, token, sizeof(token)) )
         {
             wstring str = AnsitoUnicode( token );
+            
+//            if ( str.empty() )
+//            {
+//                wchar_t buffersdf[ 256 ] = {};
+//                myUTF8_to_UNICODE( buffersdf , (unsigned char*)token , 256 );
+//                str = buffersdf;
+//            }
+            
             if ( stringMap.find( str ) == stringMap.end() )
             {
                 stringMap[ str ] = stringMap.size();
@@ -7218,6 +7239,12 @@ void ReadArg( string path , string name , string tem )
                 char line1[ 320 ];
                 char line2[ 320 ];
                 
+                if ( getStringFromIndexWithDelim( token, "EVDE", 2, line1 , 256) )
+                {
+                    xml2->SetAttribute( "event" , 1 );
+                    continue;
+                }
+                
                 int n = 1;
                 while ( getStringFromIndexWithDelim( token , ",", n, line1 , 256) )
                 {
@@ -7368,6 +7395,7 @@ void ReadArg( string path , string name , string tem )
         if ( tem == "windowman" )
         {
             static int messageNum = 0;
+            static int messageNum1 = 0;
             static int winNum = 0;
             
             if ( !xml )
@@ -7383,8 +7411,9 @@ void ReadArg( string path , string name , string tem )
                 xml1->SetAttribute( "No" , token );
                 
                 messageNum = 0;
+                messageNum1 = 0;
                 winNum = 0;
-                
+
                 continue;
             }
             
@@ -7392,6 +7421,7 @@ void ReadArg( string path , string name , string tem )
             {
                 if ( atoi(token) > 0 )
                 {
+                    xml1->SetAttribute( "msgNum" , atoi( token ) );
                     continue;
                 }
                 
@@ -8186,6 +8216,12 @@ void ReadArg( string path , string name , string tem )
                 char line1[ 320 ];
                 char line2[ 320 ];
                 
+                if ( getStringFromIndexWithDelim( token, "EVDE", 2, line1 , 256) )
+                {
+                    xml2->SetAttribute( "event" , 1 );
+                    continue;
+                }
+                
                 int n = 1;
                 while ( getStringFromIndexWithDelim( token , ",", n, line1 , 256) )
                 {
@@ -8272,6 +8308,12 @@ void ReadArg( string path , string name , string tem )
                 char buffer[ 32 ];
                 char line1[ 320 ];
                 char line2[ 320 ];
+                
+                if ( getStringFromIndexWithDelim( token, "EVDE", 2, line1 , 256) )
+                {
+                    xml2->SetAttribute( "event" , 1 );
+                    continue;
+                }
                 
                 int n = 1;
                 while ( getStringFromIndexWithDelim( token , ",", n, line1 , 256) )
@@ -9008,6 +9050,12 @@ void ReadArg( string path , string name , string tem )
                 char line1[ 320 ];
                 char line2[ 320 ];
                 
+                if ( getStringFromIndexWithDelim( token, "EVDE", 2, line1 , 256) )
+                {
+                    xml2->SetAttribute( "event" , 1 );
+                    continue;
+                }
+                
                 int n = 1;
                 while ( getStringFromIndexWithDelim( token , ",", n, line1 , 256) )
                 {
@@ -9700,7 +9748,7 @@ void ReadArg( string path , string name , string tem )
                     }
                     else if ( getStringFromIndexWithDelim( token, "EVDE", 2, line1 , 256) )
                     {
-                        //xml2->SetAttribute( "del" , 1 );
+                        xml2->SetAttribute( "event" , 1 );
                     }
                     else
                     {
@@ -10556,6 +10604,12 @@ void ReadArg( string path , string name , string tem )
                 char line1[ 320 ];
                 char line2[ 320 ];
                 
+                if ( getStringFromIndexWithDelim( token, "EVDE", 2, line1 , 256) )
+                {
+                    xml2->SetAttribute( "event" , 1 );
+                    continue;
+                }
+                
                 int n = 1;
                 while ( getStringFromIndexWithDelim( token , ",", n, line1 , 256) )
                 {
@@ -10651,22 +10705,22 @@ void ReadArg( string path , string name , string tem )
             
             if ( line[ 0 ] == 'r' && getStringFromIndexWithDelim(line, "routenum:", 2, token, sizeof(token)) )
             {
-                xml->SetAttribute( "routeNum" , token );
+                xml->SetAttribute( "routeNum" , atoi( token ) );
                 continue;
             }
             if ( line[ 0 ] == 'w' && getStringFromIndexWithDelim(line, "aittime:", 2, token, sizeof(token)) )
             {
-                xml->SetAttribute( "waitTime" , token );
+                xml->SetAttribute( "waitTime" , atoi( token ) );
                 continue;
             }
             if ( line[ 0 ] == 'n' && getStringFromIndexWithDelim(line, "eedstone:", 2, token, sizeof(token)) )
             {
-                xml->SetAttribute( "needStone" , token );
+                xml->SetAttribute( "needStone" , atoi( token ) );
                 continue;
             }
             if ( line[ 0 ] == 's' && getStringFromIndexWithDelim(line, "eflg:", 2, token, sizeof(token)) )
             {
-                xml->SetAttribute( "seFlag" , token );
+                xml->SetAttribute( "seFlag" , atoi( token ) );
                 continue;
             }
             if ( line[ 0 ] == 'p' && getStringFromIndexWithDelim(line, "ickupitem:", 2, token, sizeof(token)) )
@@ -10676,17 +10730,17 @@ void ReadArg( string path , string name , string tem )
             }
             if ( line[ 0 ] == 'o' && getStringFromIndexWithDelim(line, "neway:", 2, token, sizeof(token)) )
             {
-                xml->SetAttribute( "oneWay" , token );
+                xml->SetAttribute( "oneWay" , atoi( token ) );
                 continue;
             }
             if ( line[ 0 ] == 'w' && getStringFromIndexWithDelim(line, "ave:", 2, token, sizeof(token)) )
             {
-                xml->SetAttribute( "wave" , token );
+                xml->SetAttribute( "wave" , atoi( token ) );
                 continue;
             }
             if ( line[ 0 ] == 'W' && getStringFromIndexWithDelim(line, "AVE:", 2, token, sizeof(token)) )
             {
-                xml->SetAttribute( "wave" , token );
+                xml->SetAttribute( "wave" , atoi( token ) );
                 continue;
             }
             if ( line[ 0 ] == 'r' && getStringFromIndexWithDelim(line, "outename1:", 2, token, sizeof(token)) )
@@ -10827,8 +10881,14 @@ void ReadArg( string path , string name , string tem )
                     int map = atoi( token2 );
                     getStringFromIndexWithDelim(token1, ",", 2, token2, 128 );
                     int x = atoi( token2 );
-                    getStringFromIndexWithDelim(token1, ",", 3, token2, 128 );
+                    bool b = getStringFromIndexWithDelim(token1, ",", 3, token2, 128 );
                     int y = atoi( token2 );
+                    
+                    if ( !b )
+                    {
+                        x = map;
+                        map = -1;
+                    }
                     
                     char buff[ 32 ];
                     sprintf( buff , "map%d" , n - 1 );
@@ -10846,7 +10906,7 @@ void ReadArg( string path , string name , string tem )
             }
             
             
-            if ( line[ 0 ] != '\0' )
+            if ( line[ 0 ] != '\0' && line[ 0 ] != '\r' )
             {
                 assert( 0 );
             }
@@ -14121,7 +14181,7 @@ bool SaveSkill(void)
         int n = option.find( "倍" );
         if ( n >= 0 )
         {
-            string sub = option.substr( n + 2 );
+            string sub = option.substr( n + 3 );
             xml->SetAttribute( "CRT" , atoi( sub.c_str() ) );
         }
         
@@ -14164,39 +14224,39 @@ bool SaveSkill(void)
         n = option.find( "回避" );
         if ( n >= 0 )
         {
-            string sub = option.substr( n + 4 );
+            string sub = option.substr( n + 6 );
             xml->SetAttribute( "MISS" , atoi( sub.c_str() ) );
         }
         
         n = option.find( "回避%" );
         if ( n >= 0 )
         {
-            string sub = option.substr( n + 5 );
+            string sub = option.substr( n + 7 );
             xml->SetAttribute( "MISS" , atoi( sub.c_str() ) );
         }
         n = option.find( "反击%" );
         if ( n >= 0 )
         {
-            string sub = option.substr( n + 5 );
+            string sub = option.substr( n + 7 );
             xml->SetAttribute( "BACK" , atoi( sub.c_str() ) );
         }
         n = option.find( "会心%" );
         if ( n >= 0 )
         {
-            string sub = option.substr( n + 5 );
+            string sub = option.substr( n + 7 );
             xml->SetAttribute( "CRT" , atoi( sub.c_str() ) );
         }
         
         n = option.find( "攻%" );
         if ( n >= 0 )
         {
-            string sub = option.substr( n + 3 );
+            string sub = option.substr( n + 4 );
             xml->SetAttribute( "ATK" , atoi( sub.c_str() ) );
         }
         n = option.find( "防%" );
         if ( n >= 0 )
         {
-            string sub = option.substr( n + 3 );
+            string sub = option.substr( n + 4 );
             xml->SetAttribute( "DEF" , atoi( sub.c_str() ) );
         }
         
@@ -14547,7 +14607,7 @@ int		main()
     //    SaveEXP();
     //    SaveGambleBankItems();
     //    SaveGroup();
-    //    SaveItem();
+    //    SaveSkill();
     //    SaveJobdailyfile();
     //    SaveMagic();
     //    SaveMapWarp();
@@ -14555,7 +14615,7 @@ int		main()
     //    SaveRace();
     //    SaveSkill();
     //    SaveSkillCode();
-    //return 0;
+    // return 0;
     
     //    SaveSkillCode();
     //    return 0;

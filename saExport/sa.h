@@ -86,6 +86,8 @@ struct ItemInfo
 	int		ward;
 	int		attackRank;
 	int		weight;
+    int		hit;
+    int		miss;
 
 	int		Poison1;
 	int		Poison2;
